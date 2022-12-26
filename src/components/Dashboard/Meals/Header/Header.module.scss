@@ -1,0 +1,25 @@
+._wrapper {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 30px;
+  ._title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 120%;
+    text-align: left !important;
+    color: #4b5563;
+  }
+
+  ._subtitle {
+    /* Body/Base/Semibold */
+
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: left;
+    color: #4b5563;
+  }
+}
