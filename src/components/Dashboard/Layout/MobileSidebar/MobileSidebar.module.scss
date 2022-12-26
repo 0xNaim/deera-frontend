@@ -1,0 +1,18 @@
+.MobileSidebar {
+  position: relative;
+  background: #000;
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background: #684cf9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+  }
+}

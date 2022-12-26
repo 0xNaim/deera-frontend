@@ -93,7 +93,7 @@ const CustomTable = () => {
     <div className={styles._wrapper}>
       {success && <FCSuccess />}
       <Stack
-        direction="row"
+        direction={{ sm: 'row', xs: 'column' }}
         justifyContent="flex-end"
         alignItems="center"
         spacing={1}
@@ -193,6 +193,7 @@ const CustomTable = () => {
                         borderRadius: '8px',
                         overflow: 'hidden',
                       }}
+                      className={styles.tableImg}
                     />
                   </TableCell>
                   <TableCell component="th" scope="row">

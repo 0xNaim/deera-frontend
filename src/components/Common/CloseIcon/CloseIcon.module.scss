@@ -1,0 +1,45 @@
+// COLORS
+$softorange: #f4a259;
+$tomatored: #f25c66;
+$mediumblu: #1e272d;
+
+.closeContainer {
+  position: relative;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.leftRight {
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  margin-top: 13px;
+  background-color: $softorange;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in;
+  margin-left: 3px;
+}
+
+.rightLeft {
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  margin-top: 13px;
+  background-color: $softorange;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in;
+  margin-left: 3px;
+}
+
+.closeContainer:hover .leftRight {
+  transform: rotate(-45deg);
+  background-color: $tomatored;
+}
+.closeContainer:hover .rightLeft {
+  transform: rotate(45deg);
+  background-color: $tomatored;
+}

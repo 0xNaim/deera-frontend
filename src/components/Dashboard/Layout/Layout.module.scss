@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  .menuWrapper {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    .tabsMobileMenu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background: #684cf9;
+      border-radius: 0 50% 50% 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
+
+  .left_wrapper {
+    display: block;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
