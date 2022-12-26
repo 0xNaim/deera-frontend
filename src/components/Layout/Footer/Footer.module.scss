@@ -1,0 +1,92 @@
+.footerWrapper {
+  padding: 20px 0;
+  background: #f3f4f6;
+  .desktopFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    .desktopNumber {
+      margin: 15px 0;
+      h6 {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        text-align: left;
+        color: #374151;
+      }
+    }
+
+    .desktopSocialIcon {
+      svg {
+        color: #9ca3af;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .desktopCopyWrite {
+      margin-top: 15px;
+      h6 {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        text-align: center;
+        color: #000000;
+      }
+    }
+  }
+
+  .mobileView {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    .firstRow {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e7eb;
+      .desktopSocialIcon {
+        svg {
+          color: #9ca3af;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .secondRow {
+      .desktopNumber {
+        margin: 15px 0;
+        h6 {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 120%;
+          text-align: left;
+          color: #374151;
+        }
+      }
+      .desktopCopyWrite {
+        margin-top: 15px;
+        h6 {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 120%;
+          text-align: center;
+          color: #000000;
+        }
+      }
+    }
+  }
+}

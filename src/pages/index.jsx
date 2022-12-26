@@ -1,7 +1,10 @@
-const Home = () => (
-  <div>
-    <h3>Linting Setup</h3>
-  </div>
+import Home from '../components/Client/Home/Home';
+import Layout from '../components/Layout';
+
+const HomePage = () => (
+  <Layout>
+    <Home />
+  </Layout>
 );
 
-export default Home;
+export default HomePage;
