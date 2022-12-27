@@ -116,9 +116,7 @@ const CustomTable = () => {
           </Button>
           <Menu
             id="fade-menu"
-            MenuListProps={{
-              'aria-labelledby': 'fade-button',
-            }}
+            MenuListProps={{ 'aria-labelledby': 'fade-button' }}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
@@ -143,9 +141,7 @@ const CustomTable = () => {
           </Button>
           <Menu
             id="fade-menu"
-            MenuListProps={{
-              'aria-labelledby': 'fade-button',
-            }}
+            MenuListProps={{ 'aria-labelledby': 'fade-button' }}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}

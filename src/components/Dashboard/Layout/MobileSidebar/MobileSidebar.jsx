@@ -7,9 +7,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import styles from './MobileSidebar.module.scss';
 
 const MobileSidebar = ({ buttonContent }) => {
-  const [state, setState] = React.useState({
-    left: false,
-  });
+  const [state, setState] = React.useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -36,9 +34,7 @@ const MobileSidebar = ({ buttonContent }) => {
         sx={{ background: 'red' }}
       >
         <div
-          style={{
-            zIndex: '99999',
-          }}
+          style={{ zIndex: '99999' }}
         >
           <IconButton onClick={toggleDrawer('left', false)} className={styles.closeButton}>
             <CloseIcon />

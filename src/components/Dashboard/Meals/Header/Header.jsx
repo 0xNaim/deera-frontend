@@ -55,9 +55,7 @@ const Header = () => {
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
+          MenuListProps={{ 'aria-labelledby': 'basic-button' }}
         >
           <MenuItem sx={{ width: '200px', maxWidth: '200px' }} onClick={handleClose}>
             Profile

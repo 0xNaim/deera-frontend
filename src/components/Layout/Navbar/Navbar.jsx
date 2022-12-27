@@ -144,7 +144,7 @@ const Navbar = (props) => {
         </AppBar>
       </ElevationScroll>
       <Toolbar />
-      <div>{props.children}</div>
+      <Box>{props.children}</Box>
     </>
   );
 };
