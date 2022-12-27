@@ -1,0 +1,49 @@
+.content__wrapper {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  padding: 1.5rem 0;
+
+  .go__back {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+
+    .go__back--icon {
+      font-size: 1rem;
+    }
+  }
+  .heading {
+    font-size: 1.4rem !important;
+    font-weight: 700;
+    margin-top: 0.5rem;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  .form {
+    .form__input {
+      margin-top: 1.5rem;
+      @media only screen and (max-width: 768px) {
+        margin-top: 1rem !important;
+      }
+
+      .input__label {
+        font-size: 1.2rem !important;
+      }
+
+      .helper__text {
+        color: #d32f2f;
+      }
+    }
+
+    .submit__btn {
+      font-size: 1.1rem !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+      text-transform: capitalize !important;
+      margin: 3rem 0;
+    }
+  }
+}
