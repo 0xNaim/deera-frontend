@@ -33,9 +33,7 @@ const MobileSidebar = ({ buttonContent }) => {
         className={styles.MobileSidebar}
         sx={{ background: 'red' }}
       >
-        <div
-          style={{ zIndex: '99999' }}
-        >
+        <div style={{ zIndex: '99999' }}>
           <IconButton onClick={toggleDrawer('left', false)} className={styles.closeButton}>
             <CloseIcon />
           </IconButton>
