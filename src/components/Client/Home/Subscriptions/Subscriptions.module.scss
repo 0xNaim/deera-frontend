@@ -1,0 +1,51 @@
+.subWrapper {
+  padding: 100px 0;
+  @media screen and (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  .headerWrapper {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 0.75px solid #e5e7eb;
+    .headerTitle {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28.6233px;
+      line-height: 120%;
+      color: #4b5563;
+    }
+
+    .headerView {
+      a {
+        text-decoration: none;
+        h6 {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 15.9043px;
+          line-height: 120%;
+          text-align: center;
+          color: #f2a515;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .bodyText {
+    margin-bottom: 50px;
+    h6 {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18.5209px;
+      line-height: 120%;
+      color: #4b5563;
+      max-width: 500px;
+    }
+  }
+}

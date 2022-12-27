@@ -1,0 +1,30 @@
+.cardWrapper {
+  margin-right: 15px;
+  background: transparent !important;
+  box-shadow: none !important;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    color: #f2a515;
+    margin-top: 15px;
+  }
+
+  .subTitle {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 120%;
+    color: #111827;
+    margin-top: 10px;
+  }
+}
