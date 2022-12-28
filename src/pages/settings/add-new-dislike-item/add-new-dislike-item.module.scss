@@ -1,0 +1,41 @@
+.content__wrapper {
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.5rem 0;
+  }
+
+  .content {
+    margin: 1.5rem 0;
+
+    @media only screen and (min-width: 1024px) {
+      width: 600px;
+      margin: 1.5rem auto;
+    }
+
+    .content__input {
+      margin-top: 1rem;
+    }
+
+    .helper__text {
+      font-size: 0.7rem;
+      color: #d32f2f;
+    }
+
+    button {
+      text-transform: capitalize !important;
+    }
+
+    .add__item--btn {
+      margin-top: 0.5rem;
+    }
+
+    .submit--btn {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 5rem;
+      box-shadow: none !important;
+    }
+  }
+}

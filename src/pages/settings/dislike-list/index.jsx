@@ -24,7 +24,7 @@ const initialIngredients = [
 
 const DislikeList = () => {
   const [ingredients] = useState(initialIngredients);
-  const [selectedIngredients, setSelectedIngredients] = useState(['Naim', 'Onoy']);
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   // Handle select ingredients
   const handleSelectIngredient = (ingredient) => {
