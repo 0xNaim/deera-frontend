@@ -1,0 +1,43 @@
+.delivery__content__wrapper {
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.5rem 0;
+  }
+
+  .delivery__content {
+    margin: 1.5rem 0;
+
+    @media only screen and (min-width: 1080px) {
+      width: 600px;
+      margin: 1.5rem auto;
+    }
+
+    .delivery__time {
+      border: 1px solid #f2a515;
+      border-radius: 8px;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+    }
+
+    .btn__group {
+      margin-top: 5rem;
+
+      @media only screen and (max-width: 768px) {
+        margin-top: 2rem;
+      }
+
+      button {
+        margin: 0.5rem 0;
+        text-transform: capitalize;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .btn--submit {
+        color: #fff;
+      }
+    }
+  }
+}
