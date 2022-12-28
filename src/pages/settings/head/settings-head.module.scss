@@ -1,6 +1,7 @@
 .go__back {
   display: inline-flex;
   align-items: center;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-size: 1rem;
   color: #6b7280;
   cursor: pointer;
@@ -14,6 +15,7 @@
   font-size: 1.4rem !important;
   font-weight: 700;
   margin-top: 0.5rem;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
 
   @media only screen and (max-width: 768px) {
     font-size: 1.2rem !important;
