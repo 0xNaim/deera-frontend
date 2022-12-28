@@ -1,0 +1,38 @@
+.subWrapper {
+  padding: 100px 0;
+  .content {
+    .headerWrapper {
+      margin-bottom: 50px;
+      .title {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28.6233px;
+        line-height: 120%;
+        color: #4b5563;
+        text-align: left;
+        @media screen and (min-width: 600px) {
+          font-size: 60px;
+          line-height: 120%;
+          text-align: center;
+        }
+      }
+      .subTitle {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18.5209px;
+        line-height: 120%;
+        color: #4b5563;
+        text-align: left;
+        margin-top: 15px;
+        @media screen and (min-width: 600px) {
+          font-size: 24px;
+          line-height: 120%;
+          margin-top: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
