@@ -112,3 +112,330 @@ export const mealsList = [
     `,
   },
 ];
+
+export const subscriptionData = [
+  {
+    id: 1,
+    image: '/assets/client/s1.svg',
+    title: 'Lose weight',
+    slug: 'lose-weight',
+    subTitle: 'Lose weight the healthy way.',
+    meals: [
+      {
+        id: 1,
+        image: '/assets/client/card1.svg',
+        title: 'Lose weight',
+        subTitle: 'Lose weight the healthy way.',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted</li>
+        <li>Croissant</li>
+        <li>Emmental cheese (Swiss Cheese)</li>
+        <li>Mayonnaise</li>
+        <li>Oregano</li>
+        <li>Tomato</li>
+        <li>Turkey</li>
+      </ul>
+    `,
+      },
+      {
+        id: 2,
+        image: '/assets/client/card2.svg',
+        title: 'Lose weight 2',
+        subTitle: 'Lose weight the healthy way 2',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 2</li>
+        <li>Croissant 2</li>
+        <li>Emmental cheese (Swiss Cheese) 2</li>
+        <li>Mayonnaise 2</li>
+        <li>Oregano 2</li>
+        <li>Tomato 2</li>
+        <li>Turkey 2</li>
+      </ul>
+    `,
+      },
+      {
+        id: 3,
+        image: '/assets/client/card3.svg',
+        title: 'Lose weight 3',
+        subTitle: 'Lose weight the healthy way 3',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 3</li>
+        <li>Croissant 3</li>
+        <li>Emmental cheese (Swiss Cheese) 3</li>
+        <li>Mayonnaise 3</li>
+        <li>Oregano 3</li>
+        <li>Tomato 3</li>
+        <li>Turkey 3</li>
+      </ul>
+    `,
+      },
+      {
+        id: 4,
+        image: '/assets/client/card4.svg',
+        title: 'Lose weight 4',
+        subTitle: 'Lose weight the healthy way 4',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 4</li>
+        <li>Croissant 4</li>
+        <li>Emmental cheese (Swiss Cheese) 4</li>
+        <li>Mayonnaise 4</li>
+        <li>Oregano 4</li>
+        <li>Tomato 5</li>
+        <li>Turkey 4</li>
+      </ul>
+    `,
+      },
+    ],
+  },
+  {
+    id: 2,
+    image: '/assets/client/s2.svg',
+    title: 'Lose weight 2',
+    slug: 'lose-weight-2',
+    subTitle: 'Lose weight the healthy way 2',
+    meals: [
+      {
+        id: 1,
+        image: '/assets/client/card1.svg',
+        title: 'Lose weight',
+        subTitle: 'Lose weight the healthy way.',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted</li>
+        <li>Croissant</li>
+        <li>Emmental cheese (Swiss Cheese)</li>
+        <li>Mayonnaise</li>
+        <li>Oregano</li>
+        <li>Tomato</li>
+        <li>Turkey</li>
+      </ul>
+    `,
+      },
+      {
+        id: 2,
+        image: '/assets/client/card2.svg',
+        title: 'Lose weight 2',
+        subTitle: 'Lose weight the healthy way 2',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 2</li>
+        <li>Croissant 2</li>
+        <li>Emmental cheese (Swiss Cheese) 2</li>
+        <li>Mayonnaise 2</li>
+        <li>Oregano 2</li>
+        <li>Tomato 2</li>
+        <li>Turkey 2</li>
+      </ul>
+    `,
+      },
+      {
+        id: 3,
+        image: '/assets/client/card3.svg',
+        title: 'Lose weight 3',
+        subTitle: 'Lose weight the healthy way 3',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 3</li>
+        <li>Croissant 3</li>
+        <li>Emmental cheese (Swiss Cheese) 3</li>
+        <li>Mayonnaise 3</li>
+        <li>Oregano 3</li>
+        <li>Tomato 3</li>
+        <li>Turkey 3</li>
+      </ul>
+    `,
+      },
+      {
+        id: 4,
+        image: '/assets/client/card4.svg',
+        title: 'Lose weight 4',
+        subTitle: 'Lose weight the healthy way 4',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 4</li>
+        <li>Croissant 4</li>
+        <li>Emmental cheese (Swiss Cheese) 4</li>
+        <li>Mayonnaise 4</li>
+        <li>Oregano 4</li>
+        <li>Tomato 5</li>
+        <li>Turkey 4</li>
+      </ul>
+    `,
+      },
+    ],
+  },
+  {
+    id: 3,
+    image: '/assets/client/s3.svg',
+    title: 'Lose weight 3',
+    slug: 'lose-weight-3',
+    subTitle: 'Lose weight the healthy way 3',
+    meals: [
+      {
+        id: 1,
+        image: '/assets/client/card1.svg',
+        title: 'Lose weight',
+        subTitle: 'Lose weight the healthy way.',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted</li>
+        <li>Croissant</li>
+        <li>Emmental cheese (Swiss Cheese)</li>
+        <li>Mayonnaise</li>
+        <li>Oregano</li>
+        <li>Tomato</li>
+        <li>Turkey</li>
+      </ul>
+    `,
+      },
+      {
+        id: 2,
+        image: '/assets/client/card2.svg',
+        title: 'Lose weight 2',
+        subTitle: 'Lose weight the healthy way 2',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 2</li>
+        <li>Croissant 2</li>
+        <li>Emmental cheese (Swiss Cheese) 2</li>
+        <li>Mayonnaise 2</li>
+        <li>Oregano 2</li>
+        <li>Tomato 2</li>
+        <li>Turkey 2</li>
+      </ul>
+    `,
+      },
+      {
+        id: 3,
+        image: '/assets/client/card3.svg',
+        title: 'Lose weight 3',
+        subTitle: 'Lose weight the healthy way 3',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 3</li>
+        <li>Croissant 3</li>
+        <li>Emmental cheese (Swiss Cheese) 3</li>
+        <li>Mayonnaise 3</li>
+        <li>Oregano 3</li>
+        <li>Tomato 3</li>
+        <li>Turkey 3</li>
+      </ul>
+    `,
+      },
+      {
+        id: 4,
+        image: '/assets/client/card4.svg',
+        title: 'Lose weight 4',
+        subTitle: 'Lose weight the healthy way 4',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 4</li>
+        <li>Croissant 4</li>
+        <li>Emmental cheese (Swiss Cheese) 4</li>
+        <li>Mayonnaise 4</li>
+        <li>Oregano 4</li>
+        <li>Tomato 5</li>
+        <li>Turkey 4</li>
+      </ul>
+    `,
+      },
+    ],
+  },
+  {
+    id: 4,
+    image: '/assets/client/s1.svg',
+    title: 'Lose weight 4',
+    slug: 'lose-weight-4',
+    subTitle: 'Lose weight the healthy way 4',
+    meals: [
+      {
+        id: 1,
+        image: '/assets/client/card1.svg',
+        title: 'Lose weight',
+        subTitle: 'Lose weight the healthy way.',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted</li>
+        <li>Croissant</li>
+        <li>Emmental cheese (Swiss Cheese)</li>
+        <li>Mayonnaise</li>
+        <li>Oregano</li>
+        <li>Tomato</li>
+        <li>Turkey</li>
+      </ul>
+    `,
+      },
+      {
+        id: 2,
+        image: '/assets/client/card2.svg',
+        title: 'Lose weight 2',
+        subTitle: 'Lose weight the healthy way 2',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 2</li>
+        <li>Croissant 2</li>
+        <li>Emmental cheese (Swiss Cheese) 2</li>
+        <li>Mayonnaise 2</li>
+        <li>Oregano 2</li>
+        <li>Tomato 2</li>
+        <li>Turkey 2</li>
+      </ul>
+    `,
+      },
+      {
+        id: 3,
+        image: '/assets/client/card3.svg',
+        title: 'Lose weight 3',
+        subTitle: 'Lose weight the healthy way 3',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 3</li>
+        <li>Croissant 3</li>
+        <li>Emmental cheese (Swiss Cheese) 3</li>
+        <li>Mayonnaise 3</li>
+        <li>Oregano 3</li>
+        <li>Tomato 3</li>
+        <li>Turkey 3</li>
+      </ul>
+    `,
+      },
+      {
+        id: 4,
+        image: '/assets/client/card4.svg',
+        title: 'Lose weight 4',
+        subTitle: 'Lose weight the healthy way 4',
+        details: `
+      <h1>The main components of the meal</h1>
+      <ul>
+        <li>Butter Unsalted 4</li>
+        <li>Croissant 4</li>
+        <li>Emmental cheese (Swiss Cheese) 4</li>
+        <li>Mayonnaise 4</li>
+        <li>Oregano 4</li>
+        <li>Tomato 5</li>
+        <li>Turkey 4</li>
+      </ul>
+    `,
+      },
+    ],
+  },
+];
