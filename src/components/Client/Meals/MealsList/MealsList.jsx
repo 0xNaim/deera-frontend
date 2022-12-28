@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
 import { mealsList } from '../../fakedata/data';
+import MealsDialog from '../MealsDialog/MealsDialog';
 import styles from './MealsList.module.scss';
 
 const TabPanel = (props) => {
@@ -73,8 +74,16 @@ const MealsList = () => {
       <TabPanel value={value} index={0}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
           {mealsList?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+            <Grid
+              item
+              md={4}
+              sm={6}
+              xs={12}
+              key={meals.id}
+              sx={{ marginBottom: '15px' }}
+              // onClick={handleMealsDialogOpen}
+            >
+              <MealsDialog btnContent={<SingleProduct cart={meals} margin="0" />} data={meals} />
             </Grid>
           ))}
         </Grid>
