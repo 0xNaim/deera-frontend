@@ -1,0 +1,49 @@
+.content__wrapper {
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.5rem 0;
+  }
+
+  .content {
+    @media only screen and (min-width: 1024px) {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    .description {
+      margin: 1.5rem 0;
+    }
+
+    .ingredients__wrapper {
+      .ingredient {
+        border-radius: 25px;
+        margin-bottom: 0.5rem;
+      }
+
+      .ingredient:not(:last-child) {
+        margin-right: 0.8rem;
+      }
+    }
+
+    .button__group {
+      .other_gradient--btn {
+        margin: 3rem 0;
+        text-transform: capitalize !important;
+      }
+
+      .submit__btn {
+        text-transform: capitalize;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.active-ingredient {
+  border: 1px solid #f2a515;
+  color: #f2a515;
+}
