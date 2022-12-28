@@ -1,6 +1,12 @@
+import { ThemeProvider } from '@mui/material';
 import '../styles/globals.scss';
 import '../styles/reset.scss';
+import theme from '../theme/theme';
 
-const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
+const MyApp = ({ Component, pageProps }) => (
+  <ThemeProvider theme={theme}>
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
 
 export default MyApp;
