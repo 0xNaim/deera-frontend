@@ -1,21 +1,12 @@
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  FormControl,
-  OutlinedInput,
-  Typography,
-} from '@mui/material';
-import { useRouter } from 'next/router';
+import { Box, Button, Container, FormControl, OutlinedInput, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import Layout from '../../../components/Layout';
+import SettingsHead from '../head';
 import styles from './personal-information.module.scss';
 
 const PersonalInformation = () => {
   // Router
-  const router = useRouter();
+  // const router = useRouter();
 
   // React hook form
   const {
@@ -25,7 +16,7 @@ const PersonalInformation = () => {
   } = useForm({});
 
   // Handle back to previous page
-  const handleGoBack = () => router.back();
+  // const handleGoBack = () => router.back();
 
   // Handle form submit
   const handleFormSubmit = (e) => {
@@ -36,17 +27,7 @@ const PersonalInformation = () => {
     <Layout>
       <Container>
         <Box className={styles.content__wrapper}>
-          <Box>
-            <Box onClick={handleGoBack} className={styles.go__back}>
-              <ArrowBackIosIcon className={styles['go__back--icon']} />
-              Back
-            </Box>
-
-            <Typography className={styles.heading} variant="h5" gutterBottom>
-              Personal Information
-            </Typography>
-            <Divider />
-          </Box>
+          <SettingsHead heading="Personal Information" />
 
           <Box as="form" className={styles.form}>
             <FormControl className={styles.form__input} variant="outlined" fullWidth>
