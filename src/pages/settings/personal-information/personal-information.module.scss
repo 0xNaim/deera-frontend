@@ -12,26 +12,6 @@
     margin: 0 auto;
   }
 
-  .go__back {
-    display: inline-flex;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
-
-    .go__back--icon {
-      font-size: 1rem;
-    }
-  }
-  .heading {
-    font-size: 1.4rem !important;
-    font-weight: 700;
-    margin-top: 0.5rem;
-
-    @media only screen and (max-width: 768px) {
-      font-size: 1.2rem !important;
-    }
-  }
-
   .form {
     .form__input {
       margin-top: 1.5rem;
@@ -41,6 +21,7 @@
 
       .input__label {
         font-size: 1.2rem !important;
+        font-weight: 600;
       }
 
       .helper__text {
