@@ -37,3 +37,30 @@ export const subscriptionsData = [
     subTitle: 'Lose weight the healthy way 6',
   },
 ];
+
+export const mealsList = [
+  {
+    id: 1,
+    image: '/assets/client/card1.svg',
+    title: 'Lose weight',
+    subTitle: 'Lose weight the healthy way.',
+  },
+  {
+    id: 2,
+    image: '/assets/client/card2.svg',
+    title: 'Lose weight 2',
+    subTitle: 'Lose weight the healthy way 2',
+  },
+  {
+    id: 3,
+    image: '/assets/client/card3.svg',
+    title: 'Lose weight 3',
+    subTitle: 'Lose weight the healthy way 3',
+  },
+  {
+    id: 4,
+    image: '/assets/client/card4.svg',
+    title: 'Lose weight 4',
+    subTitle: 'Lose weight the healthy way 4',
+  },
+];

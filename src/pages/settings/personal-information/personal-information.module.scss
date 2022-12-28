@@ -2,6 +2,16 @@
   font-family: 'IBM Plex Sans Arabic', sans-serif;
   padding: 1.5rem 0;
 
+  @media screen and (min-width: 600px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 100px 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
   .go__back {
     display: inline-flex;
     align-items: center;

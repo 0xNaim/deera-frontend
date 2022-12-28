@@ -1,8 +1,14 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable object-curly-newline */
+import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
+import { mealsList } from '../../fakedata/data';
+import styles from './MealsList.module.scss';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -15,7 +21,7 @@ const TabPanel = (props) => {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 };
@@ -35,22 +41,61 @@ const MealsList = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%' }} className={styles.wrapper}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Ifter" {...a11yProps(0)} />
-          <Tab label="Lunch" {...a11yProps(1)} />
-          <Tab label="Snacks" {...a11yProps(2)} />
+          <Tab
+            label={
+              <Typography variant="h6" color="inherit" className={styles.title}>
+                Ifter
+              </Typography>
+            }
+            {...a11yProps(0)}
+          />
+          <Tab
+            label={
+              <Typography variant="h6" color="inherit" className={styles.title}>
+                Lunch
+              </Typography>
+            }
+            {...a11yProps(1)}
+          />
+          <Tab
+            label={
+              <Typography variant="h6" color="inherit" className={styles.title}>
+                Snacks
+              </Typography>
+            }
+            {...a11yProps(2)}
+          />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Ifter
+        <Grid container spacing={2} className={styles.tabsWrapper}>
+          {mealsList?.map((meals) => (
+            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleProduct cart={meals} margin="0" />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Lunch
+        <Grid container spacing={2} className={styles.tabsWrapper}>
+          {mealsList?.slice(0, 2)?.map((meals) => (
+            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleProduct cart={meals} margin="0" />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Snacks
+        <Grid container spacing={2} className={styles.tabsWrapper}>
+          {mealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleProduct cart={meals} margin="0" />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
     </Box>
   );
