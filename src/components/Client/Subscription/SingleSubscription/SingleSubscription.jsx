@@ -1,4 +1,4 @@
-import { Button, Card, Stack, Typography } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 import React from 'react';
 import styles from './SingleSubscription.module.scss';
 
@@ -12,7 +12,7 @@ const SingleSubscription = ({ cart }) => (
       {cart?.subTitle}
     </Typography>
 
-    <Stack className={styles.pkgWrapper}>
+    {/* <Stack className={styles.pkgWrapper}>
       <Typography variant="h6" color="inherit" className={styles.pkg__title}>
         Choose package
       </Typography>
@@ -32,8 +32,8 @@ const SingleSubscription = ({ cart }) => (
           Two snack salad meals
         </Button>
       </Stack>
-    </Stack>
-    <Stack className={styles.durationWrapper}>
+    </Stack> */}
+    {/* <Stack className={styles.durationWrapper}>
       <Typography variant="h6" color="inherit" className={styles.duration__title}>
         Choose package
       </Typography>
@@ -53,13 +53,13 @@ const SingleSubscription = ({ cart }) => (
           14 days without Friday
         </Button>
       </Stack>
-    </Stack>
-    <Stack className={styles.deliverWrapper}>
+    </Stack> */}
+    {/* <Stack className={styles.deliverWrapper}>
       <h1>hello</h1>
     </Stack>
     <Stack className={styles.totalWrapper}>
       <h1>hello</h1>
-    </Stack>
+    </Stack> */}
   </Card>
 );
 

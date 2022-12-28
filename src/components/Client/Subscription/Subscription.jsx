@@ -1,4 +1,5 @@
 import { Container, Grid, Typography } from '@mui/material';
+import Link from 'next/link';
 import React from 'react';
 import { subscriptionData } from '../fakedata/data';
 import SingleSubscription from './SingleSubscription/SingleSubscription';
@@ -22,7 +23,9 @@ const Subscription = () => (
         <Grid container spacing={2} className={styles.content__wrapper}>
           {subscriptionData?.map((item) => (
             <Grid item md={4} sm={6} xs={12} key={item.id} sx={{ marginBottom: '15px' }}>
-              <SingleSubscription cart={item} />
+              <Link href={`/subscriptions/${item?.slug}`} style={{ textDecoration: 'none' }}>
+                <SingleSubscription cart={item} />
+              </Link>
             </Grid>
           ))}
         </Grid>

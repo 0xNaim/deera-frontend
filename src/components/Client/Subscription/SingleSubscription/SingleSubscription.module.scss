@@ -3,6 +3,7 @@
   background: #f9fafb !important;
   border: 1px solid #e5e7eb;
   padding: 14px;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -28,86 +29,5 @@
     line-height: 120%;
     color: #111827;
     margin-top: 10px;
-  }
-
-  .pkgWrapper {
-    border-top: 1px solid #e5e7eb;
-    border-bottom: 1px solid #e5e7eb;
-    padding: 15px 0;
-    margin-top: 15px;
-
-    .pkg__title {
-      font-family: 'IBM Plex Sans Arabic';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 120%;
-      color: #111827;
-    }
-
-    .pkg__button__wrapper {
-      margin-top: 15px;
-      .single__button {
-        padding: 9.81998px 14.73px;
-        // width: 100%;
-        border: 1.2275px solid #e5e7eb;
-        border-radius: 18.1958px;
-        font-family: 'IBM Plex Sans Arabic';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 120%;
-        text-align: center;
-        color: #9ca3af;
-        text-transform: capitalize;
-
-        &:hover {
-          background: #f2a515;
-          box-shadow: 0px 1.2275px 2.45499px rgba(0, 0, 0, 0.05);
-          color: #ffffff;
-        }
-      }
-    }
-  }
-  .durationWrapper {
-    margin-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #e5e7eb;
-    .duration__title {
-      font-family: 'IBM Plex Sans Arabic';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 120%;
-      color: #111827;
-    }
-
-    .duration__button__wrapper {
-      margin-top: 15px;
-      .single__button {
-        padding: 9.81998px 14.73px;
-        // width: 100%;
-        border: 1.2275px solid #e5e7eb;
-        border-radius: 18.1958px;
-        font-family: 'IBM Plex Sans Arabic';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 120%;
-        text-align: center;
-        color: #9ca3af;
-        text-transform: capitalize;
-
-        &:hover {
-          background: #f2a515;
-          box-shadow: 0px 1.2275px 2.45499px rgba(0, 0, 0, 0.05);
-          color: #ffffff;
-        }
-      }
-    }
-  }
-  .deliverWrapper {
-  }
-  .totalWrapper {
   }
 }
