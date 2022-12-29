@@ -9,8 +9,9 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import Layout from '../../../components/Layout';
+import Navbar from '../../../components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './address.module.scss';
 
 const fakeAddresses = [
@@ -28,41 +29,46 @@ const Address = () => {
   };
 
   return (
-    <Layout>
-      <Container>
-        <Box className={styles.content__wrapper}>
-          <SettingsHead heading="My Addresses" />
+    <>
+      <Box className={styles.mobile__menu}>
+        <Navbar />
+      </Box>
 
-          <Box className={styles.address__wrapper}>
-            <RadioGroup value={selectedAddress} onChange={handleSetAddress}>
-              {addresses.map((address, idx) => (
-                <Box key={address.name} className={styles.address__group}>
-                  <FormControlLabel value={idx} control={<Radio />} />
-                  <Box className={styles.address}>
-                    <Box>
-                      <Typography className={styles.address__name} variant="h6">
-                        {address.name}
-                      </Typography>
-                      <Typography>{address.address}</Typography>
+      <SettingsLayout>
+        <SettingsHead heading="My Addresses" />
+        <Container>
+          <Box className={styles.content__wrapper}>
+            <Box className={styles.address__wrapper}>
+              <RadioGroup value={selectedAddress} onChange={handleSetAddress}>
+                {addresses.map((address, idx) => (
+                  <Box key={address.name} className={styles.address__group}>
+                    <FormControlLabel value={idx} control={<Radio />} />
+                    <Box className={styles.address}>
+                      <Box>
+                        <Typography className={styles.address__name} variant="h6">
+                          {address.name}
+                        </Typography>
+                        <Typography>{address.address}</Typography>
+                      </Box>
+                      <ArrowForwardIosIcon className={styles.address__icon} />
                     </Box>
-                    <ArrowForwardIosIcon className={styles.address__icon} />
                   </Box>
-                </Box>
-              ))}
-            </RadioGroup>
+                ))}
+              </RadioGroup>
 
-            <Box className={styles.btn__group}>
-              <Button className={styles['btn--submit']} variant="contained" fullWidth>
-                Submit
-              </Button>
-              <Button color="secondary" variant="outlined" fullWidth>
-                New address
-              </Button>
+              <Box className={styles.btn__group}>
+                <Button className={styles['btn--submit']} variant="contained" fullWidth>
+                  Submit
+                </Button>
+                <Button color="secondary" variant="outlined" fullWidth>
+                  New address
+                </Button>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Container>
-    </Layout>
+        </Container>
+      </SettingsLayout>
+    </>
   );
 };
 

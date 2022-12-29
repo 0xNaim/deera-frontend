@@ -2,8 +2,9 @@
 import DoneIcon from '@mui/icons-material/Done';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useState } from 'react';
-import Layout from '../../../components/Layout';
+import Navbar from '../../../components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './dislike-list.module.scss';
 
 const initialIngredients = [
@@ -55,53 +56,59 @@ const DislikeList = () => {
   };
 
   return (
-    <Layout>
-      <Container>
-        <Box className={styles.content__wrapper}>
-          <SettingsHead heading="Prohibited ingredients" />
+    <>
+      <Box className={styles.mobile__menu}>
+        <Navbar />
+      </Box>
 
-          <Box className={styles.content}>
-            <Box className={styles.description}>
-              <Typography color="secondary">
-                Please specify the ingredients that you would like to avoid in choosing meals!
-              </Typography>
-            </Box>
+      <SettingsLayout>
+        <SettingsHead heading="Prohibited ingredients" />
 
-            <Box className={styles.ingredients__wrapper}>
-              {ingredients.map((ingredient) => (
-                <Chip
-                  className={
-                    getIngredient(ingredient) === ingredient
-                      ? `${styles.ingredient} ${styles['active-ingredient']}`
-                      : `${styles.ingredient}`
-                  }
-                  key={ingredient}
-                  onClick={() => handleSelectIngredient(ingredient)}
-                  label={ingredient}
-                  icon={getIngredient(ingredient) === ingredient && <DoneIcon color="primary" />}
+        <Container>
+          <Box className={styles.content__wrapper}>
+            <Box className={styles.content}>
+              <Box className={styles.description}>
+                <Typography color="secondary">
+                  Please specify the ingredients that you would like to avoid in choosing meals!
+                </Typography>
+              </Box>
+
+              <Box className={styles.ingredients__wrapper}>
+                {ingredients.map((ingredient) => (
+                  <Chip
+                    className={
+                      getIngredient(ingredient) === ingredient
+                        ? `${styles.ingredient} ${styles['active-ingredient']}`
+                        : `${styles.ingredient}`
+                    }
+                    key={ingredient}
+                    onClick={() => handleSelectIngredient(ingredient)}
+                    label={ingredient}
+                    icon={getIngredient(ingredient) === ingredient && <DoneIcon color="primary" />}
+                    variant="outlined"
+                  />
+                ))}
+              </Box>
+
+              <Box className={styles.button__group}>
+                <Button
+                  className={styles['other_gradient--btn']}
+                  color="secondary"
                   variant="outlined"
-                />
-              ))}
-            </Box>
+                  fullWidth
+                >
+                  Other Ingredients
+                </Button>
 
-            <Box className={styles.button__group}>
-              <Button
-                className={styles['other_gradient--btn']}
-                color="secondary"
-                variant="outlined"
-                fullWidth
-              >
-                Other Ingredients
-              </Button>
-
-              <Button className={styles.submit__btn} variant="contained" fullWidth>
-                Submit
-              </Button>
+                <Button className={styles.submit__btn} variant="contained" fullWidth>
+                  Submit
+                </Button>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Container>
-    </Layout>
+        </Container>
+      </SettingsLayout>
+    </>
   );
 };
 

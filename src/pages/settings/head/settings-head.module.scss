@@ -1,23 +1,27 @@
-.go__back {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
-  font-size: 1rem;
-  color: #6b7280;
-  cursor: pointer;
+.head__wrapper {
+  padding-top: 1rem;
 
-  .go__back--icon {
+  .go__back {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
     font-size: 1rem;
+    color: #6b7280;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    .go__back--icon {
+      font-size: 1rem;
+    }
   }
-}
 
-.heading {
-  font-size: 1.4rem !important;
-  font-weight: 700;
-  margin-top: 1rem;
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  .heading {
+    font-size: 1.4rem !important;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 1.2rem !important;
+    @media only screen and (max-width: 768px) {
+      font-size: 1.2rem !important;
+    }
   }
 }

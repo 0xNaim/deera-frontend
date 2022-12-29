@@ -1,18 +1,17 @@
-.content__wrapper {
-  margin: 4rem 0;
+.mobile__menu {
+  display: block;
 
-  @media only screen and (max-width: 768px) {
-    margin: 1.5rem 0;
+  @media only screen and (min-width: 768px) {
+    display: none;
   }
+}
+
+.content__wrapper {
+  margin: 2.5rem 0;
 
   .content {
-    @media only screen and (min-width: 1024px) {
-      width: 600px;
-      margin: 0 auto;
-    }
-
     .description {
-      margin: 1.5rem 0;
+      margin-bottom: 1.5rem;
     }
 
     .ingredients__wrapper {
