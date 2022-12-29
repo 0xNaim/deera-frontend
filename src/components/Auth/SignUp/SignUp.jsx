@@ -1,21 +1,20 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
-import { Button, Card, Checkbox, Container, Stack, Typography } from '@mui/material';
+import { Button, Card, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
-import styles from './SignIn.module.scss';
+import styles from './SignUp.module.scss';
 
-const SignIn = () => {
+const SignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    control,
   } = useForm({
-    defaultValues: { saving: false, phone: '', password: '' },
+    defaultValues: { saving: false, name: '', phone: '', email: '', password: '' },
   });
 
   const onSubmit = (data) => {
@@ -29,27 +28,51 @@ const SignIn = () => {
             <Card className={styles.card}>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <Typography variant="h6" color="inherit" className={styles.title}>
-                  Sign in
+                  Create a new account
                 </Typography>
                 <Typography variant="h6" color="inherit" className={styles.subtitle}>
-                  Log in by completing the information below
+                  Enter the information below to register a new subscription
                 </Typography>
 
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    Phone number
+                    The name
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter a phone number"
+                    placeholder="Enter the name"
+                    {...register('name', { required: true })}
+                  />
+                  {errors?.name && <p className={styles.input_error}>This field is required</p>}
+                </div>
+                <div className={styles.single__box}>
+                  <Typography variant="h6" color="inherit" className={styles.input__title}>
+                    The phone
+                  </Typography>
+                  <input
+                    type="text"
+                    className={styles.input}
+                    placeholder="Enter the phone"
                     {...register('phone', { required: true })}
                   />
                   {errors?.phone && <p className={styles.input_error}>This field is required</p>}
                 </div>
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    Password
+                    E-mail
+                  </Typography>
+                  <input
+                    type="text"
+                    className={styles.input}
+                    placeholder="Enter the email"
+                    {...register('email', { required: true })}
+                  />
+                  {errors?.email && <p className={styles.input_error}>This field is required</p>}
+                </div>
+                <div className={styles.single__box}>
+                  <Typography variant="h6" color="inherit" className={styles.input__title}>
+                    password
                   </Typography>
                   <input
                     type="text"
@@ -60,38 +83,19 @@ const SignIn = () => {
                   {errors?.password && <p className={styles.input_error}>This field is required</p>}
                 </div>
 
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" spacing={0.1} alignItems="center">
-                    <Controller
-                      name="saving"
-                      control={control}
-                      rules={{ required: true }}
-                      render={({ field }) => <Checkbox {...field} />}
-                    />
-                    <Typography variant="h6" color="inherit" className={styles.saving__title}>
-                      Saving data
-                    </Typography>
-                  </Stack>
-                  <div>
-                    <Typography variant="h6" color="inherit" className={styles.saving__title}>
-                      did you forget your password?
-                    </Typography>
-                  </div>
-                </Stack>
-
                 <Button
                   type="submit"
                   variant="contained"
                   color="primary"
                   className={styles.submit__button}
                 >
-                  Sign in
+                  Create a new account
                 </Button>
 
                 <Typography variant="h6" color="inherit" className={styles.submit__title}>
-                  Don&apos;t have account yet?{' '}
-                  <Link href="/sign-up" style={{ color: '#F2A515' }}>
-                    Create a new account{' '}
+                  Already have an account?
+                  <Link href="/sign-in" style={{ color: '#F2A515', paddingLeft: '4px' }}>
+                    Sign in
                   </Link>
                 </Typography>
               </form>
@@ -103,4 +107,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
