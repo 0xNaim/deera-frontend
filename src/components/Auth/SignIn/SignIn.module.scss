@@ -1,0 +1,117 @@
+.wrapper {
+  padding: 100px 0;
+
+  @media screen and (max-width: 600px) {
+    padding: 30px 0;
+  }
+
+  .card {
+    padding: 20px;
+    border: 1px solid #f2a515;
+    background: transparent !important;
+    box-shadow: none !important;
+
+    @media screen and (max-width: 600px) {
+      padding: 0px;
+      border: none;
+    }
+
+    .title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 23.0435px;
+      line-height: 150%;
+      letter-spacing: -0.03em;
+      color: #4b5563;
+    }
+    .subtitle {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 120%;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    .single__box {
+      padding: 10px 0;
+      .input__title {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 120%;
+        color: #4b5563;
+      }
+
+      .input {
+        padding: 16px;
+        width: 100%;
+        height: 56px;
+        background: #f9fafb;
+        border: 0.75px solid #e5e7eb;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        color: #9ca3af;
+
+        &:focus {
+          outline: none;
+          border: 1px solid #f2a515;
+        }
+      }
+      .input_error {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        color: red;
+        margin-top: 10px;
+      }
+    }
+
+    .saving__title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .submit__button {
+      margin-top: 30px;
+      padding: 12px 16px;
+      height: 50px;
+      width: 100%;
+      background: #f2a515;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 120%;
+      text-align: center;
+      color: #ffffff;
+    }
+    .submit__title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      text-align: center;
+      color: #6b7280;
+      margin-top: 15px;
+    }
+  }
+}
