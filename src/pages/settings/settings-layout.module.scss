@@ -1,0 +1,38 @@
+.sidebar {
+  background: #f9fafb;
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: block;
+  }
+
+  .logo__wrapper {
+    padding: 1.34rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .sidebar__list {
+    .sidebar__link {
+      text-decoration: none;
+      color: inherit;
+
+      .sidebar__item {
+        padding-left: 1.5rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+
+        p {
+          color: #374151;
+          font-weight: 700;
+        }
+
+        .sidebar__btn {
+          color: #fff;
+          text-transform: capitalize;
+          font-weight: 700;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

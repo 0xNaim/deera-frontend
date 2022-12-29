@@ -1,0 +1,48 @@
+.mobile__menu {
+  display: block;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.content__wrapper {
+  margin: 2.5rem 0;
+
+  .content {
+    .description {
+      margin-bottom: 1.5rem;
+    }
+
+    .ingredients__wrapper {
+      .ingredient {
+        border-radius: 25px;
+        margin-bottom: 0.5rem;
+      }
+
+      .ingredient:not(:last-child) {
+        margin-right: 0.8rem;
+      }
+    }
+
+    .button__group {
+      .other_gradient--btn {
+        margin: 3rem 0;
+        text-transform: capitalize !important;
+      }
+
+      .submit__btn {
+        text-transform: capitalize;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.active-ingredient {
+  border: 1px solid #f2a515;
+  color: #f2a515;
+}

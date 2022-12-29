@@ -1,18 +1,15 @@
-.delivery__content__wrapper {
-  margin: 4rem 0;
+.mobile__menu {
+  display: block;
 
-  @media only screen and (max-width: 768px) {
-    margin: 1.5rem 0;
+  @media only screen and (min-width: 768px) {
+    display: none;
   }
+}
+
+.delivery__content__wrapper {
+  margin: 2.5rem 0;
 
   .delivery__content {
-    margin: 1.5rem 0;
-
-    @media only screen and (min-width: 1080px) {
-      width: 600px;
-      margin: 1.5rem auto;
-    }
-
     .delivery__time {
       border: 1px solid #f2a515;
       border-radius: 8px;

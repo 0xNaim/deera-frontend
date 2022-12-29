@@ -75,7 +75,7 @@ const Language = () => {
           color: ' #374151',
         }}
       >
-        Options
+        العربية
       </Button>
       <StyledMenu
         id="demo-customized-menu"

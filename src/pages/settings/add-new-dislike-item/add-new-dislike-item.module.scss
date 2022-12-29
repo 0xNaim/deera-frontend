@@ -1,0 +1,34 @@
+.mobile__menu {
+  display: block;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.content__wrapper {
+  margin: 2.5rem 0;
+
+  .content {
+    .helper__text {
+      font-size: 0.7rem;
+      color: #d32f2f;
+    }
+
+    button {
+      text-transform: capitalize !important;
+    }
+
+    .add__item--btn {
+      margin-top: 0.5rem;
+    }
+
+    .submit--btn {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 5rem;
+      box-shadow: none !important;
+    }
+  }
+}

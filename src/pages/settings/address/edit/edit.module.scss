@@ -1,0 +1,39 @@
+.mobile__menu {
+  display: block;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.content__wrapper {
+  margin: 2.5rem 0;
+
+  .form {
+    .form__input {
+      margin-bottom: 1rem;
+
+      .helper__text {
+        font-size: 0.8rem;
+        color: #d32f2f;
+        margin-top: 0.2rem;
+      }
+    }
+
+    .btn__group {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+
+      .submit__btn {
+        color: #fff;
+      }
+    }
+  }
+}

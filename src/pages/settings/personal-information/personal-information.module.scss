@@ -1,27 +1,20 @@
+.mobile__menu {
+  display: block;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
 .content__wrapper {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
-  padding: 1.5rem 0;
-
-  @media screen and (min-width: 600px) {
-    padding: 60px 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 100px 0;
-    max-width: 700px;
-    margin: 0 auto;
-  }
 
   .form {
     .form__input {
-      margin-top: 1.5rem;
-      @media only screen and (max-width: 768px) {
-        margin-top: 1rem !important;
-      }
+      margin-top: 1rem;
 
       .input__label {
         font-size: 1.2rem !important;
-        font-weight: 600;
       }
 
       .helper__text {
