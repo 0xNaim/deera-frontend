@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
+import Navbar from '../../components/Layout/Navbar/Navbar';
 import SettingsHead from './head';
 import SettingsLayout from './settings-layout';
 import styles from './settings.module.scss';
@@ -24,187 +25,193 @@ const Settings = () => {
   const handleLanguageChange = (e) => setChangeLanguage(e.target.checked);
 
   return (
-    <SettingsLayout>
-      <SettingsHead heading="Settings" />
+    <>
+      <Box className={styles.mobile__menu}>
+        <Navbar />
+      </Box>
 
-      <Container>
-        <Box className={styles.settings}>
-          <Box className={styles.settings__content}>
-            <Typography className={styles.heading} variant="h6">
-              Your data
-            </Typography>
+      <SettingsLayout>
+        <SettingsHead heading="Settings" />
 
-            <List>
-              <Link href="/settings/personal-information" className={styles.link}>
+        <Container>
+          <Box className={styles.settings}>
+            <Box className={styles.settings__content}>
+              <Typography className={styles.heading} variant="h6">
+                Your data
+              </Typography>
+
+              <List>
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText primary="Your personal information" />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+
                 <ListItemButton className={styles.list} disableRipple>
-                  <ListItemText primary="Your personal information" />
-                  <ArrowForwardIosIcon className={styles.icons} />
+                  <ListItemText primary="Change the language" />
+                  <Switch checked={changeLanguage} onChange={handleLanguageChange} />
                 </ListItemButton>
-              </Link>
-              <Divider />
+                <Divider />
+              </List>
+            </Box>
 
-              <ListItemButton className={styles.list} disableRipple>
-                <ListItemText primary="Change the language" />
-                <Switch checked={changeLanguage} onChange={handleLanguageChange} />
-              </ListItemButton>
-              <Divider />
-            </List>
-          </Box>
+            <Box className={styles.settings__content}>
+              <Typography className={styles.heading} variant="h6">
+                Subscription
+              </Typography>
 
-          <Box className={styles.settings__content}>
-            <Typography className={styles.heading} variant="h6">
-              Subscription
-            </Typography>
-
-            <List>
-              <ListItemButton className={styles.list} disableRipple>
-                <ListItemText
-                  primary={
-                    // eslint-disable-next-line react/jsx-wrap-multilines
-                    <>
-                      Subscription type:
-                      <Box className={styles.subscription_type} component="span">
-                        {' '}
-                        protien
-                      </Box>
-                    </>
-                  }
-                />
-              </ListItemButton>
-              <Divider />
-
-              <ListItemButton className={styles.list} disableRipple>
-                <ListItemText
-                  primary={
-                    // eslint-disable-next-line react/jsx-wrap-multilines
-                    <>
-                      Package type:
-                      <Box className={styles.subscription_type} component="span">
-                        {' '}
-                        3 snacks
-                      </Box>
-                    </>
-                  }
-                />
-              </ListItemButton>
-              <Divider />
-
-              <Link href="/settings/personal-information" className={styles.link}>
+              <List>
                 <ListItemButton className={styles.list} disableRipple>
                   <ListItemText
                     primary={
                       // eslint-disable-next-line react/jsx-wrap-multilines
                       <>
-                        Remaining time:
+                        Subscription type:
                         <Box className={styles.subscription_type} component="span">
                           {' '}
-                          13 days
+                          protien
                         </Box>
                       </>
                     }
                   />
-                  <ArrowForwardIosIcon className={styles.icons} />
                 </ListItemButton>
-              </Link>
-              <Divider />
+                <Divider />
 
-              <Link href="/settings/personal-information" className={styles.link}>
                 <ListItemButton className={styles.list} disableRipple>
                   <ListItemText
                     primary={
                       // eslint-disable-next-line react/jsx-wrap-multilines
                       <>
-                        Prohibited ingredients:
+                        Package type:
                         <Box className={styles.subscription_type} component="span">
-                          fish, eggs,...
+                          {' '}
+                          3 snacks
                         </Box>
                       </>
                     }
                   />
-                  <ArrowForwardIosIcon className={styles.icons} />
                 </ListItemButton>
-              </Link>
-              <Divider />
+                <Divider />
 
-              <ListItemButton className={styles.list} disableRipple>
-                <ListItemText primary="Stop subscription" />
-                <Switch checked={changeLanguage} onChange={handleLanguageChange} disabled />
-              </ListItemButton>
-              <Divider />
-            </List>
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText
+                      primary={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <>
+                          Remaining time:
+                          <Box className={styles.subscription_type} component="span">
+                            {' '}
+                            13 days
+                          </Box>
+                        </>
+                      }
+                    />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText
+                      primary={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <>
+                          Prohibited ingredients:
+                          <Box className={styles.subscription_type} component="span">
+                            fish, eggs,...
+                          </Box>
+                        </>
+                      }
+                    />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+
+                <ListItemButton className={styles.list} disableRipple>
+                  <ListItemText primary="Stop subscription" />
+                  <Switch checked={changeLanguage} onChange={handleLanguageChange} disabled />
+                </ListItemButton>
+                <Divider />
+              </List>
+            </Box>
+
+            <Box className={styles.settings__content}>
+              <Typography className={styles.heading} variant="h6">
+                Delivery
+              </Typography>
+
+              <List>
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText
+                      primary={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <>
+                          Delivery address:
+                          <Box className={styles.subscription_type} component="span">
+                            home
+                          </Box>
+                        </>
+                      }
+                    />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText
+                      primary={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <>
+                          Delivery time:
+                          <Box className={styles.subscription_type} component="span">
+                            6-8 am
+                          </Box>
+                        </>
+                      }
+                    />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+              </List>
+            </Box>
+
+            <Box className={styles.settings__content}>
+              <Typography className={styles.heading} variant="h6">
+                Support and settings
+              </Typography>
+
+              <List>
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText primary="Talk to us" />
+                    <CallIcon sx={{ mr: 1 }} />
+                    <WhatsAppIcon />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+
+                <Link href="/settings/personal-information" className={styles.link}>
+                  <ListItemButton className={styles.list} disableRipple>
+                    <ListItemText primary="Sign out" />
+                    <ArrowForwardIosIcon className={styles.icons} />
+                  </ListItemButton>
+                </Link>
+                <Divider />
+              </List>
+            </Box>
           </Box>
-
-          <Box className={styles.settings__content}>
-            <Typography className={styles.heading} variant="h6">
-              Delivery
-            </Typography>
-
-            <List>
-              <Link href="/settings/personal-information" className={styles.link}>
-                <ListItemButton className={styles.list} disableRipple>
-                  <ListItemText
-                    primary={
-                      // eslint-disable-next-line react/jsx-wrap-multilines
-                      <>
-                        Delivery address:
-                        <Box className={styles.subscription_type} component="span">
-                          home
-                        </Box>
-                      </>
-                    }
-                  />
-                  <ArrowForwardIosIcon className={styles.icons} />
-                </ListItemButton>
-              </Link>
-              <Divider />
-
-              <Link href="/settings/personal-information" className={styles.link}>
-                <ListItemButton className={styles.list} disableRipple>
-                  <ListItemText
-                    primary={
-                      // eslint-disable-next-line react/jsx-wrap-multilines
-                      <>
-                        Delivery time:
-                        <Box className={styles.subscription_type} component="span">
-                          6-8 am
-                        </Box>
-                      </>
-                    }
-                  />
-                  <ArrowForwardIosIcon className={styles.icons} />
-                </ListItemButton>
-              </Link>
-              <Divider />
-            </List>
-          </Box>
-
-          <Box className={styles.settings__content}>
-            <Typography className={styles.heading} variant="h6">
-              Support and settings
-            </Typography>
-
-            <List>
-              <Link href="/settings/personal-information" className={styles.link}>
-                <ListItemButton className={styles.list} disableRipple>
-                  <ListItemText primary="Talk to us" />
-                  <CallIcon sx={{ mr: 1 }} />
-                  <WhatsAppIcon />
-                </ListItemButton>
-              </Link>
-              <Divider />
-
-              <Link href="/settings/personal-information" className={styles.link}>
-                <ListItemButton className={styles.list} disableRipple>
-                  <ListItemText primary="Sign out" />
-                  <ArrowForwardIosIcon className={styles.icons} />
-                </ListItemButton>
-              </Link>
-              <Divider />
-            </List>
-          </Box>
-        </Box>
-      </Container>
-    </SettingsLayout>
+        </Container>
+      </SettingsLayout>
+    </>
   );
 };
 
