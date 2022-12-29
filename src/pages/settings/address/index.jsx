@@ -9,8 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import Layout from '../../../components/Layout';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './address.module.scss';
 
 const fakeAddresses = [
@@ -28,11 +28,10 @@ const Address = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="My Addresses" />
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="My Addresses" />
-
           <Box className={styles.address__wrapper}>
             <RadioGroup value={selectedAddress} onChange={handleSetAddress}>
               {addresses.map((address, idx) => (
@@ -62,7 +61,7 @@ const Address = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 

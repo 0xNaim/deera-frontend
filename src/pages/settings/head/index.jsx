@@ -1,5 +1,5 @@
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Box, Divider, Typography } from '@mui/material';
+import { Box, Container, Divider, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import styles from './settings-head.module.scss';
 
@@ -11,17 +11,21 @@ const SettingsHead = ({ heading }) => {
   const handleGoBack = () => router.back();
 
   return (
-    <Box>
-      <Box onClick={handleGoBack} className={styles.go__back}>
-        <ArrowBackIosIcon className={styles['go__back--icon']} />
-        Back
-      </Box>
+    <>
+      <Container>
+        <Box className={styles.head__wrapper}>
+          <Box onClick={handleGoBack} className={styles.go__back}>
+            <ArrowBackIosIcon className={styles['go__back--icon']} />
+            Back
+          </Box>
 
-      <Typography className={styles.heading} variant="h5" gutterBottom>
-        {heading}
-      </Typography>
+          <Typography className={styles.heading} variant="h5" gutterBottom>
+            {heading}
+          </Typography>
+        </Box>
+      </Container>
       <Divider />
-    </Box>
+    </>
   );
 };
 

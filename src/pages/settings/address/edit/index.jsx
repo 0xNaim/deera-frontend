@@ -10,8 +10,8 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import Layout from '../../../../components/Layout';
 import SettingsHead from '../../head';
+import SettingsLayout from '../../settings-layout';
 import styles from './edit.module.scss';
 
 const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
@@ -36,11 +36,11 @@ const EdditAddress = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="Modify the delivery address" />
+
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="Modify the delivery address" />
-
           <Box className={styles.form} component="form">
             <FormControl className={styles.form__input} variant="outlined" fullWidth>
               <OutlinedInput
@@ -147,7 +147,7 @@ const EdditAddress = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 

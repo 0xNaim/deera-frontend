@@ -1,7 +1,7 @@
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import { useFieldArray, useForm } from 'react-hook-form';
-import Layout from '../../../components/Layout';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './add-new-dislike-item.module.scss';
 
 const initialComponent = { item: '' };
@@ -29,11 +29,11 @@ const AddNewDislikeItem = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="Insert a new component" />
+
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="Insert a new component" />
-
           <Box component="form" className={styles.content}>
             {fields.map((field, index) => (
               <Box key={field.id}>
@@ -74,7 +74,7 @@ const AddNewDislikeItem = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 

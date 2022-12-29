@@ -9,8 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import Layout from '../../../../components/Layout';
 import SettingsHead from '../../head';
+import SettingsLayout from '../../settings-layout';
 import styles from './add-new.module.scss';
 
 const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
@@ -32,11 +32,11 @@ const AddNewAddress = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="New delivery address" />
+
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="New delivery address" />
-
           <Box className={styles.form} component="form">
             <FormControl className={styles.form__input} variant="outlined" fullWidth>
               <OutlinedInput
@@ -137,7 +137,7 @@ const AddNewAddress = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 

@@ -1,13 +1,10 @@
 import { Box, Button, Container, FormControl, OutlinedInput, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import Layout from '../../../components/Layout';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './personal-information.module.scss';
 
 const PersonalInformation = () => {
-  // Router
-  // const router = useRouter();
-
   // React hook form
   const {
     register,
@@ -15,20 +12,17 @@ const PersonalInformation = () => {
     formState: { errors },
   } = useForm({});
 
-  // Handle back to previous page
-  // const handleGoBack = () => router.back();
-
   // Handle form submit
   const handleFormSubmit = (e) => {
     console.log(e);
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="Personal Information" />
+
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="Personal Information" />
-
           <Box as="form" className={styles.form}>
             <FormControl className={styles.form__input} variant="outlined" fullWidth>
               <Typography className={styles.input__label} variant="h6">
@@ -96,7 +90,7 @@ const PersonalInformation = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 export default PersonalInformation;

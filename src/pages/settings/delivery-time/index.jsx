@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { useState } from 'react';
-import Layout from '../../../components/Layout';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './delivery-time.module.scss';
 
 const times = ['Between 7 am to 12 am (before noon)', 'Between 6 pm to 10 pm (the day before)'];
@@ -16,11 +16,11 @@ const DeliveryTime = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="Delivery time" />
+
       <Container>
         <Box className={styles.delivery__content__wrapper}>
-          <SettingsHead heading="Delivery time" />
-
           <Box className={styles.delivery__content}>
             <RadioGroup value={selectedTime} onChange={handleDeliveryTime}>
               {deliveryTimes.map((deliveryTime, idx) => (
@@ -41,7 +41,7 @@ const DeliveryTime = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 

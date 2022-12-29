@@ -1,45 +1,18 @@
-.container {
-  margin: 4rem 0;
+.settings {
+  .settings__content {
+    margin-top: 1rem;
 
-  @media only screen and (max-width: 768px) {
-    margin: 1.5rem 0;
-  }
-
-  .btn__wrapper {
-    margin-bottom: 2rem;
-    overflow: hidden !important;
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    button {
-      text-transform: capitalize !important;
+    .heading {
+      font-size: 1.4rem;
+      font-weight: 500;
       @media only screen and (max-width: 768px) {
-        width: 100%;
+        font-size: 1.2rem;
       }
     }
-  }
 
-  .item {
-    padding-top: 0.8rem !important;
-
-    .content__wrapper {
-      padding: 0.5rem;
-      font-family: 'IBM Plex Sans Arabic', sans-serif;
-
-      @media only screen and (max-width: 768px) {
-        padding: 0;
-      }
-
-      .heading {
-        font-size: 1.2rem;
-        font-weight: 700;
-        @media only screen and (max-width: 768px) {
-          font-size: 1rem;
-        }
-      }
-
-      .icons {
-        font-size: 0.9rem;
-        color: #6b7280;
-      }
+    .icons {
+      font-size: 0.9rem;
+      color: #6b7280;
     }
   }
 }

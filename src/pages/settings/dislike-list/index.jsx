@@ -2,8 +2,8 @@
 import DoneIcon from '@mui/icons-material/Done';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useState } from 'react';
-import Layout from '../../../components/Layout';
 import SettingsHead from '../head';
+import SettingsLayout from '../settings-layout';
 import styles from './dislike-list.module.scss';
 
 const initialIngredients = [
@@ -55,11 +55,11 @@ const DislikeList = () => {
   };
 
   return (
-    <Layout>
+    <SettingsLayout>
+      <SettingsHead heading="Prohibited ingredients" />
+
       <Container>
         <Box className={styles.content__wrapper}>
-          <SettingsHead heading="Prohibited ingredients" />
-
           <Box className={styles.content}>
             <Box className={styles.description}>
               <Typography color="secondary">
@@ -101,7 +101,7 @@ const DislikeList = () => {
           </Box>
         </Box>
       </Container>
-    </Layout>
+    </SettingsLayout>
   );
 };
 
