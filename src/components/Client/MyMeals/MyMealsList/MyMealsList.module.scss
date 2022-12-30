@@ -1,0 +1,20 @@
+.wrapper {
+  cursor: pointer;
+  .title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    // color: #f2a515;
+    color: #9ca3af;
+    text-transform: capitalize;
+  }
+
+  .tabsWrapper {
+    padding: 50px 0;
+    @media screen and (max-width: 600px) {
+      padding: 30px 0;
+    }
+  }
+}
