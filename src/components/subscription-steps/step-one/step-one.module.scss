@@ -1,0 +1,38 @@
+.content__wrapper {
+  .form {
+    .form__inputs {
+      margin-top: 1rem;
+      background: #f9fafb;
+
+      .error__text {
+        font-size: 0.9rem;
+        color: #d32f2f !important;
+      }
+    }
+
+    .next__btn {
+      font-size: 1.3rem;
+      color: #fff;
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-top: 3rem;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.delivery__address {
+  margin-top: 1.5rem;
+
+  .address__title {
+    color: #374151;
+    font-weight: 600;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}
