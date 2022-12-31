@@ -92,7 +92,7 @@ const MealsList = () => {
         <Grid container spacing={2} className={styles.tabsWrapper}>
           {mealsList?.slice(0, 2)?.map((meals) => (
             <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+              <MealsDialog btnContent={<SingleProduct cart={meals} margin="0" />} data={meals} />
             </Grid>
           ))}
         </Grid>
@@ -101,7 +101,7 @@ const MealsList = () => {
         <Grid container spacing={2} className={styles.tabsWrapper}>
           {mealsList?.slice(2, 4)?.map((meals) => (
             <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+              <MealsDialog btnContent={<SingleProduct cart={meals} margin="0" />} data={meals} />
             </Grid>
           ))}
         </Grid>
