@@ -6,8 +6,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
-import { mealsList, myMealsList } from '../../fakedata/data';
+import { myMealsList } from '../../fakedata/data';
 import styles from './MyMealsList.module.scss';
 import SingleMyMealList from './SingleMyMealList/SingleMyMealList';
 
@@ -37,14 +36,35 @@ function a11yProps(index) {
 const MyMealsList = () => {
   const [value, setValue] = React.useState(0);
 
+  const [selectData, setSelectData] = React.useState([]);
+
+  const handleAddData = (item) => {
+    if (!selectData.includes(item)) {
+      setSelectData([...selectData, item]);
+    }
+  };
+
+  const handleRemoveData = (id) => {
+    setSelectData(selectData.filter((item) => item.id !== id));
+  };
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  console.log(selectData, 'datas');
+
   return (
     <Box sx={{ width: '100%' }} className={styles.wrapper}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
+          // aria-label="basic tabs example"
+        >
           <Tab
             label={
               <Typography variant="h6" color="inherit" className={styles.title}>
@@ -115,61 +135,96 @@ const MyMealsList = () => {
               sx={{ marginBottom: '15px' }}
               // onClick={handleMealsDialogOpen}
             >
-              <SingleMyMealList cart={meals} margin="0" />
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(0, 2)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(0, 2)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(2, 4)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(2, 4)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(2, 4)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(2, 4)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={6}>
         <Grid container spacing={2} className={styles.tabsWrapper}>
-          {mealsList?.slice(2, 4)?.map((meals) => (
-            <Grid item md={4} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
-              <SingleProduct cart={meals} margin="0" />
+          {myMealsList?.slice(2, 4)?.map((meals) => (
+            <Grid item md={6} sm={6} xs={12} key={meals.id} sx={{ marginBottom: '15px' }}>
+              <SingleMyMealList
+                cart={meals}
+                handleAddData={handleAddData}
+                selectData={selectData}
+                handleRemoveData={handleRemoveData}
+              />
             </Grid>
           ))}
         </Grid>

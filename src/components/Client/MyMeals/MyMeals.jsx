@@ -1,4 +1,5 @@
 import { Button, Container, Stack, Typography } from '@mui/material';
+import Link from 'next/link';
 import React from 'react';
 import styles from './MyMeals.module.scss';
 import MyMealsList from './MyMealsList/MyMealsList';
@@ -10,9 +11,11 @@ const MyMeals = () => (
         <Typography variant="h6" color="inherit" className={styles.header_title}>
           My meals
         </Typography>
-        <Button variant="outlined" color="primary" className={styles.header_button}>
-          My account
-        </Button>
+        <Link href="/settings" passHref style={{ textDecoration: 'none' }}>
+          <Button variant="outlined" color="primary" className={styles.header_button}>
+            My account
+          </Button>
+        </Link>
       </Stack>
       <MyMealsList />
     </Container>

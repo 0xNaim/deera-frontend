@@ -449,7 +449,7 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
   {
     id: 2,
@@ -459,7 +459,7 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
   {
     id: 3,
@@ -469,7 +469,7 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
   {
     id: 4,
@@ -479,7 +479,7 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
   {
     id: 5,
@@ -489,7 +489,7 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
   {
     id: 6,
@@ -499,6 +499,6 @@ export const myMealsList = [
     protein: 20,
     fats: 20,
     image: '/assets/client/my-meals-list.svg',
-    type: 'Breakfast breakfast',
+    type: 'Breakfast',
   },
 ];
