@@ -1,0 +1,138 @@
+.content__wrapper {
+  margin-bottom: 1rem;
+
+  .circular__content {
+    display: flex;
+    align-items: center;
+
+    .circular__wrapper {
+      width: 15%;
+      height: 150px;
+      margin-top: 2rem;
+      position: relative;
+
+      @media only screen and (max-width: 768px) {
+        width: 35%;
+        height: 120px;
+        top: -5px;
+      }
+
+      .circular__parent {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        border: 9px solid #ddd;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: 768px) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .circular {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px !important;
+        height: 120px !important;
+
+        @media only screen and (max-width: 768px) {
+          width: 100px !important;
+          height: 100px !important;
+        }
+      }
+    }
+
+    .circular__text {
+      .circular__text__heading {
+        @media only screen and (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .subscription__review {
+  }
+
+  .discount__area {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    .discount__label {
+      font-size: 1rem;
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .discount {
+      display: flex;
+      justify-content: space-between;
+
+      .discount__input {
+        width: 87%;
+        background: #f9fafb;
+
+        @media only screen and (max-width: 768px) {
+          width: 70%;
+        }
+      }
+
+      .discount__btn {
+        width: 12%;
+        color: #fff !important;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 1.3rem;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 1rem;
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  .price__area {
+    margin-top: 1rem;
+
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .payment {
+      .btn__group {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          text-transform: capitalize;
+          font-size: 1.3rem;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 1rem;
+          }
+        }
+
+        .btn__payment {
+          color: #fff;
+          font-weight: 600;
+          width: 49%;
+        }
+
+        .btn__back {
+          width: 49%;
+        }
+      }
+    }
+  }
+}
