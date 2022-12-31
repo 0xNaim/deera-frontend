@@ -67,7 +67,7 @@ const AddNewAddress = () => {
                     Region
                   </MenuItem>
                   {regions.map((region) => (
-                    <MenuItem selected key={region} value={region}>
+                    <MenuItem key={region} value={region}>
                       {region}
                     </MenuItem>
                   ))}
