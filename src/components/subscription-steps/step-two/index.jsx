@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Checkbox,
+  CircularProgress,
   Divider,
   FormControlLabel,
   List,
@@ -18,7 +19,27 @@ const StepTwo = ({ backStep }) => {
 
   return (
     <Box className={styles.content__wrapper}>
-      <Typography variant="h6">Step 2</Typography>
+      <Box className={styles.circular__content}>
+        <Box className={styles.circular__wrapper}>
+          <Box className={styles.circular__parent}>
+            <Typography variant="h5" fontWeight={600}>
+              2 of 2
+            </Typography>
+          </Box>
+          <CircularProgress className={styles.circular} variant="determinate" value={100} />
+        </Box>
+
+        <Box className={styles.circular__text}>
+          <Typography
+            className={styles.circular__text__heading}
+            variant="h5"
+            fontWeight={600}
+            gutterBottom
+          >
+            Summary of subscription details
+          </Typography>
+        </Box>
+      </Box>
 
       <Box className={styles.subscription__review}>
         <List disablePadding>

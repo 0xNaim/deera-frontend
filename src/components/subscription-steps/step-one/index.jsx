@@ -1,5 +1,14 @@
 /* eslint-disable no-return-assign */
-import { Box, Button, FormControl, MenuItem, Select, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  FormControl,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from '@mui/material';
 import { useForm } from 'react-hook-form';
 import styles from './step-one.module.scss';
 
@@ -25,7 +34,29 @@ const StepOne = ({ nextStep }) => {
 
   return (
     <Box className={styles.content__wrapper}>
-      <Typography variant="h2">Step 1</Typography>
+      <Box className={styles.circular__content}>
+        <Box className={styles.circular__wrapper}>
+          <Box className={styles.circular__parent}>
+            <Typography variant="h5" fontWeight={600}>
+              1 of 2
+            </Typography>
+          </Box>
+          <CircularProgress className={styles.circular} variant="determinate" value={50} />
+        </Box>
+
+        <Box className={styles.circular__text}>
+          <Typography
+            className={styles.circular__text__heading}
+            variant="h5"
+            fontWeight={600}
+            gutterBottom
+          >
+            Start and delivery data
+          </Typography>
+          <Typography sx={{ color: '#9CA3AF' }}>Next: Order summary</Typography>
+        </Box>
+      </Box>
+
       <Box component="form" className={styles.form}>
         <FormControl className={styles.form__inputs} fullWidth>
           <Typography fontWeight={600} sx={{ color: '#374151' }}>

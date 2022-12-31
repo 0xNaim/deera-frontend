@@ -1,4 +1,61 @@
 .content__wrapper {
+  .circular__content {
+    display: flex;
+    align-items: center;
+
+    .circular__wrapper {
+      width: 15%;
+      height: 150px;
+      margin-top: 2rem;
+      position: relative;
+
+      @media only screen and (max-width: 768px) {
+        width: 35%;
+        height: 120px;
+        top: -5px;
+      }
+
+      .circular__parent {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        border: 9px solid #ddd;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: 768px) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .circular {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px !important;
+        height: 120px !important;
+
+        @media only screen and (max-width: 768px) {
+          width: 100px !important;
+          height: 100px !important;
+        }
+      }
+    }
+
+    .circular__text {
+      .circular__text__heading {
+        @media only screen and (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
   .form {
     .form__inputs {
       margin-top: 1rem;
