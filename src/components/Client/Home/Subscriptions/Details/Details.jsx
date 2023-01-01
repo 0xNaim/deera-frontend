@@ -113,7 +113,7 @@ const Details = ({ data }) => {
         </Typography>
       </Stack>
 
-      <Link href="/payment" style={{ textDecoration: 'none' }}>
+      <Link href="/sign-in" style={{ textDecoration: 'none' }}>
         <Button
           variant="contained"
           color="primary"

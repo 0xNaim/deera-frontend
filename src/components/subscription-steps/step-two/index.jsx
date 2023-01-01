@@ -12,6 +12,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 import styles from './step-two.module.scss';
 
 const StepTwo = ({ backStep }) => {
@@ -113,9 +114,11 @@ const StepTwo = ({ backStep }) => {
           />
 
           <Box className={styles.btn__group}>
-            <Button className={styles.btn__payment} variant="contained">
-              Payment
-            </Button>
+            <Link href="/settings/my-meals" style={{ textDecoration: 'none', width: '100%' }}>
+              <Button className={styles.btn__payment} variant="contained">
+                Payment
+              </Button>
+            </Link>
             <Button
               className={styles.btn__back}
               onClick={backStep}

@@ -29,7 +29,7 @@ const SignIn = () => {
     const user = { ...data };
     localStorage.setItem('user', JSON.stringify(user));
 
-    router.push('/');
+    router.push('/payment');
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);
