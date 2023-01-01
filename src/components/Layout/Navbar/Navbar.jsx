@@ -107,7 +107,7 @@ const Navbar = (props) => {
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
-                    <Link href="/subscription">
+                    <Link href="/subscriptions">
                       <Typography variant="subtitle1" color="inherit">
                         Subscription
                       </Typography>
