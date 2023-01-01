@@ -1,0 +1,56 @@
+.head__wrapper {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .head__title {
+    font-weight: 600;
+    color: #4b5563;
+  }
+
+  .account__wrapper {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+
+    .notice__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .notice__badge {
+        background: #9ca3af;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        margin-left: 1rem;
+        margin-right: 4rem;
+
+        @media only screen and (max-width: 768px) {
+          margin-right: 1rem;
+        }
+
+        .notice__icon {
+          color: #f9fafb;
+        }
+      }
+    }
+
+    .account__info {
+      display: flex;
+      align-items: center;
+
+      .avatar__wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .avatar {
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
