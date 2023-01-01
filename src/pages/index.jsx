@@ -7,4 +7,5 @@ const HomePage = () => (
   </Layout>
 );
 
+// export default withPrivateRoute(HomePage);
 export default HomePage;

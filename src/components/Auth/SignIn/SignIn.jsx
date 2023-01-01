@@ -1,33 +1,59 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
-import { Button, Card, Checkbox, Container, Stack, Typography } from '@mui/material';
+import { Alert, Button, Card, Checkbox, Container, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import FCSnackbar from '../../Common/FCSnackbar';
 
 import styles from './SignIn.module.scss';
 
 const SignIn = () => {
+  const router = useRouter();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
+    watch,
   } = useForm({
     defaultValues: { saving: false, phone: '', password: '' },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const user = { ...data };
+    localStorage.setItem('user', JSON.stringify(user));
+
+    router.push('/');
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
   };
+
+  const onError = (Error, e) => {
+    if (Error?.saving?.message === '') {
+      console.log('first');
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
+      {success && <FCSnackbar />}
       <Container>
         <Grid container justifyContent="center" alignItems="center">
           <Grid item md={6} sm={10} xs={12}>
             <Card className={styles.card}>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(onSubmit, onError)}>
                 <Typography variant="h6" color="inherit" className={styles.title}>
                   Sign in
                 </Typography>
@@ -78,6 +104,12 @@ const SignIn = () => {
                     </Typography>
                   </div>
                 </Stack>
+
+                {error && (
+                  <Alert sx={{ mt: 1 }} severity="error">
+                    Please select Saving Data to Save
+                  </Alert>
+                )}
 
                 <Button
                   type="submit"

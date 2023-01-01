@@ -1,5 +1,6 @@
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import { Box, Button, Stack, Typography } from '@mui/material';
+import Link from 'next/link';
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -112,9 +113,16 @@ const Details = ({ data }) => {
         </Typography>
       </Stack>
 
-      <Button variant="contained" color="primary" className={styles.subscribe__page}>
-        Subscribe
-      </Button>
+      <Link href="/payment" style={{ textDecoration: 'none' }}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ textDecoration: 'none' }}
+          className={styles.subscribe__page}
+        >
+          Subscribe
+        </Button>
+      </Link>
     </Box>
   );
 };
