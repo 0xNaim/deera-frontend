@@ -14,7 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 import Layout from '../../../components/Dashboard/Layout/Layout';
-import dashboardTheme from '../dashboard-theme/dashboard-theme';
+import dashboardTheme from '../../../theme/dashboard-theme';
 import DashboardHead from '../head';
 import styles from './settings.module.scss';
 
