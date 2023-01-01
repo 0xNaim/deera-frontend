@@ -15,33 +15,31 @@ import DropDownMenu from './common/DropDownMenu';
 import SingleMenu from './common/SingleMenu';
 
 // import data
-import {
-  employeesData,
-  mealsData,
-  requestsData,
-  settingsData,
-  subscriptionsData,
-} from './fakedata';
+import { employeesData, mealsData, requestsData, subscriptionsData } from './fakedata';
 
 const Sidebar = () => {
   const [requests, setRequests] = React.useState(false);
   const [subscriptions, setSubscriptions] = React.useState(false);
   const [meals, setMeals] = React.useState(false);
-  const [settings, setSettings] = React.useState(false);
+  // const [settings, setSettings] = React.useState(false);
   const [employees, setEmployees] = React.useState(false);
 
   const handleRequestsClick = () => {
     setRequests(!requests);
   };
+
   const handleSubscriptionsClick = () => {
     setSubscriptions(!subscriptions);
   };
+
   const handleMealsClick = () => {
     setMeals(!meals);
   };
-  const handleSettingsClick = () => {
-    setSettings(!settings);
-  };
+
+  // const handleSettingsClick = () => {
+  //   setSettings(!settings);
+  // };
+
   const handleEmployeesClick = () => {
     setEmployees(!employees);
   };
@@ -88,13 +86,15 @@ const Sidebar = () => {
           />
           <SingleMenu image="/assets/coupons.png" link="/coupons" name="Coupons" />
 
-          <DropDownMenu
+          {/* <DropDownMenu
             handleClick={handleSettingsClick}
             open={settings}
             image="/assets/settings.svg"
             name="Settings"
             menus={settingsData}
-          />
+          /> */}
+
+          <SingleMenu image="/assets/settings.svg" link="/dashboard/settings" name="Settings" />
         </List>
         {/* signout part */}
         <Stack className={styles._last_wrapper}>
