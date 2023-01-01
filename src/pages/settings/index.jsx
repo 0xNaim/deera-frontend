@@ -114,7 +114,7 @@ const Settings = () => {
                 </Link>
                 <Divider />
 
-                <Link href="/settings/personal-information" className={styles.link}>
+                <Link href="/settings/dislike-list" className={styles.link}>
                   <ListItemButton className={styles.list} disableRipple>
                     <ListItemText
                       primary={
@@ -146,7 +146,7 @@ const Settings = () => {
               </Typography>
 
               <List>
-                <Link href="/settings/personal-information" className={styles.link}>
+                <Link href="/settings/address" className={styles.link}>
                   <ListItemButton className={styles.list} disableRipple>
                     <ListItemText
                       primary={
@@ -164,7 +164,7 @@ const Settings = () => {
                 </Link>
                 <Divider />
 
-                <Link href="/settings/personal-information" className={styles.link}>
+                <Link href="/settings/delivery-time" className={styles.link}>
                   <ListItemButton className={styles.list} disableRipple>
                     <ListItemText
                       primary={

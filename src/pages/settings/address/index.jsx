@@ -8,6 +8,7 @@ import {
   RadioGroup,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
@@ -15,8 +16,12 @@ import SettingsLayout from '../settings-layout';
 import styles from './address.module.scss';
 
 const fakeAddresses = [
-  { name: 'Home', address: 'House 40, Street 50, Plot 6 Salmiya' },
-  { name: 'Word', address: 'House 21, Street 32, Block 1 Shuwaikh' },
+  { name: 'Home', address: 'House 40, Street 50, Plot 6 Salmiya', link: '' },
+  {
+    name: 'Word',
+    address: 'House 21, Street 32, Block 1 Shuwaikh',
+    link: '/settings/address/edit',
+  },
 ];
 
 const Address = () => {
@@ -41,18 +46,22 @@ const Address = () => {
             <Box className={styles.address__wrapper}>
               <RadioGroup value={selectedAddress} onChange={handleSetAddress}>
                 {addresses.map((address, idx) => (
-                  <Box key={address.name} className={styles.address__group}>
-                    <FormControlLabel value={idx} control={<Radio />} />
-                    <Box className={styles.address}>
-                      <Box>
-                        <Typography className={styles.address__name} variant="h6">
-                          {address.name}
-                        </Typography>
-                        <Typography>{address.address}</Typography>
+                  <div key={address.name}>
+                    <Link href={address?.link} style={{ textDecoration: 'none' }}>
+                      <Box key={address.name} className={styles.address__group}>
+                        <FormControlLabel value={idx} control={<Radio />} />
+                        <Box className={styles.address}>
+                          <Box>
+                            <Typography className={styles.address__name} variant="h6">
+                              {address.name}
+                            </Typography>
+                            <Typography>{address.address}</Typography>
+                          </Box>
+                          <ArrowForwardIosIcon className={styles.address__icon} />
+                        </Box>
                       </Box>
-                      <ArrowForwardIosIcon className={styles.address__icon} />
-                    </Box>
-                  </Box>
+                    </Link>
+                  </div>
                 ))}
               </RadioGroup>
 
@@ -60,9 +69,11 @@ const Address = () => {
                 <Button className={styles['btn--submit']} variant="contained" fullWidth>
                   Submit
                 </Button>
-                <Button color="secondary" variant="outlined" fullWidth>
-                  New address
-                </Button>
+                <Link href="/settings/address/add-new" style={{ textDecoration: 'none' }}>
+                  <Button color="secondary" variant="outlined" fullWidth>
+                    New address
+                  </Button>
+                </Link>
               </Box>
             </Box>
           </Box>

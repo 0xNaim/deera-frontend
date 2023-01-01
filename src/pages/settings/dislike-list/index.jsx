@@ -1,6 +1,7 @@
 /* eslint-disable comma-dangle */
 import DoneIcon from '@mui/icons-material/Done';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
@@ -91,14 +92,16 @@ const DislikeList = () => {
               </Box>
 
               <Box className={styles.button__group}>
-                <Button
-                  className={styles['other_gradient--btn']}
-                  color="secondary"
-                  variant="outlined"
-                  fullWidth
-                >
-                  Other Ingredients
-                </Button>
+                <Link href="/settings/add-new-dislike-item" style={{ textDecoration: 'none' }}>
+                  <Button
+                    className={styles['other_gradient--btn']}
+                    color="secondary"
+                    variant="outlined"
+                    fullWidth
+                  >
+                    Other Ingredients
+                  </Button>
+                </Link>
 
                 <Button className={styles.submit__btn} variant="contained" fullWidth>
                   Submit
