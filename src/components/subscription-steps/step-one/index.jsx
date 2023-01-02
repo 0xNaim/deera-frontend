@@ -1,5 +1,7 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable no-return-assign */
 import {
+  Autocomplete,
   Box,
   Button,
   CircularProgress,
@@ -9,12 +11,41 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { useEffect, useState } from 'react';
+import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
+import kuwaitCitiesData from '../../Client/fakedata/cities';
 import styles from './step-one.module.scss';
 
-const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
+// const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
 
 const StepOne = ({ nextStep }) => {
+  // Date state
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState();
+
+  // Date error state
+  const [startDateError, setStartDateError] = useState(false);
+  const [endDateError, setEndDateError] = useState(false);
+
+  // Region state
+  const [selectedRegion, setSelectedRegion] = useState('');
+
+  // Cities state
+  const [cities, setCities] = useState(kuwaitCitiesData?.[0]?.cities);
+
+  useEffect(() => {
+    const getCitiesByRegion = kuwaitCitiesData.filter(
+      (kuwaitCities) => kuwaitCities.name === selectedRegion
+    );
+
+    if (getCitiesByRegion?.length) {
+      setCities(getCitiesByRegion?.[0]?.cities);
+    } else {
+      setCities(kuwaitCitiesData?.[0]?.cities);
+    }
+  }, [selectedRegion]);
+
   // React hook form
   const {
     register,
@@ -25,11 +56,20 @@ const StepOne = ({ nextStep }) => {
 
   const values = getValues();
 
+  console.log(errors);
+
   // Handle form submit
   const handleFormSubmit = (e) => {
     console.log(e);
 
     nextStep();
+  };
+
+  // Handle error state
+  const handleOnError = () => {
+    // Handle error message
+    if (!startDate) setStartDateError(true);
+    if (!endDate?.length) setEndDateError(true);
   };
 
   return (
@@ -62,14 +102,17 @@ const StepOne = ({ nextStep }) => {
           <Typography fontWeight={600} sx={{ color: '#374151' }}>
             Choose a subscription start date
           </Typography>
-          <TextField
-            type="date"
-            {...register('startDate', { required: 'Start date is required' })}
-            error={!!errors?.startDate?.message}
+          <DatePicker
+            className={styles.date__input}
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="DD/MM/YYYY"
+            required
           />
 
-          {errors?.startDate?.message && (
-            <Typography className={styles.error__text}>{errors?.startDate?.message}</Typography>
+          {startDateError && (
+            <Typography className={styles.error__text}>Start date is required</Typography>
           )}
         </FormControl>
 
@@ -93,14 +136,18 @@ const StepOne = ({ nextStep }) => {
           <Typography fontWeight={600} sx={{ color: '#374151' }}>
             Please specify the delivery period
           </Typography>
-          <TextField
-            type="date"
-            {...register('deliveryTime', { required: 'Delivery time is required' })}
-            error={!!errors?.deliveryTime?.message}
+
+          <DatePicker
+            className={styles.date__input}
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="DD/MM/YYYY"
+            required
           />
 
-          {errors?.deliveryTime?.message && (
-            <Typography className={styles.error__text}>{errors?.deliveryTime?.message}</Typography>
+          {endDateError && (
+            <Typography className={styles.error__text}>Delivery date is required</Typography>
           )}
         </FormControl>
 
@@ -125,21 +172,41 @@ const StepOne = ({ nextStep }) => {
             <Select
               {...register('region', { required: 'Region is required' })}
               displayEmpty
-              value={values?.region}
+              value={selectedRegion}
               error={!!errors?.region?.message}
+              onChange={(e) => setSelectedRegion(e.target.value)}
             >
-              <MenuItem value="undefined" sx={{ fontStyle: 'italic' }}>
-                Region
+              <MenuItem value="" sx={{ fontStyle: 'italic' }} disabled>
+                Select Region
               </MenuItem>
-              {regions.map((region) => (
-                <MenuItem key={region} value={region}>
-                  {region}
+              {kuwaitCitiesData?.map((region) => (
+                <MenuItem key={region?.id} value={region?.name}>
+                  {region?.name}
                 </MenuItem>
               ))}
             </Select>
 
             {errors?.region?.message && (
               <Typography className={styles.error__text}>{errors?.region?.message}</Typography>
+            )}
+          </FormControl>
+
+          <FormControl className={styles.form__inputs} fullWidth>
+            <Autocomplete
+              options={cities && cities.map((city) => city.name)}
+              renderInput={(params) => (
+                <TextField
+                  {...register('city', { required: 'City is required' })}
+                  {...params}
+                  label="Select city"
+                />
+              )}
+              fullWidth
+              disablePortal
+            />
+
+            {errors?.city?.message && (
+              <Typography className={styles.error__text}>{errors?.city?.message}</Typography>
             )}
           </FormControl>
 
@@ -193,7 +260,7 @@ const StepOne = ({ nextStep }) => {
         </Box>
 
         <Button
-          onClick={handleSubmit(handleFormSubmit)}
+          onClick={handleSubmit(handleFormSubmit, handleOnError)}
           className={styles.next__btn}
           variant="contained"
           fullWidth

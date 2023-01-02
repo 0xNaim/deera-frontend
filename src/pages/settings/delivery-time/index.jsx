@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { useState } from 'react';
+import SettingsHead from '../../../components/Client/head';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../head';
 import SettingsLayout from '../settings-layout';
 import styles from './delivery-time.module.scss';
 
