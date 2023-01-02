@@ -62,6 +62,7 @@ const Sidebar = () => {
             image="/assets/requests.svg"
             name="Requests"
             menus={requestsData}
+            pageLink="/dashboard/requests"
           />
           <DropDownMenu
             handleClick={handleSubscriptionsClick}
@@ -69,6 +70,7 @@ const Sidebar = () => {
             image="/assets/subscriptions.svg"
             name="subscriptions"
             menus={subscriptionsData}
+            pageLink="/dashboard/subscriptions"
           />
           <DropDownMenu
             handleClick={handleMealsClick}
@@ -76,6 +78,7 @@ const Sidebar = () => {
             image="/assets/meals.svg"
             name="Meals"
             menus={mealsData}
+            pageLink="/dashboard/meals"
           />
           <DropDownMenu
             handleClick={handleEmployeesClick}
@@ -83,6 +86,7 @@ const Sidebar = () => {
             image="/assets/employees.svg"
             name="Employees"
             menus={employeesData}
+            pageLink="/dashboard/Employees"
           />
           <SingleMenu image="/assets/coupons.png" link="/coupons" name="Coupons" />
 

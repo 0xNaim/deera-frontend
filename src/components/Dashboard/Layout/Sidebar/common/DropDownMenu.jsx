@@ -10,6 +10,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import {
   Collapse,
+  IconButton,
   List,
   ListItemButton,
   ListItemIcon,
@@ -19,7 +20,7 @@ import {
 // import scss
 import styles from '../Sidebar.module.scss';
 
-const DropDownMenu = ({ handleClick, open, image, name, menus }) => (
+const DropDownMenu = ({ handleClick, open, image, name, menus, pageLink }) => (
   <>
     <ListItemButton
       sx={{
@@ -27,26 +28,37 @@ const DropDownMenu = ({ handleClick, open, image, name, menus }) => (
         borderRadius: '12px',
       }}
       className={styles._single_nav}
-      onClick={handleClick}
+      // onClick={handleClick}
     >
       <ListItemIcon className={styles._img_nav}>
         <Image src={image} alt="logo" width={20} height={20} />
       </ListItemIcon>
       <ListItemText
         primary={
-          <Typography
-            variant="h6"
-            color="inherit"
-            className={styles._single_title}
-            sx={{
-              color: open ? '#fff' : '#718096',
-            }}
-          >
-            {name}
-          </Typography>
+          <Link href={pageLink} style={{ textDecoration: 'none' }}>
+            <Typography
+              variant="h6"
+              color="inherit"
+              className={styles._single_title}
+              sx={{
+                color: open ? '#fff' : '#718096',
+              }}
+            >
+              {name}
+            </Typography>
+          </Link>
         }
       />
-      {open ? <ExpandLess /> : <ExpandMore />}
+
+      {open ? (
+        <IconButton onClick={handleClick} sx={{ padding: '0' }}>
+          <ExpandLess />
+        </IconButton>
+      ) : (
+        <IconButton onClick={handleClick} sx={{ padding: '0' }}>
+          <ExpandMore />
+        </IconButton>
+      )}
     </ListItemButton>
 
     <Collapse in={open} timeout="auto" unmountOnExit>
