@@ -9,12 +9,24 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { useState } from 'react';
+import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import styles from './step-one.module.scss';
 
 const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
 
 const StepOne = ({ nextStep }) => {
+  // Date state
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState();
+
+  // Date error state
+  const [startDateError, setStartDateError] = useState(false);
+  const [endDateError, setEndDateError] = useState(false);
+
+  console.log(startDateError);
+
   // React hook form
   const {
     register,
@@ -30,6 +42,13 @@ const StepOne = ({ nextStep }) => {
     console.log(e);
 
     nextStep();
+  };
+
+  // Handle error state
+  const handleOnError = () => {
+    // Handle error message
+    if (!startDate) setStartDateError(true);
+    if (!endDate?.length) setEndDateError(true);
   };
 
   return (
@@ -62,14 +81,17 @@ const StepOne = ({ nextStep }) => {
           <Typography fontWeight={600} sx={{ color: '#374151' }}>
             Choose a subscription start date
           </Typography>
-          <TextField
-            type="date"
-            {...register('startDate', { required: 'Start date is required' })}
-            error={!!errors?.startDate?.message}
+          <DatePicker
+            className={styles.date__input}
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="DD/MM/YYYY"
+            required
           />
 
-          {errors?.startDate?.message && (
-            <Typography className={styles.error__text}>{errors?.startDate?.message}</Typography>
+          {startDateError && (
+            <Typography className={styles.error__text}>Start date is required</Typography>
           )}
         </FormControl>
 
@@ -93,14 +115,18 @@ const StepOne = ({ nextStep }) => {
           <Typography fontWeight={600} sx={{ color: '#374151' }}>
             Please specify the delivery period
           </Typography>
-          <TextField
-            type="date"
-            {...register('deliveryTime', { required: 'Delivery time is required' })}
-            error={!!errors?.deliveryTime?.message}
+
+          <DatePicker
+            className={styles.date__input}
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="DD/MM/YYYY"
+            required
           />
 
-          {errors?.deliveryTime?.message && (
-            <Typography className={styles.error__text}>{errors?.deliveryTime?.message}</Typography>
+          {endDateError && (
+            <Typography className={styles.error__text}>Delivery date is required</Typography>
           )}
         </FormControl>
 
@@ -193,7 +219,7 @@ const StepOne = ({ nextStep }) => {
         </Box>
 
         <Button
-          onClick={handleSubmit(handleFormSubmit)}
+          onClick={handleSubmit(handleFormSubmit, handleOnError)}
           className={styles.next__btn}
           variant="contained"
           fullWidth
