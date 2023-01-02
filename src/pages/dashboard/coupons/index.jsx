@@ -1,12 +1,154 @@
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import SearchIcon from '@mui/icons-material/Search';
-import { Box, Button, Container, InputBase, ThemeProvider } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  IconButton,
+  InputBase,
+  Pagination,
+  Paper,
+  Switch,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  ThemeProvider,
+} from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import DashboardHead from '../../../components/Dashboard/head';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
+import paginate from '../../../utils/paginate';
 import styles from './coupons.module.scss';
+
+const couponsData = [
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 45,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 65,
+    checked: true,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 72,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 24,
+    checked: true,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 75,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 15,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: true,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 45,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: true,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+  {
+    name: 'Dealcode',
+    percentage: 25,
+    startDate: '2/12/2022',
+    expiryDate: '12/31/2022',
+    usageTimes: 34,
+    checked: false,
+  },
+];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -45,7 +187,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Coupons = () => {
-  console.log('Coupons');
+  // Pagination handling
+  const [currentPage, setCurrentPage] = useState(1);
+  const sizePerPage = 10;
+  const totalPage = Math.ceil(couponsData.length / sizePerPage);
+
+  const filteredData = paginate(couponsData, currentPage, sizePerPage);
 
   return (
     <ThemeProvider theme={dashboardTheme}>
@@ -81,6 +228,76 @@ const Coupons = () => {
                   Search
                 </Button>
               </Box>
+            </Box>
+
+            <TableContainer component={Paper} className={styles.content__table}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Percentage</TableCell>
+                    <TableCell>Start Date</TableCell>
+                    <TableCell>Expiry Date</TableCell>
+                    <TableCell>Usage Times</TableCell>
+                    <TableCell>Procedures</TableCell>
+                    <TableCell />
+                  </TableRow>
+                </TableHead>
+
+                <TableBody>
+                  {filteredData?.map((coupon) => (
+                    <TableRow key={Math.random()}>
+                      <TableCell component="th" scope="row">
+                        {coupon?.name}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {`${coupon?.percentage}%`}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {coupon?.startDate}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {coupon?.expiryDate}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {coupon?.usageTimes}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        <Box className={styles.action__icons}>
+                          <IconButton>
+                            <Image
+                              src="/assets/deleteIcon.svg"
+                              width={20}
+                              height={20}
+                              alt="Delete Icon"
+                            />
+                          </IconButton>
+                          <IconButton>
+                            <Image
+                              src="/assets/editIcon.svg"
+                              width={20}
+                              height={20}
+                              alt="Edit Icon"
+                            />
+                          </IconButton>
+                        </Box>
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        <Switch checked={coupon?.checked} />
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <Box className={styles.pagination__wrapper}>
+              <Pagination
+                onChange={(e, value) => setCurrentPage(value)}
+                count={totalPage}
+                variant="outlined"
+                color="primary"
+                shape="rounded"
+              />
             </Box>
           </Box>
         </Container>
