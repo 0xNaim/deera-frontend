@@ -10,8 +10,8 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
+import SettingsHead from '../../../../components/Client/head';
 import Navbar from '../../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../../head';
 import SettingsLayout from '../../settings-layout';
 import styles from './edit.module.scss';
 

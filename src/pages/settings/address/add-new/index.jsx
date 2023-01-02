@@ -9,8 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import SettingsHead from '../../../../components/Client/head';
 import Navbar from '../../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../../head';
 import SettingsLayout from '../../settings-layout';
 import styles from './add-new.module.scss';
 

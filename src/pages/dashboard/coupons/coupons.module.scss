@@ -1,0 +1,34 @@
+.content__wrapper {
+  padding: 1.5rem 0;
+
+  .content__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .add__coupon__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+
+    .search__coupon__wrapper {
+      display: flex;
+      gap: 0.5rem;
+
+      .search__btn {
+        background: #e5e7eb;
+        color: #6b7280;
+      }
+    }
+  }
+}

@@ -3,8 +3,8 @@ import DoneIcon from '@mui/icons-material/Done';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
+import SettingsHead from '../../../components/Client/head';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../head';
 import SettingsLayout from '../settings-layout';
 import styles from './dislike-list.module.scss';
 

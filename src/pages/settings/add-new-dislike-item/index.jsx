@@ -1,7 +1,7 @@
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import { useFieldArray, useForm } from 'react-hook-form';
+import SettingsHead from '../../../components/Client/head';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../head';
 import SettingsLayout from '../settings-layout';
 import styles from './add-new-dislike-item.module.scss';
 

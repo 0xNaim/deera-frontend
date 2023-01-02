@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControl, OutlinedInput, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import SettingsHead from '../../../components/Client/head';
 import Navbar from '../../../components/Layout/Navbar/Navbar';
-import SettingsHead from '../head';
 import SettingsLayout from '../settings-layout';
 import styles from './personal-information.module.scss';
 

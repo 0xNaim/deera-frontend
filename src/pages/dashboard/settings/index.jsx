@@ -13,9 +13,9 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import DashboardHead from '../../../components/Dashboard/head';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
-import DashboardHead from '../head';
 import styles from './settings.module.scss';
 
 const Settings = () => {
