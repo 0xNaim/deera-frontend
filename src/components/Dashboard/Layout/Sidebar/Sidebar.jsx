@@ -88,7 +88,7 @@ const Sidebar = () => {
             menus={employeesData}
             pageLink="/dashboard/Employees"
           />
-          <SingleMenu image="/assets/coupons.png" link="/coupons" name="Coupons" />
+          <SingleMenu image="/assets/coupons.png" link="/dashboard/coupons" name="Coupons" />
 
           {/* <DropDownMenu
             handleClick={handleSettingsClick}

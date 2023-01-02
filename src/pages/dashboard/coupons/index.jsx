@@ -21,7 +21,7 @@ import { alpha, styled } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import DashboardHead from '../../../components/Dashboard/head';
+import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
@@ -197,7 +197,8 @@ const Coupons = () => {
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <DashboardHead heading="Coupons" />
+        {/* <DashboardHead heading="Coupons" /> */}
+        <Header title="Coupons" />
 
         <Container>
           <Box className={styles.content__wrapper}>
