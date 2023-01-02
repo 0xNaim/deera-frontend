@@ -17,6 +17,7 @@
     ._single_nav {
       padding: 12px 6px;
       margin-bottom: 5px;
+      width: 100%;
       &:hover {
         background: #684cf9;
         border-radius: 12px;
@@ -33,7 +34,7 @@
         text-align: left !important;
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 120%;
         /* or 26px */
 
@@ -48,6 +49,7 @@
       background: #ffffff;
       border: 1px solid #f3f4f6;
       border-radius: 12px;
+      // background: #000;
 
       ._single_nav {
         padding: 12px 6px;
@@ -65,7 +67,7 @@
           text-align: left !important;
           font-style: normal;
           font-weight: 500;
-          font-size: 18px;
+          font-size: 15px;
           line-height: 120%;
           text-align: right;
           color: #718096;

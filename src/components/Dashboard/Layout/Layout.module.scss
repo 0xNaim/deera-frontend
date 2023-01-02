@@ -22,10 +22,44 @@
     }
   }
 
-  .left_wrapper {
-    display: block;
-    @media screen and (max-width: 768px) {
-      display: none;
+  // .left_wrapper {
+  //   display: block;
+  //   // position: fixed;
+  //   @media screen and (max-width: 768px) {
+  //     display: none;
+  //   }
+  // }
+
+  .sidebar_wrapper {
+    display: flex;
+
+    .left_bar {
+      display: block;
+      width: 15%;
+      @media screen and (max-width: 1440px) {
+        width: 20%;
+      }
+      @media screen and (max-width: 1024px) {
+        width: 25%;
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      .left_wrapper {
+        position: fixed;
+      }
+    }
+    .right_bar {
+      width: 85%;
+      @media screen and (max-width: 1440px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 1024px) {
+        width: 75%;
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 }

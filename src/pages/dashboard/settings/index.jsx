@@ -13,7 +13,8 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
-import DashboardHead from '../../../components/Dashboard/head';
+import Header from '../../../components/Dashboard/common/Header/Header';
+// import DashboardHead from '../../../components/Dashboard/head';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import styles from './settings.module.scss';
@@ -24,7 +25,8 @@ const Settings = () => {
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <DashboardHead heading="Settings" />
+        {/* <DashboardHead heading="Settings" /> */}
+        <Header title="Settings" />
 
         <Container>
           <Box className={styles.content__wrapper} component="section">

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
 // import MUI
 import MenuIcon from '@mui/icons-material/Menu';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import Sidebar from './Sidebar/Sidebar';
 // style
 import styles from './Layout.module.scss';
@@ -19,14 +19,23 @@ const Layout = ({ children }) => (
       }
     />
 
-    <Grid container>
-      <Grid item lg={2} md={3} sm={4} xs={4} className={styles.left_wrapper}>
+    {/* <Grid container>
+      <Grid item lg={2} md={4} sm={12} xs={12} className={styles.left_wrapper}>
         <Sidebar />
       </Grid>
-      <Grid item lg={10} md={9} sm={12} xs={12}>
+      <Grid item lg={10} md={8} sm={12} xs={12}>
         {children}
       </Grid>
-    </Grid>
+    </Grid> */}
+
+    <div className={styles.sidebar_wrapper}>
+      <div className={styles.left_bar}>
+        <div className={styles.left_wrapper}>
+          <Sidebar />
+        </div>
+      </div>
+      <div className={styles.right_bar}>{children}</div>
+    </div>
   </div>
 );
 

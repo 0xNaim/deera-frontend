@@ -15,6 +15,7 @@ import SwapVertIcon from '@mui/icons-material/SwapVert';
 import {
   Box,
   Button,
+  Container,
   Fade,
   Menu,
   MenuItem,
@@ -91,163 +92,165 @@ const CustomTable = () => {
 
   return (
     <div className={styles._wrapper}>
-      {success && <FCSuccess />}
-      <Stack
-        direction={{ sm: 'row', xs: 'column' }}
-        justifyContent="flex-end"
-        alignItems="center"
-        spacing={1}
-        className={styles._header_wrapper}
-      >
-        <Button variant="contained" color="inherit" className={styles._header_meal_button}>
-          Add a Meal
-        </Button>
-        <div>
-          <Button
-            className={styles._header_meal_dropdown_button}
-            id="fade-button"
-            aria-controls={open ? 'fade-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-          >
-            Sort by
-            <SwapVertIcon />
+      <Container>
+        {success && <FCSuccess />}
+        <Stack
+          direction={{ sm: 'row', xs: 'column' }}
+          justifyContent="flex-end"
+          alignItems="center"
+          spacing={1}
+          className={styles._header_wrapper}
+        >
+          <Button variant="contained" color="inherit" className={styles._header_meal_button}>
+            Add a Meal
           </Button>
-          <Menu
-            id="fade-menu"
-            MenuListProps={{ 'aria-labelledby': 'fade-button' }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-        </div>
-        <div>
-          <Button
-            className={styles._header_meal_dropdown_button}
-            id="fade-button"
-            aria-controls={open ? 'fade-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-          >
-            Choose the category
-            <KeyboardArrowDownIcon />
-          </Button>
-          <Menu
-            id="fade-menu"
-            MenuListProps={{ 'aria-labelledby': 'fade-button' }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-          >
-            <MenuItem sx={{ width: '200px' }} onClick={handleClose}>
-              Profile
-            </MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-        </div>
-      </Stack>
-      <Box>
-        {/* <TableContainer component={Paper}> */}
-        <TableContainer sx={{ border: '1px solid #e5e7eb' }}>
-          <Table
-            sx={{ minWidth: 500 }}
-            aria-label="custom pagination table"
-            className={styles._table_wrapper}
-          >
-            <TableHead className={styles._table_header}>
-              <TableRow>
-                <TableCell className={styles._table_h_title}>Meal Picture</TableCell>
-                <TableCell className={styles._table_h_title}>Arabic Name</TableCell>
-                <TableCell className={styles._table_h_title}>English Name</TableCell>
-                <TableCell className={styles._table_h_title}>Category</TableCell>
-                <TableCell className={styles._table_h_title}>Calories</TableCell>
-                <TableCell className={styles._table_h_title}>Procedures</TableCell>
-                <TableCell />
-              </TableRow>
-            </TableHead>
-
-            <TableBody className={styles._table_body}>
-              {paginator(data, page, 5).data.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell component="th" scope="row">
-                    <Image
-                      src={row.meal_picture}
-                      alt="meal_picture"
-                      width={111}
-                      height={73}
-                      style={{
-                        objectFit: 'contain',
-                        borderRadius: '8px',
-                        overflow: 'hidden',
-                      }}
-                      className={styles.tableImg}
-                    />
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <Typography variant="h6" color="inherit" className={styles._table_b_title}>
-                      {row.arabic_name}
-                    </Typography>
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <Typography variant="h6" color="inherit" className={styles._table_b_title}>
-                      {row.english_name}
-                    </Typography>
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <Typography variant="h6" color="inherit" className={styles._table_b_title}>
-                      {row.category}
-                    </Typography>
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <Typography variant="h6" color="inherit" className={styles._table_b_title}>
-                      {row.calories}
-                    </Typography>
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      alignItems="center"
-                      className={styles._button_wrapper}
-                    >
-                      <button>
-                        <EditIcon />
-                      </button>
-                      <button onClick={() => deleteById(row.id)}>
-                        <DeleteIcon />
-                      </button>
-                    </Stack>
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    <FCSwitch />
-                  </TableCell>
+          <div>
+            <Button
+              className={styles._header_meal_dropdown_button}
+              id="fade-button"
+              aria-controls={open ? 'fade-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              Sort by
+              <SwapVertIcon />
+            </Button>
+            <Menu
+              id="fade-menu"
+              MenuListProps={{ 'aria-labelledby': 'fade-button' }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+          </div>
+          <div>
+            <Button
+              className={styles._header_meal_dropdown_button}
+              id="fade-button"
+              aria-controls={open ? 'fade-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              Choose the category
+              <KeyboardArrowDownIcon />
+            </Button>
+            <Menu
+              id="fade-menu"
+              MenuListProps={{ 'aria-labelledby': 'fade-button' }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem sx={{ width: '200px' }} onClick={handleClose}>
+                Profile
+              </MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+          </div>
+        </Stack>
+        <Box>
+          {/* <TableContainer component={Paper}> */}
+          <TableContainer sx={{ border: '1px solid #e5e7eb' }}>
+            <Table
+              sx={{ minWidth: 500 }}
+              aria-label="custom pagination table"
+              className={styles._table_wrapper}
+            >
+              <TableHead className={styles._table_header}>
+                <TableRow>
+                  <TableCell className={styles._table_h_title}>Meal Picture</TableCell>
+                  <TableCell className={styles._table_h_title}>Arabic Name</TableCell>
+                  <TableCell className={styles._table_h_title}>English Name</TableCell>
+                  <TableCell className={styles._table_h_title}>Category</TableCell>
+                  <TableCell className={styles._table_h_title}>Calories</TableCell>
+                  <TableCell className={styles._table_h_title}>Procedures</TableCell>
+                  <TableCell />
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
+              </TableHead>
 
-      <br />
-      <br />
+              <TableBody className={styles._table_body}>
+                {paginator(data, page, 5).data.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell component="th" scope="row">
+                      <Image
+                        src={row.meal_picture}
+                        alt="meal_picture"
+                        width={111}
+                        height={73}
+                        style={{
+                          objectFit: 'contain',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                        }}
+                        className={styles.tableImg}
+                      />
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <Typography variant="h6" color="inherit" className={styles._table_b_title}>
+                        {row.arabic_name}
+                      </Typography>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <Typography variant="h6" color="inherit" className={styles._table_b_title}>
+                        {row.english_name}
+                      </Typography>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <Typography variant="h6" color="inherit" className={styles._table_b_title}>
+                        {row.category}
+                      </Typography>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <Typography variant="h6" color="inherit" className={styles._table_b_title}>
+                        {row.calories}
+                      </Typography>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <Stack
+                        direction="row"
+                        spacing={1}
+                        alignItems="center"
+                        className={styles._button_wrapper}
+                      >
+                        <button>
+                          <EditIcon />
+                        </button>
+                        <button onClick={() => deleteById(row.id)}>
+                          <DeleteIcon />
+                        </button>
+                      </Stack>
+                    </TableCell>
+                    <TableCell component="th" scope="row">
+                      <FCSwitch />
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
 
-      <Pagination
-        count={count}
-        page={page}
-        onChange={handleChange}
-        color="success"
-        variant="outlined"
-        shape="rounded"
-      />
+        <br />
+        <br />
+
+        <Pagination
+          count={count}
+          page={page}
+          onChange={handleChange}
+          color="success"
+          variant="outlined"
+          shape="rounded"
+        />
+      </Container>
     </div>
   );
 };
