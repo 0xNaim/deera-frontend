@@ -1,7 +1,7 @@
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import SingleProduct from '../../../../Common/SingleProduct/SingleProduct';
@@ -9,6 +9,9 @@ import SingleSubscription from '../../../Subscription/SingleSubscription/SingleS
 import styles from './Details.module.scss';
 
 const Details = ({ data }) => {
+  const [choosePackage, setChoosePackage] = useState('');
+  const [chooseDuration, setChooseDuration] = useState('');
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -38,19 +41,55 @@ const Details = ({ data }) => {
         </Typography>
 
         <div className={styles.pkg__button__wrapper}>
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChoosePackage('two-snacks')}
+            style={{
+              background: choosePackage === 'two-snacks' ? '#f2a515' : 'transparent',
+              color: choosePackage === 'two-snacks' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             Two snacks
           </Button>
 
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChoosePackage('3-snack-salad-meals')}
+            style={{
+              background: choosePackage === '3-snack-salad-meals' ? '#f2a515' : 'transparent',
+              color: choosePackage === '3-snack-salad-meals' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             3 snack salad meals
           </Button>
 
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChoosePackage('snack-meal')}
+            style={{
+              background: choosePackage === 'snack-meal' ? '#f2a515' : 'transparent',
+              color: choosePackage === 'snack-meal' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             Snack meal
           </Button>
 
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChoosePackage('two-snack-salad-meals')}
+            style={{
+              background: choosePackage === 'two-snack-salad-meals' ? '#f2a515' : 'transparent',
+              color: choosePackage === 'two-snack-salad-meals' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             Two snack salad meals
           </Button>
         </div>
@@ -72,17 +111,53 @@ const Details = ({ data }) => {
           Choose duration
         </Typography>
         <div className={styles.duration__button__wrapper}>
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChooseDuration('a-week')}
+            style={{
+              background: chooseDuration === 'a-week' ? '#f2a515' : 'transparent',
+              color: chooseDuration === 'a-week' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             a week
           </Button>
-          <Button variant="outlined" color="primary" className={styles.single__button}>
-            Month without friady
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChooseDuration('month-without-friday')}
+            style={{
+              background: chooseDuration === 'month-without-friday' ? '#f2a515' : 'transparent',
+              color: chooseDuration === 'month-without-friday' ? '#ffffff' : '#9ca3af',
+            }}
+          >
+            Month without friday
           </Button>
 
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChooseDuration('month-without-weekend')}
+            style={{
+              background: chooseDuration === 'month-without-weekend' ? '#f2a515' : 'transparent',
+              color: chooseDuration === 'month-without-weekend' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             Month without Weekend
           </Button>
-          <Button variant="outlined" color="primary" className={styles.single__button}>
+          <Button
+            variant="outlined"
+            color="primary"
+            className={styles.single__button}
+            onClick={() => setChooseDuration('14-days-without-friday')}
+            style={{
+              background: chooseDuration === '14-days-without-friday' ? '#f2a515' : 'transparent',
+              color: chooseDuration === '14-days-without-friday' ? '#ffffff' : '#9ca3af',
+            }}
+          >
             14 days without Friday
           </Button>
         </div>

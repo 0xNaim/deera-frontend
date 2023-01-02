@@ -22,7 +22,7 @@ const SignIn = () => {
     control,
     watch,
   } = useForm({
-    defaultValues: { saving: false, phone: '', password: '' },
+    defaultValues: { saving: true, phone: '+8801708717675', password: 'sonjoybarman' },
   });
 
   const onSubmit = (data) => {
@@ -38,7 +38,7 @@ const SignIn = () => {
 
   const onError = (Error, e) => {
     if (Error?.saving?.message === '') {
-      console.log('first');
+      // console.log('first');
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -78,7 +78,7 @@ const SignIn = () => {
                     Password
                   </Typography>
                   <input
-                    type="text"
+                    type="password"
                     className={styles.input}
                     placeholder="Enter the password"
                     {...register('password', { required: true })}
@@ -92,6 +92,7 @@ const SignIn = () => {
                       name="saving"
                       control={control}
                       rules={{ required: true }}
+                      value={watch('inputName')}
                       render={({ field }) => <Checkbox {...field} />}
                     />
                     <Typography variant="h6" color="inherit" className={styles.saving__title}>
