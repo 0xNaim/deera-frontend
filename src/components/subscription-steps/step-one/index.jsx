@@ -56,8 +56,6 @@ const StepOne = ({ nextStep }) => {
 
   const values = getValues();
 
-  console.log(errors);
-
   // Handle form submit
   const handleFormSubmit = (e) => {
     console.log(e);
