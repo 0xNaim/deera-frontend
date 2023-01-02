@@ -1,5 +1,7 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable no-return-assign */
 import {
+  Autocomplete,
   Box,
   Button,
   CircularProgress,
@@ -9,12 +11,13 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
+import kuwaitCitiesData from '../../Client/fakedata/cities';
 import styles from './step-one.module.scss';
 
-const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
+// const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
 
 const StepOne = ({ nextStep }) => {
   // Date state
@@ -25,7 +28,23 @@ const StepOne = ({ nextStep }) => {
   const [startDateError, setStartDateError] = useState(false);
   const [endDateError, setEndDateError] = useState(false);
 
-  console.log(startDateError);
+  // Region state
+  const [selectedRegion, setSelectedRegion] = useState('');
+
+  // Cities state
+  const [cities, setCities] = useState(kuwaitCitiesData?.[0]?.cities);
+
+  useEffect(() => {
+    const getCitiesByRegion = kuwaitCitiesData.filter(
+      (kuwaitCities) => kuwaitCities.name === selectedRegion
+    );
+
+    if (getCitiesByRegion?.length) {
+      setCities(getCitiesByRegion?.[0]?.cities);
+    } else {
+      setCities(kuwaitCitiesData?.[0]?.cities);
+    }
+  }, [selectedRegion]);
 
   // React hook form
   const {
@@ -36,6 +55,8 @@ const StepOne = ({ nextStep }) => {
   } = useForm();
 
   const values = getValues();
+
+  console.log(errors);
 
   // Handle form submit
   const handleFormSubmit = (e) => {
@@ -151,21 +172,41 @@ const StepOne = ({ nextStep }) => {
             <Select
               {...register('region', { required: 'Region is required' })}
               displayEmpty
-              value={values?.region}
+              value={selectedRegion}
               error={!!errors?.region?.message}
+              onChange={(e) => setSelectedRegion(e.target.value)}
             >
-              <MenuItem value="undefined" sx={{ fontStyle: 'italic' }}>
-                Region
+              <MenuItem value="" sx={{ fontStyle: 'italic' }} disabled>
+                Select Region
               </MenuItem>
-              {regions.map((region) => (
-                <MenuItem key={region} value={region}>
-                  {region}
+              {kuwaitCitiesData?.map((region) => (
+                <MenuItem key={region?.id} value={region?.name}>
+                  {region?.name}
                 </MenuItem>
               ))}
             </Select>
 
             {errors?.region?.message && (
               <Typography className={styles.error__text}>{errors?.region?.message}</Typography>
+            )}
+          </FormControl>
+
+          <FormControl className={styles.form__inputs} fullWidth>
+            <Autocomplete
+              options={cities && cities.map((city) => city.name)}
+              renderInput={(params) => (
+                <TextField
+                  {...register('city', { required: 'City is required' })}
+                  {...params}
+                  label="Select city"
+                />
+              )}
+              fullWidth
+              disablePortal
+            />
+
+            {errors?.city?.message && (
+              <Typography className={styles.error__text}>{errors?.city?.message}</Typography>
             )}
           </FormControl>
 
