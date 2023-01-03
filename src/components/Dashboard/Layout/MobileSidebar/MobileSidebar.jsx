@@ -31,7 +31,6 @@ const MobileSidebar = ({ buttonContent }) => {
         open={state.left}
         onClose={toggleDrawer('left', false)}
         className={styles.MobileSidebar}
-        sx={{ background: 'red' }}
       >
         <div style={{ zIndex: '99999' }}>
           <IconButton onClick={toggleDrawer('left', false)} className={styles.closeButton}>
