@@ -60,14 +60,22 @@ const StepOne = ({ nextStep }) => {
   const handleFormSubmit = (e) => {
     console.log(e);
 
+    // Handle error message
+    if (startDate) setStartDateError(false);
+    if (endDate) setEndDateError(false);
+
     nextStep();
   };
 
   // Handle error state
   const handleOnError = () => {
     // Handle error message
+    if (startDate) setStartDateError(false);
+    if (endDate) setEndDateError(false);
+
+    // Handle error message
     if (!startDate) setStartDateError(true);
-    if (!endDate?.length) setEndDateError(true);
+    if (!endDate) setEndDateError(true);
   };
 
   return (
