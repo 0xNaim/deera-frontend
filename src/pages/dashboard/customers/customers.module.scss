@@ -1,0 +1,72 @@
+.content__wrapper {
+  padding: 1.5rem 0;
+
+  .content__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .add__coupon__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        // font-size: 0.8rem;
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        // font-size: 16px;
+        line-height: 120%;
+        /* or 19px */
+
+        text-align: center;
+
+        /* Light-Indiago */
+
+        // color: #F3F0FF;
+      }
+    }
+
+    .search__coupon__wrapper {
+      display: flex;
+      gap: 0.5rem;
+
+      .search__btn {
+        background: #e5e7eb;
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        color: #6b7280;
+      }
+    }
+  }
+
+  .content__table {
+    margin: 1.5rem 0;
+
+    .action__icons {
+      display: flex;
+      gap: 0.8rem;
+
+      button {
+        width: 34px !important;
+        height: 34px !important;
+        border-radius: 6px !important;
+        background: #e5e7eb !important;
+      }
+    }
+  }
+
+  .pagination__wrapper {
+    float: right;
+  }
+}
