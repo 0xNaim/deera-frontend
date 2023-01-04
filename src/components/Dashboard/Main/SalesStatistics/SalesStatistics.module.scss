@@ -1,0 +1,66 @@
+.wrapper {
+  .header {
+    margin-bottom: 20px;
+    .header_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 27px;
+      line-height: 120%;
+      color: #4b5563;
+    }
+  }
+
+  .card {
+    padding: 24px 22px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: none !important;
+
+    .left_side {
+      display: flex;
+      align-items: center;
+      .left_icon {
+        padding: 14px;
+        background: #a7f3d0;
+        border-radius: 14px;
+        margin-right: 6px;
+        svg {
+          color: #c4c4c4;
+        }
+      }
+      .left_total {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: #6b7280;
+      }
+      .left_subTitle {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 120%;
+        color: #1f2937;
+        margin-top: 10px;
+      }
+    }
+
+    .right_side {
+      display: flex;
+      align-items: center;
+      .right_title {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        color: #10b981;
+        margin-left: 6px;
+      }
+    }
+  }
+}

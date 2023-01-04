@@ -1,0 +1,50 @@
+.wrapper {
+  .custom_details {
+    margin: 50px 0;
+
+    .custom_details_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 27px;
+      line-height: 120%;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      box-shadow: none !important;
+
+      .icon_view {
+        padding: 6px;
+        background: #e5e7eb;
+        border: 0.568047px solid #d1d5db;
+        border-radius: 6.05917px;
+        svg {
+          color: #6b7280;
+        }
+      }
+      .customer_title {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: #4b5563;
+        padding: 10px 0px;
+      }
+      .customer_requests_title {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: right;
+        color: #684cf9;
+      }
+    }
+  }
+}
