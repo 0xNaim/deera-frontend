@@ -31,6 +31,7 @@ import {
 } from '@mui/material';
 
 // import components
+import Link from 'next/link';
 import FCSuccess from '../../../Common/FCSuccess';
 import FCSwitch from '../../../Common/FCSwitch';
 
@@ -101,9 +102,11 @@ const CustomTable = () => {
           spacing={1}
           className={styles._header_wrapper}
         >
-          <Button variant="contained" color="inherit" className={styles._header_meal_button}>
-            Add a Meal
-          </Button>
+          <Link href="/dashboard/meals/add-meals" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" color="inherit" className={styles._header_meal_button}>
+              Add a Meal
+            </Button>
+          </Link>
           <div>
             <Button
               className={styles._header_meal_dropdown_button}

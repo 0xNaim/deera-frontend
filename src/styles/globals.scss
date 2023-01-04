@@ -33,3 +33,22 @@ body {
     color: #f2a515 !important;
   }
 }
+
+.image_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px;
+  border-width: 3px;
+  border-radius: 8px;
+  // border-color: ${(props) => getColor(props)};
+  border-color: #684cf9;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border 0.24s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+}
