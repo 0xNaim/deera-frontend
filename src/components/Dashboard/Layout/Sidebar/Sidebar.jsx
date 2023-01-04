@@ -53,9 +53,13 @@ const Sidebar = () => {
       <CardContent className={styles._content}>
         {/* menu list start here */}
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
-          <SingleMenu image="/assets/home.svg" link="/" name="Main" />
-          <SingleMenu image="/assets/customers.svg" link="/customers" name="Customers" />
-          <SingleMenu image="/assets/financial.svg" link="/financial" name="financial operations" />
+          <SingleMenu image="/assets/home.svg" link="/dashboard/main" name="Main" />
+          <SingleMenu image="/assets/customers.svg" link="/dashboard/customers" name="Customers" />
+          <SingleMenu
+            image="/assets/financial.svg"
+            link="/dashboard/financial"
+            name="financial operations"
+          />
           <DropDownMenu
             handleClick={handleRequestsClick}
             open={requests}

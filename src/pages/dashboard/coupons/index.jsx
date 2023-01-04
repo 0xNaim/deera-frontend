@@ -204,11 +204,19 @@ const Coupons = () => {
           <Box className={styles.content__wrapper}>
             <Box className={styles.content__header}>
               <Box className={styles.add__coupon__wrapper}>
-                <Link className={styles.link} href="/dashboard/add-coupon">
-                  <Button variant="contained">Add Coupon</Button>
+                <Link className={styles.link} href="/dashboard/coupon/add-coupon">
+                  <Button
+                    variant="contained"
+                    sx={{ color: '#F3F0FF', fontSize: '16px', padding: '12px 12px' }}
+                  >
+                    Add Coupon
+                  </Button>
                 </Link>
 
-                <Button variant="outlined">
+                <Button
+                  variant="outlined"
+                  sx={{ color: '#4B5563', fontSize: '14px', padding: '10px 12px' }}
+                >
                   Sort by
                   <ImportExportIcon />
                 </Button>

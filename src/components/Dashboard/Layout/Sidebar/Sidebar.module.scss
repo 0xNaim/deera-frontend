@@ -27,9 +27,10 @@
       padding: 12px 6px;
       margin-bottom: 5px;
       width: 100%;
+      border-radius: 12px;
+
       &:hover {
         background: #684cf9;
-        border-radius: 12px;
       }
 
       &:hover ._single_title {

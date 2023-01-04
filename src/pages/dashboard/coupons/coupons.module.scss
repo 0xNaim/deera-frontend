@@ -17,7 +17,19 @@
       }
 
       button {
-        font-size: 0.8rem;
+        // font-size: 0.8rem;
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        // font-size: 16px;
+        line-height: 120%;
+        /* or 19px */
+
+        text-align: center;
+
+        /* Light-Indiago */
+
+        // color: #F3F0FF;
       }
     }
 
@@ -27,6 +39,12 @@
 
       .search__btn {
         background: #e5e7eb;
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
         color: #6b7280;
       }
     }

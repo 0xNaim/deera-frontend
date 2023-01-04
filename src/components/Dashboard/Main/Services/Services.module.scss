@@ -1,0 +1,55 @@
+.wrapper {
+  padding: 50px 0;
+
+  .card {
+    padding: 24px 22px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: none !important;
+    .card_content {
+      .left_side {
+        .left_title {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 120%;
+          color: #10b981;
+        }
+        .left_subtitle {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 120%;
+          color: #6b7280;
+        }
+      }
+
+      .right_side {
+        .right_image {
+          padding: 0px;
+          gap: 11.2px;
+          width: 63px;
+          height: 63px;
+          background: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 11.2px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .right_title {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 120%;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
