@@ -15,14 +15,14 @@ import DropDownMenu from './common/DropDownMenu';
 import SingleMenu from './common/SingleMenu';
 
 // import data
-import { employeesData, mealsData, requestsData, subscriptionsData } from './fakedata';
+import { mealsData, requestsData, subscriptionsData } from './fakedata';
 
 const Sidebar = () => {
   const [requests, setRequests] = React.useState(false);
   const [subscriptions, setSubscriptions] = React.useState(false);
   const [meals, setMeals] = React.useState(false);
   // const [settings, setSettings] = React.useState(false);
-  const [employees, setEmployees] = React.useState(false);
+  // const [employees, setEmployees] = React.useState(false);
 
   const handleRequestsClick = () => {
     setRequests(!requests);
@@ -40,9 +40,9 @@ const Sidebar = () => {
   //   setSettings(!settings);
   // };
 
-  const handleEmployeesClick = () => {
-    setEmployees(!employees);
-  };
+  // const handleEmployeesClick = () => {
+  //   setEmployees(!employees);
+  // };
 
   return (
     <Card className={styles._wrapper}>
@@ -55,11 +55,11 @@ const Sidebar = () => {
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
           <SingleMenu image="/assets/home.svg" link="/dashboard/main" name="Main" />
           <SingleMenu image="/assets/customers.svg" link="/dashboard/customers" name="Customers" />
-          <SingleMenu
+          {/* <SingleMenu
             image="/assets/financial.svg"
             link="/dashboard/financial"
             name="financial operations"
-          />
+          /> */}
           <DropDownMenu
             handleClick={handleRequestsClick}
             open={requests}
@@ -84,14 +84,14 @@ const Sidebar = () => {
             menus={mealsData}
             pageLink="/dashboard/meals"
           />
-          <DropDownMenu
+          {/* <DropDownMenu
             handleClick={handleEmployeesClick}
             open={employees}
             image="/assets/employees.svg"
             name="Employees"
             menus={employeesData}
             pageLink="/dashboard/Employees"
-          />
+          /> */}
           <SingleMenu image="/assets/coupons.png" link="/dashboard/coupons" name="Coupons" />
 
           {/* <DropDownMenu
