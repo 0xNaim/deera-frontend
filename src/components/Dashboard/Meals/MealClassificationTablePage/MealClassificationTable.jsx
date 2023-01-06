@@ -15,6 +15,7 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import paginator from '../../../../utils/paginator';
 import FCSuccess from '../../../Common/FCSuccess';
@@ -93,16 +94,18 @@ const MealClassificationTable = () => {
                         alignItems="center"
                         className={styles.button_wrapper}
                       >
-                        <button>
-                          <EditIcon />
-                        </button>
+                        <Link href={`/dashboard/meals/meal-classification-table/${row?.slug}`}>
+                          <button>
+                            <EditIcon />
+                          </button>
+                        </Link>
                         <button onClick={() => deleteById(row.id)}>
                           <DeleteIcon />
                         </button>
                       </Stack>
                     </TableCell>
                     <TableCell component="th" scope="row">
-                      <FCSwitch />
+                      <FCSwitch value={row?.status} />
                     </TableCell>
                   </TableRow>
                 ))}

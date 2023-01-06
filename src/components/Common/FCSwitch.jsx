@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import { styled } from '@mui/material/styles';
@@ -28,7 +29,9 @@ const IOSSwitch = styled((props) => (
       color: '#33cf4d',
       border: '6px solid #fff',
     },
-    '&.Mui-disabled .MuiSwitch-thumb': { color: theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[600] },
+    '&.Mui-disabled .MuiSwitch-thumb': {
+      color: theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[600],
+    },
     '&.Mui-disabled + .MuiSwitch-track': { opacity: theme.palette.mode === 'light' ? 0.7 : 0.3 },
   },
   '& .MuiSwitch-thumb': {
@@ -44,10 +47,19 @@ const IOSSwitch = styled((props) => (
   },
 }));
 
-const FCSwitch = () => (
-  <FormGroup>
-    <FormControlLabel control={<IOSSwitch sx={{ m: 1 }} defaultChecked />} />
-  </FormGroup>
-);
+const FCSwitch = ({ value }) => {
+  const [state, setState] = React.useState(value || false);
+
+  const handleChange = (event) => {
+    setState(event.target.checked);
+  };
+  return (
+    <FormGroup>
+      <FormControlLabel
+        control={<IOSSwitch sx={{ m: 1 }} checked={state} onChange={handleChange} />}
+      />
+    </FormGroup>
+  );
+};
 
 export default FCSwitch;
