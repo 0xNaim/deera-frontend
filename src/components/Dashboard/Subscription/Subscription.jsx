@@ -53,9 +53,11 @@ const SubscriptionTable = () => {
       {success && <FCSuccess />}
       <Container>
         <div className={styles.header_btn}>
-          <Button variant="contained" color="inherit" className={styles.new_button}>
-            Add a new subscription
-          </Button>
+          <Link href="/dashboard/subscriptions/new-subscription" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" color="inherit" className={styles.new_button}>
+              Add a new subscription
+            </Button>
+          </Link>
         </div>
         <div>
           <TableContainer sx={{ border: '1px solid #e5e7eb' }}>
