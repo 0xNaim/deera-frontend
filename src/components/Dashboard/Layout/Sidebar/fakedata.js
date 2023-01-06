@@ -2,17 +2,17 @@ export const mealsData = [
   {
     id: 1,
     name: 'Meal schedule',
-    link: '/meal-schedule',
+    link: '/dashboard/meals/meal-schedule',
   },
   {
     id: 2,
     name: 'Meal classification table',
-    link: '/meal-classification-table',
+    link: '/dashboard/meals/meal-classification-table',
   },
   {
     id: 3,
     name: 'Daily meal calendar',
-    link: '/daily-meal-calendar',
+    link: '/dashboard/meals/daily-meal-calendar',
   },
 ];
 

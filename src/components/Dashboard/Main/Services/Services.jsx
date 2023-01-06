@@ -15,7 +15,7 @@ const Services = () => (
             className={styles.card_content}
           >
             <Box className={styles.left_side}>
-              <Image src="/assets/up.svg" alt="service" width={40} height={40} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.left_title}>
                 12
               </Typography>
@@ -25,7 +25,7 @@ const Services = () => (
             </Box>
             <Box className={styles.right_side}>
               <div className={styles.right_image}>
-                <Image src="/assets/drivers.svg" alt="" width={40} height={40} />
+                <Image src="/assets/drivers.svg" alt="" width={30} height={30} />
               </div>
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 Drivers
@@ -43,7 +43,7 @@ const Services = () => (
             className={styles.card_content}
           >
             <Box className={styles.left_side}>
-              <Image src="/assets/up.svg" alt="service" width={40} height={40} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.left_title}>
                 90
               </Typography>
@@ -53,7 +53,7 @@ const Services = () => (
             </Box>
             <Box className={styles.right_side}>
               <div className={styles.right_image}>
-                <Image src="/assets/customers2.svg" alt="" width={40} height={40} />
+                <Image src="/assets/customers2.svg" alt="" width={30} height={30} />
               </div>
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 Customers
@@ -71,7 +71,7 @@ const Services = () => (
             className={styles.card_content}
           >
             <Box className={styles.left_side}>
-              <Image src="/assets/up.svg" alt="service" width={40} height={40} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.left_title}>
                 10
               </Typography>
@@ -81,7 +81,7 @@ const Services = () => (
             </Box>
             <Box className={styles.right_side}>
               <div className={styles.right_image}>
-                <Image src="/assets/employees2.svg" alt="" width={40} height={40} />
+                <Image src="/assets/employees2.svg" alt="" width={30} height={30} />
               </div>
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 Employees
@@ -99,7 +99,7 @@ const Services = () => (
             className={styles.card_content}
           >
             <Box className={styles.left_side}>
-              <Image src="/assets/up.svg" alt="service" width={40} height={40} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.left_title}>
                 12
               </Typography>
@@ -109,7 +109,7 @@ const Services = () => (
             </Box>
             <Box className={styles.right_side}>
               <div className={styles.right_image}>
-                <Image src="/assets/requests2.svg" alt="" width={40} height={40} />
+                <Image src="/assets/requests2.svg" alt="" width={30} height={30} />
               </div>
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 Requests

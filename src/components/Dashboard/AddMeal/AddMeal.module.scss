@@ -27,9 +27,19 @@
     }
   }
 
+  .error_title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    color: red;
+    margin-top: 10px;
+  }
+
   .select_box {
     padding: 16px;
-    gap: 8px;
+    // gap: 8px;
     background: #f9fafb;
     border: 0.75px solid #e5e7eb;
     border-radius: 8px;
@@ -39,9 +49,21 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 120%;
+    color: #4b5563;
+    cursor: pointer;
     &:focus {
       border: 0.75px solid #e5e7eb;
       outline: none;
+    }
+
+    .single_select {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      color: #4b5563;
+      // padding: 10px 15px;
     }
   }
 

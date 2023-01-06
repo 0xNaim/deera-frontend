@@ -31,7 +31,7 @@ const SalesStatistics = () => (
               </div>
             </Box>
             <Box className={styles.right_side}>
-              <Image src="/assets/up.svg" alt="service" width={30} height={30} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 20%
               </Typography>
@@ -56,7 +56,7 @@ const SalesStatistics = () => (
               </div>
             </Box>
             <Box className={styles.right_side}>
-              <Image src="/assets/up.svg" alt="service" width={30} height={30} />
+              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 30%
               </Typography>

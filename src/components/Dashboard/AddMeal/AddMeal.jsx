@@ -5,17 +5,20 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import FCImageUploader from '../../Common/FCImageUploader';
+import SelectBundle from '../common/SelectBundle/SelectBundle';
+import { subscriptionData } from '../fakedata';
 import styles from './AddMeal.module.scss';
 
 const AddMeal = () => {
-  //   const [data, setData] = React.useState();
+  const [selectBundle, setSelectBundle] = React.useState(subscriptionData && subscriptionData[0]);
   const [files, setFiles] = React.useState([]);
   const {
     register,
     handleSubmit,
+    // control,
     // watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues: { category: 'meal1' } });
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -39,7 +42,7 @@ const AddMeal = () => {
                   placeholder="The name of the meal"
                 />
                 {/* errors will return when field validation fails  */}
-                {errors.name_arabic && <span>This field is required</span>}
+                {errors.name_arabic && <p className={styles.error_title}>This field is required</p>}
               </Box>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
@@ -51,7 +54,9 @@ const AddMeal = () => {
                   placeholder="The name of the meal"
                 />
                 {/* errors will return when field validation fails  */}
-                {errors.name_english && <span>This field is required</span>}
+                {errors.name_english && (
+                  <p className={styles.error_title}>This field is required</p>
+                )}
               </Box>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
@@ -63,14 +68,22 @@ const AddMeal = () => {
                   placeholder="The name of the meal"
                 /> */}
                 <select {...register('category')} className={styles.select_box}>
-                  <option value="meal1">Meal one</option>
-                  <option value="meal2">Meal two</option>
-                  <option value="meal3">Meal three</option>
-                  <option value="meal4">Meal four</option>
+                  <option value="meal1" className={styles.single_select}>
+                    Meal one
+                  </option>
+                  <option value="meal2" className={styles.single_select}>
+                    Meal two
+                  </option>
+                  <option value="meal3" className={styles.single_select}>
+                    Meal three
+                  </option>
+                  <option value="meal4" className={styles.single_select}>
+                    Meal four
+                  </option>
                 </select>
 
                 {/* errors will return when field validation fails  */}
-                {errors.name_arabic && <span>This field is required</span>}
+                {errors.category && <p className={styles.error_title}>This field is required</p>}
               </Box>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
@@ -82,7 +95,20 @@ const AddMeal = () => {
                   placeholder="The number of calories"
                 />
                 {/* errors will return when field validation fails  */}
-                {errors.calories_number && <span>This field is required</span>}
+                {errors.calories_number && (
+                  <p className={styles.error_title}>This field is required</p>
+                )}
+              </Box>
+
+              <Box sx={{ mt: 2 }}>
+                <Typography variant="h6" color="inherit" className={styles.input_title}>
+                  Select bundle
+                </Typography>
+                <SelectBundle
+                  data={subscriptionData}
+                  value={selectBundle}
+                  setValue={setSelectBundle}
+                />
               </Box>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
@@ -100,7 +126,7 @@ const AddMeal = () => {
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
-                    {errors.fats && <span>This field is required</span>}
+                    {errors.fats && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
                     <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
@@ -113,7 +139,7 @@ const AddMeal = () => {
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
-                    {errors.carp && <span>This field is required</span>}
+                    {errors.carp && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
                     <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
@@ -126,7 +152,7 @@ const AddMeal = () => {
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
-                    {errors.fats && <span>This field is required</span>}
+                    {errors.fats && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
                     <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
@@ -139,7 +165,7 @@ const AddMeal = () => {
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
-                    {errors.fats && <span>This field is required</span>}
+                    {errors.fats && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                 </Grid>
               </Box>

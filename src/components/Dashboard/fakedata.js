@@ -159,3 +159,116 @@ export const mostPopularMeals = [
     requests: '25 Requests',
   },
 ];
+
+export const subscriptionData = [
+  {
+    id: 1,
+    image: '/assets/dashboard/Frame 1.svg',
+    arabicName: 'protein',
+    englishName: 'protein',
+    packages: 5,
+  },
+  {
+    id: 2,
+    image: '/assets/dashboard/Frame 2.svg',
+    arabicName: 'protein 2',
+    englishName: 'protein 2',
+    packages: 5,
+  },
+  {
+    id: 3,
+    image: '/assets/dashboard/Frame 3.svg',
+    arabicName: 'protein 3',
+    englishName: 'protein 3',
+    packages: 5,
+  },
+  {
+    id: 4,
+    image: '/assets/dashboard/Frame 4.svg',
+    arabicName: 'protein 4',
+    englishName: 'protein 4',
+    packages: 5,
+  },
+  {
+    id: 5,
+    image: '/assets/dashboard/Frame 5.svg',
+    arabicName: 'protein 5',
+    englishName: 'protein 5',
+    packages: 5,
+  },
+];
+
+export const categoryData = [
+  {
+    id: 1,
+    arabic_name: 'Breakfast',
+    english_name: 'Breakfast',
+    status: true,
+  },
+  {
+    id: 2,
+    arabic_name: 'The lunch',
+    english_name: 'Lunch',
+    status: true,
+  },
+  {
+    id: 3,
+    arabic_name: 'The dinner',
+    english_name: 'Dinner',
+    status: false,
+  },
+  {
+    id: 4,
+    arabic_name: 'Snacks',
+    english_name: 'Snacks',
+    status: true,
+  },
+  {
+    id: 5,
+    arabic_name: 'the authorities',
+    english_name: 'Salds',
+    status: true,
+  },
+  {
+    id: 6,
+    arabic_name: 'Sweets',
+    english_name: 'Deserts',
+    status: true,
+  },
+  {
+    id: 7,
+    arabic_name: 'Breakfast',
+    english_name: 'Breakfast',
+    status: true,
+  },
+  {
+    id: 8,
+    arabic_name: 'The lunch',
+    english_name: 'Lunch',
+    status: true,
+  },
+  {
+    id: 9,
+    arabic_name: 'The dinner',
+    english_name: 'Dinner',
+    status: false,
+  },
+  {
+    id: 10,
+    arabic_name: 'Snacks',
+    english_name: 'Snacks',
+    status: true,
+  },
+  {
+    id: 11,
+    arabic_name: 'the authorities',
+    english_name: 'Salds',
+    status: true,
+  },
+  {
+    id: 12,
+    arabic_name: 'Sweets',
+    english_name: 'Deserts',
+    status: true,
+  },
+];
