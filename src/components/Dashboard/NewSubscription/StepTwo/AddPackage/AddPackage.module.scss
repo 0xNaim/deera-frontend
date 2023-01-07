@@ -1,0 +1,103 @@
+.wrapper {
+  padding: 20px 0;
+
+  .header_wrapper {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 120%;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+  }
+
+  .input_title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    color: #4b5563;
+    margin-bottom: 10px;
+  }
+  .input {
+    padding: 16px;
+    background: #f9fafb;
+    border: 0.75px solid #e5e7eb;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+
+    &:focus {
+      border: 0.75px solid #e5e7eb;
+      outline: none;
+    }
+  }
+
+  .error_title {
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    color: red;
+    margin-top: 10px;
+  }
+
+  .select_box {
+    padding: 16px;
+    // gap: 8px;
+    background: #f9fafb;
+    border: 0.75px solid #e5e7eb;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'IBM Plex Sans Arabic';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #4b5563;
+    cursor: pointer;
+    &:focus {
+      border: 0.75px solid #e5e7eb;
+      outline: none;
+    }
+
+    .single_select {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      color: #4b5563;
+      // padding: 10px 15px;
+    }
+  }
+
+  .save_package_button {
+    margin-top: 50px;
+
+    button {
+      padding: 8px 12px;
+      gap: 4px;
+      width: 100%;
+      height: 48px;
+      border: 1px solid #684cf9;
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+      border-radius: 6px;
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 120%;
+      text-align: center;
+      color: #684cf9;
+      background: transparent !important;
+    }
+  }
+}

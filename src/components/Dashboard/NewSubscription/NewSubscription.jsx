@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import styles from './NewSubscripiton.module.scss';
 import StepOne from './StepOne/StepOne';
+import StepTwo from './StepTwo/StepTwo';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -108,7 +109,7 @@ const NewSubscription = () => {
             <StepOne handleClick={handleNext} />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item Two
+            <StepTwo handleClick={handleNext} />
           </TabPanel>
         </Box>
       </Container>
