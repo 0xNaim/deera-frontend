@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-wrap-multilines */
-import { Button, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import styles from './NewSubscripiton.module.scss';
+import StepOne from './StepOne/StepOne';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -18,21 +19,17 @@ const TabPanel = (props) => {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 };
 
-// function a11yProps(index) {
-//   return {
-//     id: `simple-tab-${index}`,
-//     'aria-controls': `simple-tabpanel-${index}`,
-//   };
-// }
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 
 const NewSubscription = () => {
   const [value, setValue] = React.useState(0);
@@ -76,9 +73,9 @@ const NewSubscription = () => {
                     Subscription information
                   </Typography>
                 }
-                // {...a11yProps(0)}
+                {...a11yProps(0)}
               />
-              <Tab
+              {/* <Tab
                 label={
                   <Typography
                     variant="subtitle1"
@@ -90,8 +87,7 @@ const NewSubscription = () => {
                     Choice of meals
                   </Typography>
                 }
-                // {...a11yProps(1)}
-              />
+              /> */}
               <Tab
                 label={
                   <Typography
@@ -99,26 +95,20 @@ const NewSubscription = () => {
                     component="p"
                     color="inherit"
                     className={styles.tabs_title}
-                    sx={{ color: value === 2 ? '#684CF9' : '#9ca3af' }}
+                    sx={{ color: value === 1 ? '#684CF9' : '#9ca3af' }}
                   >
                     Package management
                   </Typography>
                 }
-                // {...a11yProps(2)}
+                {...a11yProps(1)}
               />
             </Tabs>
           </Box>
-          <TabPanel value={value} index={0}>
-            Item One
-            <Button variant="contained" color="inherit" onClick={() => handleNext(1)}>
-              Next
-            </Button>
+          <TabPanel value={value} index={0} sx={{ padding: '0' }}>
+            <StepOne handleClick={handleNext} />
           </TabPanel>
           <TabPanel value={value} index={1}>
             Item Two
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            Item Three
           </TabPanel>
         </Box>
       </Container>
