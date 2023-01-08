@@ -8,7 +8,6 @@ import {
   InputBase,
   Pagination,
   Paper,
-  Switch,
   Table,
   TableBody,
   TableCell,
@@ -21,6 +20,7 @@ import { alpha, styled } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import FCSwitch from '../../../components/Common/FCSwitch';
 import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
@@ -194,7 +194,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(0),
     width: '10rem',
   },
-  border: '1px solid #F3F4F6',
+  border: '1px solid #9CA3AF',
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -276,13 +276,13 @@ const Customers = () => {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Name</TableCell>
-                    <TableCell>Start Date</TableCell>
-                    <TableCell>Expiry Date</TableCell>
-                    <TableCell>Mobile</TableCell>
-                    <TableCell>Repitition</TableCell>
-                    <TableCell>Status</TableCell>
-                    <TableCell>Procedures</TableCell>
+                    <TableCell className={styles.table__heading}>Name</TableCell>
+                    <TableCell className={styles.table__heading}>Start Date</TableCell>
+                    <TableCell className={styles.table__heading}>Expiry Date</TableCell>
+                    <TableCell className={styles.table__heading}>Mobile</TableCell>
+                    <TableCell className={styles.table__heading}>Repitition</TableCell>
+                    <TableCell className={styles.table__heading}>Status</TableCell>
+                    <TableCell className={styles.table__heading}>Procedures</TableCell>
                     <TableCell />
                   </TableRow>
                 </TableHead>
@@ -290,22 +290,22 @@ const Customers = () => {
                 <TableBody>
                   {filteredData?.map((customer) => (
                     <TableRow key={Math.random()}>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.name}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.startDate}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.expiryDate}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.mobile}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.repitition}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell className={styles.table__cell} component="th" scope="row">
                         {customer?.status}
                       </TableCell>
                       <TableCell component="th" scope="row">
@@ -313,31 +313,31 @@ const Customers = () => {
                           <IconButton>
                             <Image
                               src="/assets/viewIcon.svg"
-                              width={34}
-                              height={34}
+                              width={32}
+                              height={32}
                               alt="View Icon"
                             />
                           </IconButton>
                           <IconButton>
                             <Image
                               src="/assets/deleteIcon.svg"
-                              width={20}
-                              height={20}
+                              width={18}
+                              height={18}
                               alt="Delete Icon"
                             />
                           </IconButton>
                           <IconButton>
                             <Image
                               src="/assets/editIcon.svg"
-                              width={20}
-                              height={20}
+                              width={18}
+                              height={18}
                               alt="Edit Icon"
                             />
                           </IconButton>
                         </Box>
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <Switch />
+                        <FCSwitch />
                       </TableCell>
                     </TableRow>
                   ))}

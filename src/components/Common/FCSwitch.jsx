@@ -41,7 +41,7 @@ const IOSSwitch = styled((props) => (
       position: 'absolute',
       width: '100%',
       height: '100%',
-      left: -1,
+      left: 0,
       top: 0,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',

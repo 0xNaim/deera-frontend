@@ -19,7 +19,7 @@ const SalesStatistics = () => (
           <Stack direction="row" justifyContent="space-between">
             <Box className={styles.left_side}>
               <div className={styles.left_icon}>
-                <PaymentsIcon />
+                <PaymentsIcon sx={{ fill: '#10b981', width: 24, height: 24 }} />
               </div>
               <div>
                 <Typography variant="h6" color="inherit" className={styles.left_total}>
@@ -31,7 +31,7 @@ const SalesStatistics = () => (
               </div>
             </Box>
             <Box className={styles.right_side}>
-              <Image src="/assets/up.svg" alt="service" width={25} height={25} />
+              <Image src="/assets/up.svg" alt="service" width={24} height={24} />
               <Typography variant="h6" color="inherit" className={styles.right_title}>
                 20%
               </Typography>
@@ -44,7 +44,13 @@ const SalesStatistics = () => (
           <Stack direction="row" justifyContent="space-between">
             <Box className={styles.left_side}>
               <div className={styles.left_icon} style={{ background: '#FECACA' }}>
-                <PaymentsIcon style={{ color: '#DC2626' }} />
+                {/* <PaymentsIcon style={{ color: '#DC2626' }} /> */}
+                <Image
+                  src="/assets/dashboard/soldIcon.svg"
+                  alt="Sold Icon"
+                  width={24}
+                  height={24}
+                />
               </div>
               <div>
                 <Typography variant="h6" color="inherit" className={styles.left_total}>
