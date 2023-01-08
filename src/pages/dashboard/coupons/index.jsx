@@ -8,7 +8,6 @@ import {
   InputBase,
   Pagination,
   Paper,
-  Switch,
   Table,
   TableBody,
   TableCell,
@@ -21,6 +20,7 @@ import { alpha, styled } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import FCSwitch from '../../../components/Common/FCSwitch';
 import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
@@ -276,23 +276,23 @@ const Coupons = () => {
                           <IconButton>
                             <Image
                               src="/assets/deleteIcon.svg"
-                              width={20}
-                              height={20}
+                              width={18}
+                              height={18}
                               alt="Delete Icon"
                             />
                           </IconButton>
                           <IconButton>
                             <Image
                               src="/assets/editIcon.svg"
-                              width={20}
-                              height={20}
+                              width={18}
+                              height={18}
                               alt="Edit Icon"
                             />
                           </IconButton>
                         </Box>
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <Switch checked={coupon?.checked} />
+                        <FCSwitch checked={coupon?.checked} />
                       </TableCell>
                     </TableRow>
                   ))}
