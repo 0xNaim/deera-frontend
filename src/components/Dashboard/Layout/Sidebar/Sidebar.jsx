@@ -53,7 +53,7 @@ const Sidebar = () => {
       <CardContent className={styles._content}>
         {/* menu list start here */}
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
-          <SingleMenu image="/assets/home.svg" link="/dashboard/main" name="Main" />
+          <SingleMenu image="/assets/home.svg" link="/dashboard" name="Main" />
           <SingleMenu image="/assets/customers.svg" link="/dashboard/customers" name="Customers" />
           {/* <SingleMenu
             image="/assets/financial.svg"

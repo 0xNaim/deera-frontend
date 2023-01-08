@@ -42,7 +42,7 @@ const Main = () => (
                       <MainDIalog
                         data={value}
                         btnContent={
-                          <IconButton edge="end" aria-label="view" className={styles.icon_view}>
+                          <IconButton aria-label="view" className={styles.icon_view}>
                             <VisibilityIcon />
                           </IconButton>
                         }

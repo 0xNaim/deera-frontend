@@ -53,6 +53,17 @@
   .content__table {
     margin: 1.5rem 0;
 
+    .table__heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .table__cell {
+      font-size: 1rem;
+      color: '#1F2937';
+      font-weight: 500;
+    }
+
     .action__icons {
       display: flex;
       gap: 0.8rem;
