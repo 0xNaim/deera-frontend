@@ -19,18 +19,18 @@ export const mealsData = [
 export const requestsData = [
   {
     id: 1,
-    name: 'Meal schedule',
-    link: '/meal-schedule',
+    name: 'Order Table',
+    link: '/dashboard/orders',
   },
   {
     id: 2,
-    name: 'Meal classification table',
-    link: '/meal-classification-table',
+    name: 'Order Stars',
+    link: '/order-star',
   },
   {
     id: 3,
-    name: 'Daily meal calendar',
-    link: '/daily-meal-calendar',
+    name: 'Assign driver to requests',
+    link: '/driver-request',
   },
 ];
 

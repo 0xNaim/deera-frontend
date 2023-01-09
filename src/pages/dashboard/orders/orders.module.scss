@@ -1,0 +1,64 @@
+.content__wrapper {
+  padding: 1.5rem 0;
+
+  .table__content__wrapper {
+    .btn__group {
+      display: flex;
+      justify-content: end;
+      gap: 0.5rem;
+
+      button,
+      .btn__select--subtype {
+        font-family: 'IBM Plex Sans Arabic';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #4b5563;
+        padding: 0.3rem 0.5rem !important;
+        border-radius: 0.5rem;
+
+        .btn__icon {
+          font-size: 1rem;
+        }
+      }
+
+      .btn__label--print,
+      .btn__print--meals {
+        background: #10b981 !important;
+        border: 1px solid #e5e7eb !important;
+        color: #fff !important;
+      }
+    }
+
+    .content__table {
+      margin: 1.5rem 0;
+
+      .table__heading {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .table__cell {
+        font-size: 1rem;
+        color: '#1F2937';
+        font-weight: 500;
+      }
+
+      .action__icons {
+        display: flex;
+        gap: 0.8rem;
+
+        button {
+          width: 34px !important;
+          height: 34px !important;
+          border-radius: 6px !important;
+          background: #e5e7eb !important;
+        }
+      }
+    }
+
+    .pagination__wrapper {
+      float: right;
+    }
+  }
+}

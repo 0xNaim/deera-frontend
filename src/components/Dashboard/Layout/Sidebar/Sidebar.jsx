@@ -66,7 +66,7 @@ const Sidebar = () => {
             image="/assets/requests.svg"
             name="Requests"
             menus={requestsData}
-            pageLink="/dashboard/requests"
+            pageLink="/dashboard/orders"
           />
           <DropDownMenu
             handleClick={handleSubscriptionsClick}
