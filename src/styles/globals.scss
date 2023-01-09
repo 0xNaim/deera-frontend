@@ -52,3 +52,64 @@ body {
   width: 100%;
   cursor: pointer;
 }
+
+.datepicker-month-label {
+  display: none !important;
+}
+
+.datepicker-button-previous,
+.datepicker-button-next {
+  background: #684cf9 !important;
+}
+
+.date-day-Item-selected {
+  // width: 45px;
+  // height: 45px;
+  border-radius: 50%;
+  // border: 2px solid #684cf9 !important;
+  color: #684cf9 !important;
+  position: relative !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: #684cf9;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+
+  &:hover {
+    background-color: inherit !important;
+    color: #684cf9 !important;
+  }
+}
+
+.datepicker-date-day-Item:hover {
+  background-color: inherit !important;
+  color: #684cf9 !important;
+}
+
+.datepicker-date-day-Item {
+  flex-direction: row !important;
+  /* margin: 0 12px 0 12px; */
+  // width: 45px;
+  // height: 45px;
+  border-radius: 0% !important;
+  border: none !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  position: inherit !important;
+  margin-right: 20px !important;
+  margin-left: 10px !important;
+}
+
+.datepicker-date-label {
+  margin-top: 3px !important;
+}
+
+.datepicker {
+  margin: 12px 0 !important;
+}

@@ -85,7 +85,7 @@ const Navbar = (props) => {
                     <Language />
                   </Box>
                   <Box className={styles.singleMenu}>
-                    <Link href="/control-panel">
+                    <Link href="/dashboard">
                       <Button variant="contained" color="inherit">
                         Control Panel
                       </Button>
@@ -131,7 +131,7 @@ const Navbar = (props) => {
                     <Language />
                   </Box>
                   <Box className={styles.singleMenu}>
-                    <Link href="/control-panel">
+                    <Link href="/dashboard">
                       <Button variant="contained" color="inherit">
                         Control Panel
                       </Button>

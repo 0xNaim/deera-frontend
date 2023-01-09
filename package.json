@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.41.1",
+    "react-horizontal-strip-datepicker": "^3.0.2",
     "react-multi-carousel": "^2.8.2",
     "sass": "^1.57.1"
   },

@@ -1,0 +1,27 @@
+.wrapper {
+  margin-top: 10px;
+
+  .select_meals {
+    margin: 20px 0;
+    ._title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 120%;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+    ._subtitle {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 120%;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}
