@@ -6,6 +6,12 @@
     align-items: center;
     justify-content: space-between;
 
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
     .add__coupon__wrapper {
       display: flex;
       align-items: center;
@@ -36,6 +42,10 @@
     .search__coupon__wrapper {
       display: flex;
       gap: 0.5rem;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
 
       .search__btn {
         background: #e5e7eb;

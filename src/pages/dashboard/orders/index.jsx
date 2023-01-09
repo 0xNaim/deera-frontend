@@ -162,41 +162,45 @@ const Orders = () => {
 
             <Box className={styles.table__content__wrapper}>
               <Box className={styles.btn__group}>
-                <Button
-                  className={styles['btn--sort']}
-                  color="secondary"
-                  variant="outlined"
-                  disableRipple
-                >
-                  Sort by
-                  <ImportExportIcon className={styles.btn__icon} />
-                </Button>
-                <FormControl size="small" sx={{ minWidth: 120 }}>
-                  <Select
-                    value={subType}
-                    onChange={handleChangeSubType}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                    className={styles['btn__select--subtype']}
+                <Box className={styles.group__one}>
+                  <Button
+                    className={styles['btn--sort']}
+                    color="secondary"
+                    variant="outlined"
+                    disableRipple
                   >
-                    <MenuItem value="">
-                      <em>Subtype</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Subtype 1</MenuItem>
-                    <MenuItem value={20}>Subtype 2</MenuItem>
-                    <MenuItem value={30}>Subtype 3</MenuItem>
-                  </Select>
-                </FormControl>
+                    Sort by
+                    <ImportExportIcon className={styles.btn__icon} />
+                  </Button>
+                  <FormControl size="small" sx={{ minWidth: 120 }}>
+                    <Select
+                      value={subType}
+                      onChange={handleChangeSubType}
+                      displayEmpty
+                      inputProps={{ 'aria-label': 'Without label' }}
+                      className={styles['btn__select--subtype']}
+                    >
+                      <MenuItem value="">
+                        <em>Subtype</em>
+                      </MenuItem>
+                      <MenuItem value={10}>Subtype 1</MenuItem>
+                      <MenuItem value={20}>Subtype 2</MenuItem>
+                      <MenuItem value={30}>Subtype 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
 
-                <Button className={styles['btn__label--print']} variant="contained" disableRipple>
-                  Label printing &nbsp;
-                  <PrintIcon className={styles.btn__icon} />
-                </Button>
+                <Box className={styles.group__two}>
+                  <Button className={styles['btn__label--print']} variant="contained" disableRipple>
+                    Label printing &nbsp;
+                    <PrintIcon className={styles.btn__icon} />
+                  </Button>
 
-                <Button className={styles['btn__print--meals']} variant="contained" disableRipple>
-                  Print meals &nbsp;
-                  <PrintIcon className={styles.btn__icon} />
-                </Button>
+                  <Button className={styles['btn__print--meals']} variant="contained" disableRipple>
+                    Print meals &nbsp;
+                    <PrintIcon className={styles.btn__icon} />
+                  </Button>
+                </Box>
               </Box>
 
               <TableContainer component={Paper} className={styles.content__table}>
