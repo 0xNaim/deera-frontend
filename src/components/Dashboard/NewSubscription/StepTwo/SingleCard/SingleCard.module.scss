@@ -1,0 +1,97 @@
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  .first_card {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    .pkg_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 120%;
+      color: #684cf9;
+      margin-bottom: 10px;
+    }
+    .calories_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: #4b5563;
+    }
+  }
+  .second_card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .second_title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: #6b7280;
+    }
+    .count_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      color: #111827;
+    }
+  }
+  .third_card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .third_title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: #6b7280;
+    }
+    .week_title {
+      font-family: 'IBM Plex Sans Arabic';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      color: #111827;
+    }
+  }
+  .fourth_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button_wrapper {
+      button {
+        background: #e5e7eb;
+        border: 0.568047px solid #d1d5db;
+        border-radius: 6.05917px;
+        padding: 6.05917px;
+        color: #6b7280;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './AddPackage.module.scss';
 
-const AddPackage = () => {
+const AddPackage = ({ addNewPackage }) => {
   const {
     register,
     handleSubmit,
@@ -22,7 +22,10 @@ const AddPackage = () => {
   } = useForm();
   //   { defaultValues: { category: 'meal1' } }
   console.log(watch('week'));
-  const onSubmit = (data) => console.log({ ...data });
+  const onSubmit = (data) => {
+    console.log({ ...data });
+    addNewPackage(data);
+  };
   return (
     <div className={styles.wrapper}>
       <Grid container>
@@ -178,8 +181,8 @@ const AddPackage = () => {
                 <FormControl>
                   <FormControlLabel
                     control={<Checkbox color="primary" />}
-                    label="City"
-                    {...register('city')}
+                    label="Month"
+                    {...register('month')}
                   />
                 </FormControl>
               </Grid>
