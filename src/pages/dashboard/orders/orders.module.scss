@@ -7,18 +7,29 @@
       justify-content: end;
       gap: 0.5rem;
 
-      button,
-      .btn__select--subtype {
-        font-family: 'IBM Plex Sans Arabic';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: #4b5563;
-        padding: 0.3rem 0.5rem !important;
-        border-radius: 0.5rem;
+      @media only screen and (max-width: 768px) {
+        justify-content: center;
+        flex-direction: column;
+      }
 
-        .btn__icon {
-          font-size: 1rem;
+      .group__one,
+      .group__two {
+        display: flex;
+        gap: 0.5rem;
+
+        button,
+        .btn__select--subtype {
+          font-family: 'IBM Plex Sans Arabic';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: #4b5563;
+          padding: 0.2rem 0.5rem !important;
+          border-radius: 0.5rem;
+
+          .btn__icon {
+            font-size: 1rem;
+          }
         }
       }
 
