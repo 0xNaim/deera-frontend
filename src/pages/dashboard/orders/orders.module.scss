@@ -17,6 +17,10 @@
         display: flex;
         gap: 0.5rem;
 
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
+        }
+
         button,
         .btn__select--subtype {
           font-family: 'IBM Plex Sans Arabic';
@@ -24,7 +28,7 @@
           font-weight: 600;
           font-size: 0.9rem;
           color: #4b5563;
-          padding: 0.2rem 0.5rem !important;
+          // padding: 0.2rem 0.5rem !important;
           border-radius: 0.5rem;
 
           .btn__icon {
