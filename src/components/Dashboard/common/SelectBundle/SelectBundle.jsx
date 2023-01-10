@@ -6,10 +6,7 @@ import Image from 'next/image';
 import * as React from 'react';
 
 const SelectBundle = ({ data, value, setValue }) => {
-  //   const [value, setValue] = React.useState(data[0]);
   const [inputValue, setInputValue] = React.useState('');
-
-  console.log(value, inputValue);
 
   return (
     <Autocomplete
@@ -23,7 +20,7 @@ const SelectBundle = ({ data, value, setValue }) => {
       }}
       options={data}
       autoHighlight
-      getOptionLabel={(option) => option.englishName}
+      getOptionLabel={(option) => option.english_name}
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
@@ -36,12 +33,12 @@ const SelectBundle = ({ data, value, setValue }) => {
         <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
           <Image
             src={option?.image}
-            alt={option?.englishName}
+            alt={option?.english_name}
             width={40}
             height={40}
             style={{ objectFit: 'contain' }}
           />
-          {option.englishName} + {option.packages} packages
+          {option.english_name} + {option.packages} packages
         </Box>
       )}
       renderInput={(params) => (

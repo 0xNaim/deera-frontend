@@ -2,16 +2,18 @@ import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import Image from 'next/image';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import FCImageUploader from '../../Common/FCImageUploader';
+import ImageDialog from '../../Common/ImageDialog';
 import SelectBundle from '../common/SelectBundle/SelectBundle';
 import { subscriptionData } from '../fakedata';
 import styles from './AddMeal.module.scss';
 
 const AddMeal = () => {
   const [selectBundle, setSelectBundle] = React.useState(subscriptionData && subscriptionData[0]);
-  const [files, setFiles] = React.useState([]);
+  const [files, setFiles] = React.useState('');
   const {
     register,
     handleSubmit,
@@ -20,6 +22,8 @@ const AddMeal = () => {
     formState: { errors },
   } = useForm({ defaultValues: { category: 'meal1' } });
   const onSubmit = (data) => console.log(data);
+
+  // console.log(files, 'files');
 
   return (
     <div className={styles.wrapper}>
@@ -30,7 +34,28 @@ const AddMeal = () => {
               <Typography variant="h6" color="inherit" className={styles.input_title}>
                 Add a picture of the meal
               </Typography>
-              <FCImageUploader files={files} setFiles={setFiles} />
+              <ImageDialog files={files} setFiles={setFiles} btnContent={<FCImageUploader />} />
+
+              {files && (
+                <Box
+                  sx={{
+                    borderRadius: '5px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    margin: '10px 0',
+                  }}
+                >
+                  <Image
+                    src={files}
+                    alt=""
+                    width={150}
+                    height={150}
+                    onLoad={() => {
+                      URL.revokeObjectURL(files);
+                    }}
+                  />
+                </Box>
+              )}
 
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
