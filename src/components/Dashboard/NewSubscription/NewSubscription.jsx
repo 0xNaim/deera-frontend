@@ -35,10 +35,6 @@ function a11yProps(index) {
 const NewSubscription = () => {
   const [value, setValue] = React.useState(0);
 
-  //   const handleChange = (event, newValue) => {
-  //     setValue(newValue);
-  //   };
-
   const handleNext = (num) => {
     setValue(num);
   };
@@ -50,8 +46,6 @@ const NewSubscription = () => {
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs
               value={value}
-              //   onChange={handleChange}
-              //   variant="scrollable"
               variant="fullWidth"
               scrollButtons="auto"
               aria-label="scrollable auto tabs example"
@@ -77,19 +71,7 @@ const NewSubscription = () => {
                 }
                 {...a11yProps(0)}
               />
-              {/* <Tab
-                label={
-                  <Typography
-                    variant="subtitle1"
-                    component="p"
-                    color="inherit"
-                    className={styles.tabs_title}
-                    sx={{ color: value === 1 ? '#684CF9' : '#9ca3af' }}
-                  >
-                    Choice of meals
-                  </Typography>
-                }
-              /> */}
+
               <Tab
                 disableRipple
                 label={
