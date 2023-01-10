@@ -91,7 +91,7 @@ const StepOne = ({ handleClick }) => {
                   className={styles.next_button}
                   onClick={() => handleClick(1)}
                 >
-                  Next <ArrowForwardIosIcon />
+                  Next <ArrowForwardIosIcon sx={{ height: '16px' }} />
                 </Button>
               </Box>
             </Stack>

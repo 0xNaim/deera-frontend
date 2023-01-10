@@ -62,6 +62,7 @@ const NewSubscription = () => {
               TabIndicatorProps={{ sx: { backgroundColor: '#684CF9' } }}
             >
               <Tab
+                disableRipple
                 sx={{ color: value === 0 ? 'red' : '#9ca3af' }}
                 label={
                   <Typography
@@ -90,6 +91,7 @@ const NewSubscription = () => {
                 }
               /> */}
               <Tab
+                disableRipple
                 label={
                   <Typography
                     variant="subtitle1"

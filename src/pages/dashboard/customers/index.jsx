@@ -313,18 +313,18 @@ const Customers = () => {
                           </IconButton>
                           <IconButton>
                             <Image
-                              src="/assets/deleteIcon.svg"
-                              width={18}
-                              height={18}
-                              alt="Delete Icon"
-                            />
-                          </IconButton>
-                          <IconButton>
-                            <Image
                               src="/assets/editIcon.svg"
                               width={18}
                               height={18}
                               alt="Edit Icon"
+                            />
+                          </IconButton>
+                          <IconButton>
+                            <Image
+                              src="/assets/deleteIcon.svg"
+                              width={18}
+                              height={18}
+                              alt="Delete Icon"
                             />
                           </IconButton>
                         </Box>
