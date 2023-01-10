@@ -93,7 +93,7 @@ const FirstStep = () => {
 
       <Stack
         direction="row"
-        spacing={1}
+        // spacing={1}
         alignItems="center"
         className={styles.content_wrapper}
         divider={<Divider orientation="vertical" flexItem />}
@@ -124,7 +124,7 @@ const FirstStep = () => {
 
       <Stack
         direction="row"
-        spacing={1}
+        // spacing={1}
         alignItems="center"
         className={styles.content_wrapper}
         divider={<Divider orientation="vertical" flexItem />}

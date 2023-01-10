@@ -29,11 +29,9 @@ const DropDownMenu = ({ handleClick, open, image, name, menus, pageLink }) => {
       <ListItemButton
         sx={{
           background: pathname === pageLink ? '#684cf9' : 'transparent',
-          // background: open ? '#684CF9' : pathname === link ? '#684cf9' : 'transparent',
           borderRadius: '12px',
         }}
         className={styles._single_nav}
-        // onClick={handleClick}
       >
         <ListItemIcon className={styles._img_nav}>
           <Image src={image} alt="logo" width={20} height={20} />
@@ -46,7 +44,6 @@ const DropDownMenu = ({ handleClick, open, image, name, menus, pageLink }) => {
                 color="inherit"
                 className={styles._single_title}
                 sx={{
-                  // color: open ? '#fff' : '#718096',
                   color: pathname === pageLink ? '#fff' : '#718096',
                 }}
               >

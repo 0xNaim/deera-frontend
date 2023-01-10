@@ -204,7 +204,7 @@ const Coupons = () => {
           <Box className={styles.content__wrapper}>
             <Box className={styles.content__header}>
               <Box className={styles.add__coupon__wrapper}>
-                <Link className={styles.link} href="/dashboard/coupon/add-coupon">
+                <Link className={styles.link} href="/dashboard/coupons/add-coupon">
                   <Button
                     variant="contained"
                     sx={{ color: '#F3F0FF', fontSize: '16px', padding: '12px 12px' }}

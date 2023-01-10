@@ -21,8 +21,6 @@ const Sidebar = () => {
   const [requests, setRequests] = React.useState(false);
   const [subscriptions, setSubscriptions] = React.useState(false);
   const [meals, setMeals] = React.useState(false);
-  // const [settings, setSettings] = React.useState(false);
-  // const [employees, setEmployees] = React.useState(false);
 
   const handleRequestsClick = () => {
     setRequests(!requests);
@@ -35,14 +33,6 @@ const Sidebar = () => {
   const handleMealsClick = () => {
     setMeals(!meals);
   };
-
-  // const handleSettingsClick = () => {
-  //   setSettings(!settings);
-  // };
-
-  // const handleEmployeesClick = () => {
-  //   setEmployees(!employees);
-  // };
 
   return (
     <Card className={styles._wrapper}>
