@@ -13,6 +13,7 @@ import {
   faClipboardList,
   faFire,
   faHomeUser,
+  faRightFromBracket,
   faSliders,
   faTicket,
   faUserGroup,
@@ -106,7 +107,7 @@ const Sidebar = () => {
         {/* signout part */}
         <Stack className={styles._last_wrapper}>
           <List sx={{ width: '87%' }} component="nav" aria-labelledby="nested-list-subheader">
-            <SingleMenu image="/assets/signOut.svg" link="/signout" name="Sign out" />
+            <SingleMenu icon={faRightFromBracket} link="/signout" name="Sign out" />
           </List>
         </Stack>
       </CardContent>

@@ -1,4 +1,3 @@
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import TuneIcon from '@mui/icons-material/Tune';
 import {
   Box,
@@ -6,12 +5,15 @@ import {
   Container,
   Divider,
   FormControl,
-  IconButton,
   TextField,
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import Image from 'next/image';
+import { useState } from 'react';
+import FCImageUploader from '../../../components/Common/FCImageUploader';
 import FCSwitch from '../../../components/Common/FCSwitch';
+import ImageDialog from '../../../components/Common/ImageDialog';
 import Header from '../../../components/Dashboard/common/Header/Header';
 // import DashboardHead from '../../../components/Dashboard/head';
 import Layout from '../../../components/Dashboard/Layout/Layout';
@@ -19,7 +21,7 @@ import dashboardTheme from '../../../theme/dashboard-theme';
 import styles from './settings.module.scss';
 
 const Settings = () => {
-  console.log('Settings');
+  const [files, setFiles] = useState('');
 
   return (
     <ThemeProvider theme={dashboardTheme}>
@@ -39,8 +41,30 @@ const Settings = () => {
                   <Typography className={styles.input__label} gutterBottom>
                     Add your company logo
                   </Typography>
+                  <ImageDialog files={files} setFiles={setFiles} btnContent={<FCImageUploader />} />
 
-                  <Box className={styles.upload__wrapper}>
+                  {files && (
+                    <Box
+                      sx={{
+                        borderRadius: '5px',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        margin: '10px 0',
+                      }}
+                    >
+                      <Image
+                        src={files}
+                        alt=""
+                        width={150}
+                        height={150}
+                        onLoad={() => {
+                          URL.revokeObjectURL(files);
+                        }}
+                      />
+                    </Box>
+                  )}
+
+                  {/* <Box className={styles.upload__wrapper}>
                     <IconButton disableRipple aria-label="upload picture" component="label">
                       <input hidden accept="image/*" type="file" />
                       <PhotoCamera className={styles.upload__icon} />
@@ -48,7 +72,7 @@ const Settings = () => {
                     <Typography className={styles.upload__text}>
                       Click here to upload a new image
                     </Typography>
-                  </Box>
+                  </Box> */}
                 </FormControl>
 
                 <FormControl className={styles.form__input} fullWidth>
