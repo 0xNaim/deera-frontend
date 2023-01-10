@@ -1,13 +1,15 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box, Button, Grid, Stack, Typography } from '@mui/material';
+import Image from 'next/image';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import FCImageUploader from '../../../Common/FCImageUploader';
+import ImageDialog from '../../../Common/ImageDialog';
 import styles from './StepOne.module.scss';
 
 const StepOne = ({ handleClick }) => {
-  const [files, setFiles] = React.useState([]);
+  const [files, setFiles] = React.useState('');
   const {
     register,
     handleSubmit,
@@ -50,7 +52,29 @@ const StepOne = ({ handleClick }) => {
               <Typography variant="h6" color="inherit" className={styles.input_title}>
                 subscription photo
               </Typography>
-              <FCImageUploader files={files} setFiles={setFiles} />
+              {/* <FCImageUploader files={files} setFiles={setFiles} /> */}
+              <ImageDialog files={files} setFiles={setFiles} btnContent={<FCImageUploader />} />
+
+              {files && (
+                <Box
+                  sx={{
+                    borderRadius: '5px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    margin: '10px 0',
+                  }}
+                >
+                  <Image
+                    src={files}
+                    alt=""
+                    width={150}
+                    height={150}
+                    onLoad={() => {
+                      URL.revokeObjectURL(files);
+                    }}
+                  />
+                </Box>
+              )}
             </Box>
 
             <Box sx={{ mt: 2 }}>
