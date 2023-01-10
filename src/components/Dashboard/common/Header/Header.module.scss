@@ -2,6 +2,17 @@
   border-bottom: 1px solid #f3f4f6;
   padding: 10px 0px;
 
+  ._mobile_nav_wrapper {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+
+    .menuWrapper {
+      cursor: pointer;
+    }
+  }
+
   ._title {
     font-family: 'IBM Plex Sans Arabic';
     font-style: normal;
@@ -12,7 +23,10 @@
     color: #4b5563;
 
     @media only screen and (max-width: 768px) {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 1rem;
     }
   }
 

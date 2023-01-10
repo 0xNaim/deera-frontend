@@ -1,17 +1,23 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable no-underscore-dangle */
 import Image from 'next/image';
 import React from 'react';
 
 // import MUI
+import MenuIcon from '@mui/icons-material/Menu';
 import { Avatar, Box, Container, Stack, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // import styles
+import SliceText from '../../../../utils/SliceText';
+import MobileSidebar from '../../Layout/MobileSidebar/MobileSidebar';
 import styles from './Header.module.scss';
 
 const Header = ({ title }) => {
+  const matches = useMediaQuery('(max-width:600px)');
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,10 +30,20 @@ const Header = ({ title }) => {
     <Box component="div" className={styles._wrapper}>
       <Container>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
-          <Typography variant="h5" color="inherit" className={styles._title}>
-            {/* Main */}
-            {title && title}
-          </Typography>
+          <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <div className={styles._mobile_nav_wrapper}>
+              <MobileSidebar
+                buttonContent={
+                  <div className={styles.menuWrapper}>
+                    <MenuIcon />
+                  </div>
+                }
+              />
+            </div>
+            <Typography variant="h5" color="inherit" className={styles._title}>
+              {matches ? <SliceText number={20}>{title}</SliceText> : title}
+            </Typography>
+          </Box>
 
           <div>
             <Button
@@ -39,12 +55,14 @@ const Header = ({ title }) => {
               disableRipple
             >
               <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
-                <Avatar sx={{ width: 40, height: 40 }}>
+                <Avatar
+                  sx={{ width: { md: 40, sm: 30, xs: 25 }, height: { md: 40, sm: 30, xs: 25 } }}
+                >
                   <Image src="/assets/sonjoy.png" alt="logo" width={35} height={35} />
                 </Avatar>
 
                 <Typography variant="h5" color="inherit" className={styles._subtitle}>
-                  Sonjoy barman
+                  {matches ? <SliceText number={6}>Sonjoy barman</SliceText> : 'Sonjoy barman'}
                 </Typography>
                 <Image src="/assets/down.svg" alt="logo" width={20} height={20} />
               </Stack>
