@@ -260,10 +260,11 @@ const CustomTable = () => {
         <br />
 
         <Pagination
+          // sx={{}}
           count={count}
           page={page}
           onChange={handleChange}
-          color="success"
+          color="primary"
           variant="outlined"
           shape="rounded"
         />

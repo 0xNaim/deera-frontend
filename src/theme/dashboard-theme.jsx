@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const dashboardTheme = createTheme({
+const DashboardTheme = createTheme({
   palette: {
     mode: 'light',
     primary: { main: '#684cf9' },
@@ -8,4 +8,4 @@ const dashboardTheme = createTheme({
   },
 });
 
-export default dashboardTheme;
+export default DashboardTheme;

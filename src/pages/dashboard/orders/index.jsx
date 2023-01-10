@@ -257,15 +257,15 @@ const Orders = () => {
                             </IconButton>
                             <IconButton>
                               <Image
-                                src="/assets/deleteIcon.svg"
+                                src="/assets/editIcon.svg"
                                 width={18}
                                 height={18}
-                                alt="Delete Icon"
+                                alt="Edit Icon"
                               />
                             </IconButton>
                             <IconButton>
                               <Image
-                                src="/assets/editIcon.svg"
+                                src="/assets/point.png"
                                 width={18}
                                 height={18}
                                 alt="Edit Icon"

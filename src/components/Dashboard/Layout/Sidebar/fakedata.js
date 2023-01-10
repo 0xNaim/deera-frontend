@@ -37,36 +37,21 @@ export const requestsData = [
 export const subscriptionsData = [
   {
     id: 1,
-    name: 'Meal schedule',
-    link: '/meal-schedule',
+    name: 'Subscription schedule',
+    link: '/dashboard/subscription-schedule',
   },
   {
     id: 2,
-    name: 'Meal classification table',
-    link: '/meal-classification-table',
-  },
-  {
-    id: 3,
-    name: 'Daily meal calendar',
-    link: '/daily-meal-calendar',
+    name: 'Subscription period schedule',
+    link: '//dashboard/subscription-period-schedule',
   },
 ];
 
 export const settingsData = [
   {
     id: 1,
-    name: 'Meal schedule',
-    link: '/meal-schedule',
-  },
-  {
-    id: 2,
-    name: 'Meal classification table',
-    link: '/meal-classification-table',
-  },
-  {
-    id: 3,
-    name: 'Daily meal calendar',
-    link: '/daily-meal-calendar',
+    name: 'profile',
+    link: '/dashboard/settings',
   },
 ];
 
