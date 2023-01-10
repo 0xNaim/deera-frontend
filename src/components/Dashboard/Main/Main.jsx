@@ -33,6 +33,7 @@ const Main = () => (
           <Typography variant="h6" color="inherit" className={styles.custom_details_title}>
             Best customer
           </Typography>
+
           <Card className={styles.card}>
             <List>
               {bestCustomer?.map((value, index) => (

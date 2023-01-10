@@ -1,10 +1,9 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-one-expression-per-line */
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { Card, Grid, Stack, Typography } from '@mui/material';
+import { Card, Grid, IconButton, Stack, Typography } from '@mui/material';
+import Image from 'next/image';
 import React from 'react';
 import styles from './SingleCard.module.scss';
 
@@ -57,12 +56,13 @@ const SingleCard = ({ data, deleteById }) => {
         </Grid>
         <Grid item md={2} className={styles.fourth_card}>
           <Stack direction="row" spacing={1} alignItems="center" className={styles.button_wrapper}>
-            <button>
-              <EditIcon />
-            </button>
-            <button onClick={() => deleteById(data?.id)}>
-              <DeleteIcon />
-            </button>
+            <IconButton>
+              <Image src="/assets/editIcon.svg" width={18} height={18} alt="Edit Icon" />
+            </IconButton>
+
+            <IconButton onClick={() => deleteById(data?.id)}>
+              <Image src="/assets/deleteIcon.svg" width={18} height={18} alt="Edit Icon" />
+            </IconButton>
           </Stack>
         </Grid>
       </Grid>

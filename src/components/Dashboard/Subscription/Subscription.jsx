@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/button-has-type */
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import {
   Button,
   Container,
+  IconButton,
   Pagination,
   Stack,
   Table,
@@ -113,13 +112,24 @@ const SubscriptionTable = () => {
                         className={styles.button_wrapper}
                       >
                         <Link href={`/dashboard/meals/meal-classification-table/${row?.slug}`}>
-                          <button>
-                            <EditIcon />
-                          </button>
+                          <IconButton>
+                            <Image
+                              src="/assets/editIcon.svg"
+                              width={18}
+                              height={18}
+                              alt="Delete Icon"
+                            />
+                          </IconButton>
                         </Link>
-                        <button onClick={() => deleteById(row.id)}>
-                          <DeleteIcon />
-                        </button>
+
+                        <IconButton onClick={() => deleteById(row.id)}>
+                          <Image
+                            src="/assets/deleteIcon.svg"
+                            width={18}
+                            height={18}
+                            alt="Delete Icon"
+                          />
+                        </IconButton>
                       </Stack>
                     </TableCell>
                     <TableCell component="th" scope="row">
@@ -136,9 +146,9 @@ const SubscriptionTable = () => {
               count={count}
               page={page}
               onChange={handleChange}
-              color="success"
               variant="outlined"
               shape="rounded"
+              color="primary"
             />
           </div>
         </div>

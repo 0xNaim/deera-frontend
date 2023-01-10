@@ -17,12 +17,12 @@ import {
   TableHead,
   TableRow,
   ThemeProvider,
-  Typography,
 } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
 import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
+import MealCalendar from '../../../components/Dashboard/Meals/MealCalendar/MealCalendar';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
 import styles from './orders.module.scss';
@@ -156,10 +156,8 @@ const Orders = () => {
         <Header title="Orders" />
 
         <Container>
+          <MealCalendar />
           <Box className={styles.content__wrapper}>
-            <Typography>Calender will coming soon</Typography>
-            <br />
-
             <Box className={styles.table__content__wrapper}>
               <Box className={styles.btn__group}>
                 <Box className={styles.group__one}>

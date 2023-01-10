@@ -8,6 +8,16 @@ import { Card, CardContent, Stack } from '@mui/material';
 import List from '@mui/material/List';
 
 // import scss
+import {
+  faClipboardCheck,
+  faClipboardList,
+  faFire,
+  faHomeUser,
+  faRightFromBracket,
+  faSliders,
+  faTicket,
+  faUserGroup,
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './Sidebar.module.scss';
 
 // import components
@@ -43,8 +53,8 @@ const Sidebar = () => {
       <CardContent className={styles._content}>
         {/* menu list start here */}
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
-          <SingleMenu image="/assets/home.svg" link="/dashboard" name="Main" />
-          <SingleMenu image="/assets/customers.svg" link="/dashboard/customers" name="Customers" />
+          <SingleMenu icon={faHomeUser} link="/dashboard" name="Main" />
+          <SingleMenu icon={faUserGroup} link="/dashboard/customers" name="Customers" />
           {/* <SingleMenu
             image="/assets/financial.svg"
             link="/dashboard/financial"
@@ -53,7 +63,7 @@ const Sidebar = () => {
           <DropDownMenu
             handleClick={handleRequestsClick}
             open={requests}
-            image="/assets/requests.svg"
+            icon={faClipboardList}
             name="Requests"
             menus={requestsData}
             pageLink="/dashboard/orders"
@@ -61,7 +71,7 @@ const Sidebar = () => {
           <DropDownMenu
             handleClick={handleSubscriptionsClick}
             open={subscriptions}
-            image="/assets/subscriptions.svg"
+            icon={faClipboardCheck}
             name="subscriptions"
             menus={subscriptionsData}
             pageLink="/dashboard/subscriptions"
@@ -69,7 +79,7 @@ const Sidebar = () => {
           <DropDownMenu
             handleClick={handleMealsClick}
             open={meals}
-            image="/assets/meals.svg"
+            icon={faFire}
             name="Meals"
             menus={mealsData}
             pageLink="/dashboard/meals"
@@ -82,7 +92,7 @@ const Sidebar = () => {
             menus={employeesData}
             pageLink="/dashboard/Employees"
           /> */}
-          <SingleMenu image="/assets/coupons.png" link="/dashboard/coupons" name="Coupons" />
+          <SingleMenu icon={faTicket} link="/dashboard/coupons" name="Coupons" />
 
           {/* <DropDownMenu
             handleClick={handleSettingsClick}
@@ -92,12 +102,12 @@ const Sidebar = () => {
             menus={settingsData}
           /> */}
 
-          <SingleMenu image="/assets/settings.svg" link="/dashboard/settings" name="Settings" />
+          <SingleMenu icon={faSliders} link="/dashboard/settings" name="Settings" />
         </List>
         {/* signout part */}
         <Stack className={styles._last_wrapper}>
           <List sx={{ width: '87%' }} component="nav" aria-labelledby="nested-list-subheader">
-            <SingleMenu image="/assets/signOut.svg" link="/signout" name="Sign out" />
+            <SingleMenu icon={faRightFromBracket} link="/signout" name="Sign out" />
           </List>
         </Stack>
       </CardContent>

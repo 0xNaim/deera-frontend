@@ -76,6 +76,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      width: 100%;
       @media screen and (max-width: 600px) {
         flex-direction: column;
       }
@@ -95,7 +96,7 @@
         text-align: center;
         color: #f3f0ff;
         @media screen and (max-width: 600px) {
-          width: 300px;
+          width: 100%;
         }
       }
       .cancellation_button {
@@ -113,13 +114,14 @@
         text-align: center;
         color: #f87171;
         @media screen and (max-width: 600px) {
-          width: 300px;
+          width: 100%;
         }
       }
     }
     .button_right_wrapper {
+      width: 100%;
       .next_button {
-        width: 120px;
+        // width: 120px;
         height: 48px;
         border: 1px solid #684cf9;
         font-family: 'IBM Plex Sans Arabic';
@@ -129,13 +131,14 @@
         line-height: 120%;
         text-align: center;
         color: #684cf9;
+        float: right;
 
         svg {
           font-size: 18px;
           font-weight: bold;
         }
-        @media screen and (max-width: 600px) {
-          width: 300px;
+        @media screen and (max-width: 768px) {
+          width: 100%;
           margin-top: 12px;
         }
       }

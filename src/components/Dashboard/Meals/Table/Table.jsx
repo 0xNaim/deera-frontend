@@ -98,12 +98,16 @@ const CustomTable = () => {
         <Stack
           direction={{ sm: 'row', xs: 'column' }}
           justifyContent="flex-end"
-          alignItems="center"
           spacing={1}
           className={styles._header_wrapper}
         >
           <Link href="/dashboard/meals/add-meals" style={{ textDecoration: 'none' }}>
-            <Button variant="contained" color="inherit" className={styles._header_meal_button}>
+            <Button
+              variant="contained"
+              color="inherit"
+              className={styles._header_meal_button}
+              fullWidth
+            >
               Add a Meal
             </Button>
           </Link>

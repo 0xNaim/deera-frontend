@@ -47,32 +47,36 @@ const FCTabs = () => {
           // aria-label="basic tabs example"
         >
           <Tab
+            disableRipple
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Protein
               </Typography>
             }
             {...a11yProps(0)}
           />
           <Tab
+            disableRipple
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Weight loss
               </Typography>
             }
             {...a11yProps(1)}
           />
           <Tab
+            disableRipple
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Lifestyle
               </Typography>
             }
             {...a11yProps(2)}
           />
           <Tab
+            disableRipple
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Weight gain
               </Typography>
             }
