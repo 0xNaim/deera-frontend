@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import FirstStep from './FirstStep/FirstStep';
 import styles from './Tabs.module.scss';
 
 const TabPanel = (props) => {
@@ -80,32 +81,16 @@ const FCTabs = () => {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consectetur voluptate eaque
-          vero corrupti adipisci voluptatibus placeat eligendi libero. Harum neque, praesentium
-          repellendus eos error est placeat id soluta ad.
-        </h1>
+        <FirstStep />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consectetur voluptate eaque
-          vero corrupti adipisci voluptatibus placeat eligendi libero. Harum neque, praesentium
-          repellendus eos error est placeat id soluta ad.
-        </h1>
+        <FirstStep />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consectetur voluptate eaque
-          vero corrupti adipisci voluptatibus placeat eligendi libero. Harum neque, praesentium
-          repellendus eos error est placeat id soluta ad.
-        </h1>
+        <FirstStep />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae consectetur voluptate eaque
-          vero corrupti adipisci voluptatibus placeat eligendi libero. Harum neque, praesentium
-          repellendus eos error est placeat id soluta ad.
-        </h1>
+        <FirstStep />
       </TabPanel>
     </Box>
   );
