@@ -55,11 +55,7 @@ const Sidebar = () => {
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
           <SingleMenu icon={faHomeUser} link="/dashboard" name="Main" />
           <SingleMenu icon={faUserGroup} link="/dashboard/customers" name="Customers" />
-          {/* <SingleMenu
-            image="/assets/financial.svg"
-            link="/dashboard/financial"
-            name="financial operations"
-          /> */}
+
           <DropDownMenu
             handleClick={handleRequestsClick}
             open={requests}
@@ -84,23 +80,8 @@ const Sidebar = () => {
             menus={mealsData}
             pageLink="/dashboard/meals"
           />
-          {/* <DropDownMenu
-            handleClick={handleEmployeesClick}
-            open={employees}
-            image="/assets/employees.svg"
-            name="Employees"
-            menus={employeesData}
-            pageLink="/dashboard/Employees"
-          /> */}
-          <SingleMenu icon={faTicket} link="/dashboard/coupons" name="Coupons" />
 
-          {/* <DropDownMenu
-            handleClick={handleSettingsClick}
-            open={settings}
-            image="/assets/settings.svg"
-            name="Settings"
-            menus={settingsData}
-          /> */}
+          <SingleMenu icon={faTicket} link="/dashboard/coupons" name="Coupons" />
 
           <SingleMenu icon={faSliders} link="/dashboard/settings" name="Settings" />
         </List>
