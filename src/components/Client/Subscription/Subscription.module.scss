@@ -7,7 +7,7 @@
     .headerWrapper {
       margin-bottom: 50px;
       .title {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 600;
         font-size: 28.6233px;
@@ -21,7 +21,7 @@
         }
       }
       .subTitle {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 400;
         font-size: 18.5209px;

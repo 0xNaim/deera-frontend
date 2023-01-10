@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -141,57 +142,165 @@ const AddMeal = () => {
                 </Typography>
                 <Grid container spacing={1}>
                   <Grid item md={6} sm={6} xs={12}>
-                    <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
+                    <FormControl
+                      variant="outlined"
+                      sx={{
+                        width: '100%',
+                        height: '48px',
+                        position: 'relative',
+                        '&::after': {
+                          position: 'absolute',
+                          content: '""',
+                          top: '0',
+                          right: '0',
+                          bottom: '0',
+                          background: '#F3F4F6',
+                          width: '59px',
+                          zIndex: 1,
+                        },
+                      }}
+                    >
                       <OutlinedInput
                         id="outlined-adornment-weight"
-                        endAdornment={<InputAdornment position="end">Fats</InputAdornment>}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <Typography
+                              variant="subtitle1"
+                              color="inherit"
+                              sx={{ fontSize: '14px', fontFamily: 'IBM Plex Sans Arabic' }}
+                            >
+                              Fats
+                            </Typography>
+                          </InputAdornment>
+                        }
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('fats', { required: true })}
                         placeholder="Total weight"
-                        sx={{ width: '100%', height: '48px' }}
+                        sx={{ width: '100%', height: '48px', zIndex: 9 }}
                       />
                     </FormControl>
                     {errors.fats && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
-                    <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
+                    <FormControl
+                      variant="outlined"
+                      sx={{
+                        width: '100%',
+                        height: '48px',
+                        position: 'relative',
+                        '&::after': {
+                          position: 'absolute',
+                          content: '""',
+                          top: '0',
+                          right: '0',
+                          bottom: '0',
+                          background: '#F3F4F6',
+                          width: '59px',
+                          zIndex: 1,
+                        },
+                      }}
+                    >
                       <OutlinedInput
                         id="outlined-adornment-weight"
-                        endAdornment={<InputAdornment position="end">Carp</InputAdornment>}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <Typography
+                              variant="subtitle1"
+                              color="inherit"
+                              sx={{ fontSize: '14px', fontFamily: 'IBM Plex Sans Arabic' }}
+                            >
+                              Carp
+                            </Typography>
+                          </InputAdornment>
+                        }
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('carp', { required: true })}
                         placeholder="Total weight"
-                        sx={{ width: '100%', height: '48px' }}
+                        sx={{ width: '100%', height: '48px', zIndex: 9 }}
                       />
                     </FormControl>
                     {errors.carp && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
-                    <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
+                    <FormControl
+                      variant="outlined"
+                      sx={{
+                        width: '100%',
+                        height: '48px',
+                        position: 'relative',
+                        '&::after': {
+                          position: 'absolute',
+                          content: '""',
+                          top: '0',
+                          right: '0',
+                          bottom: '0',
+                          background: '#F3F4F6',
+                          width: '70px',
+                          zIndex: 1,
+                        },
+                      }}
+                    >
                       <OutlinedInput
                         id="outlined-adornment-weight"
-                        endAdornment={<InputAdornment position="end">Protein</InputAdornment>}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <Typography
+                              variant="subtitle1"
+                              color="inherit"
+                              sx={{ fontSize: '14px', fontFamily: 'IBM Plex Sans Arabic' }}
+                            >
+                              Protein
+                            </Typography>
+                          </InputAdornment>
+                        }
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('protein', { required: true })}
                         placeholder="Total weight"
-                        sx={{ width: '100%', height: '48px' }}
+                        sx={{ width: '100%', height: '48px', zIndex: 9 }}
                       />
                     </FormControl>
                     {errors.fats && <p className={styles.error_title}>This field is required</p>}
                   </Grid>
                   <Grid item md={6} sm={6} xs={12}>
-                    <FormControl variant="outlined" sx={{ width: '100%', height: '48px' }}>
+                    <FormControl
+                      variant="outlined"
+                      sx={{
+                        width: '100%',
+                        height: '48px',
+                        position: 'relative',
+                        '&::after': {
+                          position: 'absolute',
+                          content: '""',
+                          top: '0',
+                          right: '0',
+                          bottom: '0',
+                          background: '#F3F4F6',
+                          width: '70px',
+                          zIndex: 1,
+                        },
+                      }}
+                    >
                       <OutlinedInput
                         id="outlined-adornment-weight"
-                        endAdornment={<InputAdornment position="end">Sugars</InputAdornment>}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <Typography
+                              variant="subtitle1"
+                              color="inherit"
+                              sx={{ fontSize: '14px', fontFamily: 'IBM Plex Sans Arabic' }}
+                            >
+                              Sugars
+                            </Typography>
+                          </InputAdornment>
+                        }
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('sugars', { required: true })}
                         placeholder="Total weight"
-                        sx={{ width: '100%', height: '48px' }}
+                        sx={{ width: '100%', height: '48px', zIndex: 9 }}
                       />
                     </FormControl>
                     {errors.fats && <p className={styles.error_title}>This field is required</p>}

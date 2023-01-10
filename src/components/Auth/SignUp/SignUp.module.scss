@@ -17,7 +17,7 @@
     }
 
     .title {
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 600;
       font-size: 23.0435px;
@@ -26,7 +26,7 @@
       color: #4b5563;
     }
     .subtitle {
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 400;
       font-size: 18px;
@@ -38,7 +38,7 @@
     .single__box {
       padding: 10px 0;
       .input__title {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 600;
         font-size: 18px;
@@ -54,7 +54,7 @@
         border: 0.75px solid #e5e7eb;
         border-radius: 8px;
         margin-top: 10px;
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -67,7 +67,7 @@
         }
       }
       .input_error {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -85,7 +85,7 @@
       background: #f2a515;
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 6px;
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 600;
       font-size: 22px;
@@ -94,7 +94,7 @@
       color: #ffffff;
     }
     .submit__title {
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;

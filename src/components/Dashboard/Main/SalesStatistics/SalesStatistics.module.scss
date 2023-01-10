@@ -2,7 +2,7 @@
   .header {
     margin-bottom: 20px;
     .header_title {
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 600;
       font-size: 27px;
@@ -31,7 +31,7 @@
         }
       }
       .left_total {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
@@ -39,7 +39,7 @@
         color: #6b7280;
       }
       .left_subTitle {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 600;
         font-size: 17px;
@@ -53,7 +53,7 @@
       display: flex;
       align-items: center;
       .right_title {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 500;
         font-size: 20px;

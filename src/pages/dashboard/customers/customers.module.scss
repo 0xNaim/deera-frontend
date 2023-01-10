@@ -31,7 +31,7 @@
         }
 
         button {
-          font-family: 'IBM Plex Sans Arabic';
+          font-family: 'IBM Plex Sans Arabic' !important ;
           font-weight: 600;
           font-size: 0.9rem;
           color: #f3f0ff !important;
@@ -41,7 +41,7 @@
       }
 
       button {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-weight: 600;
         font-size: 0.9rem;
         color: #4b5563;
@@ -66,7 +66,7 @@
 
       .search__btn {
         background: #e5e7eb;
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 600;
         font-size: 1rem;

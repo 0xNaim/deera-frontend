@@ -6,7 +6,7 @@
     margin-bottom: 30px;
 
     ._header_meal_button {
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-weight: 600;
       font-size: 0.9rem;
       text-transform: capitalize;
@@ -33,7 +33,7 @@
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 6px;
-      font-family: 'IBM Plex Sans Arabic';
+      font-family: 'IBM Plex Sans Arabic' !important ;
       font-style: normal;
       font-weight: 600;
       font-size: 14px;
@@ -55,7 +55,7 @@
   ._table_wrapper {
     ._table_header {
       ._table_h_title {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 600;
         font-size: 18px;
@@ -77,7 +77,7 @@
         }
       }
       ._table_b_title {
-        font-family: 'IBM Plex Sans Arabic';
+        font-family: 'IBM Plex Sans Arabic' !important ;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
