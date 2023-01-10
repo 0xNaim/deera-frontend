@@ -8,8 +8,6 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 // import MUI
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import {
@@ -17,6 +15,7 @@ import {
   Button,
   Container,
   Fade,
+  IconButton,
   Menu,
   MenuItem,
   Pagination,
@@ -228,12 +227,23 @@ const CustomTable = () => {
                         alignItems="center"
                         className={styles._button_wrapper}
                       >
-                        <button>
-                          <EditIcon />
-                        </button>
-                        <button onClick={() => deleteById(row.id)}>
-                          <DeleteIcon />
-                        </button>
+                        <IconButton>
+                          <Image
+                            src="/assets/editIcon.svg"
+                            width={18}
+                            height={18}
+                            alt="Edit Icon"
+                          />
+                        </IconButton>
+
+                        <IconButton onClick={() => deleteById(row.id)}>
+                          <Image
+                            src="/assets/deleteIcon.svg"
+                            width={18}
+                            height={18}
+                            alt="Edit Icon"
+                          />
+                        </IconButton>
                       </Stack>
                     </TableCell>
                     <TableCell component="th" scope="row">
