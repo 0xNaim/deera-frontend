@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable no-underscore-dangle */
 // import next js
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 // mui
@@ -20,9 +19,10 @@ import {
 
 import { useRouter } from 'next/router';
 // import scss
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../Sidebar.module.scss';
 
-const DropDownMenu = ({ handleClick, open, image, name, menus, pageLink }) => {
+const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
   const { pathname } = useRouter();
   return (
     <>
@@ -34,7 +34,12 @@ const DropDownMenu = ({ handleClick, open, image, name, menus, pageLink }) => {
         className={styles._single_nav}
       >
         <ListItemIcon className={styles._img_nav}>
-          <Image src={image} alt="logo" width={20} height={20} />
+          {/* <Image src={image} alt="logo" width={20} height={20} /> */}
+          <FontAwesomeIcon
+            icon={icon}
+            color={pathname === pageLink ? '#fff' : '#718096'}
+            style={{ fontSize: '18px', marginTop: '-3px' }}
+          />
         </ListItemIcon>
         <ListItemText
           primary={
