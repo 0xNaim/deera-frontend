@@ -7,9 +7,8 @@
 
     ._header_meal_button {
       font-family: 'IBM Plex Sans Arabic';
-      font-style: normal;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 0.9rem;
       text-transform: capitalize;
       line-height: 120%;
       text-align: center;
@@ -19,14 +18,15 @@
       border-radius: 6px;
       padding: 10px 10px;
 
-      @media screen and (max-width: 768px) {
-        font-size: 12px;
-      }
-      @media screen and (max-width: 600px) {
-        font-size: 16px;
-        width: 100%;
-        max-width: 300px;
-      }
+      // @media screen and (max-width: 768px) {
+      //   font-size: 12px;
+      // }
+
+      // @media screen and (max-width: 600px) {
+      //   font-size: 16px;
+      //   width: 100%;
+      //   max-width: 300px;
+      // }
     }
 
     ._header_meal_dropdown_button {

@@ -123,6 +123,7 @@ const AddMeal = () => {
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('fats', { required: true })}
+                        placeholder="Total weight"
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
@@ -136,6 +137,7 @@ const AddMeal = () => {
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('carp', { required: true })}
+                        placeholder="Total weight"
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
@@ -149,6 +151,7 @@ const AddMeal = () => {
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('protein', { required: true })}
+                        placeholder="Total weight"
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>
@@ -162,6 +165,7 @@ const AddMeal = () => {
                         aria-describedby="outlined-weight-helper-text"
                         inputProps={{ 'aria-label': 'weight' }}
                         {...register('sugars', { required: true })}
+                        placeholder="Total weight"
                         sx={{ width: '100%', height: '48px' }}
                       />
                     </FormControl>

@@ -157,9 +157,9 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
   marginLeft: 0,
   width: '100%',
-  [theme.breakpoints.down('md')]: {
-    marginLeft: theme.spacing(0),
-    // width: '10rem',
+  [theme.breakpoints.up('md')]: {
+    // marginLeft: theme.spacing(0),
+    width: '18rem',
   },
   border: '1px solid #9CA3AF',
 }));
@@ -197,26 +197,19 @@ const Coupons = () => {
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        {/* <DashboardHead heading="Coupons" /> */}
         <Header title="Coupons" />
 
         <Container>
           <Box className={styles.content__wrapper}>
             <Box className={styles.content__header}>
               <Box className={styles.add__coupon__wrapper}>
-                <Link className={styles.link} href="/dashboard/coupons/add-coupon">
-                  <Button
-                    variant="contained"
-                    sx={{ color: '#F3F0FF', fontSize: '16px', padding: '12px 12px' }}
-                  >
+                <Link className={styles.link} href="/dashboard/customers/add-customer">
+                  <Button variant="contained" disableRipple>
                     Add Coupon
                   </Button>
                 </Link>
 
-                <Button
-                  variant="outlined"
-                  sx={{ color: '#4B5563', fontSize: '14px', padding: '10px 12px' }}
-                >
+                <Button variant="outlined" disableRipple>
                   Sort by
                   <ImportExportIcon />
                 </Button>
@@ -233,7 +226,7 @@ const Coupons = () => {
                   />
                 </Search>
 
-                <Button className={styles.search__btn} variant="contained">
+                <Button className={styles.search__btn} variant="contained" disableRipple>
                   Search
                 </Button>
               </Box>

@@ -16,26 +16,42 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      width: 100%;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+      }
 
       .link {
         text-decoration: none;
         color: inherit;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        button {
+          font-family: 'IBM Plex Sans Arabic';
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: #f3f0ff !important;
+          border-radius: 8px;
+          padding: 0.5rem;
+        }
       }
 
       button {
-        // font-size: 0.8rem;
         font-family: 'IBM Plex Sans Arabic';
-        font-style: normal;
         font-weight: 600;
-        // font-size: 16px;
-        line-height: 120%;
-        /* or 19px */
+        font-size: 0.9rem;
+        color: #4b5563;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 0.5rem;
 
-        text-align: center;
-
-        /* Light-Indiago */
-
-        // color: #F3F0FF;
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
 
@@ -45,6 +61,7 @@
 
       @media only screen and (max-width: 768px) {
         width: 100%;
+        flex-direction: column;
       }
 
       .search__btn {
@@ -52,8 +69,7 @@
         font-family: 'IBM Plex Sans Arabic';
         font-style: normal;
         font-weight: 600;
-        font-size: 16px;
-        line-height: 120%;
+        font-size: 1rem;
         text-align: center;
         color: #6b7280;
       }

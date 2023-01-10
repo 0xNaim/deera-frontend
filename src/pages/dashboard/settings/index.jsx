@@ -6,13 +6,12 @@ import {
   Container,
   Divider,
   FormControl,
-  FormControlLabel,
   IconButton,
-  Switch,
   TextField,
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import FCSwitch from '../../../components/Common/FCSwitch';
 import Header from '../../../components/Dashboard/common/Header/Header';
 // import DashboardHead from '../../../components/Dashboard/head';
 import Layout from '../../../components/Dashboard/Layout/Layout';
@@ -93,19 +92,32 @@ const Settings = () => {
                     </Typography>
 
                     <Box className={styles.input__wrapper}>
-                      <TextField className={styles.input} placeholder="API Key Code" fullWidth />
-                      <Button className={styles.input__btn} variant="contained">
+                      <Box className={styles.activation__wrapper}>
+                        <TextField className={styles.input} placeholder="API Key Code" fullWidth />
+
+                        <Box className={styles.activation__input}>
+                          <FCSwitch />
+                          <Typography className={styles.activation__label}>Activation</Typography>
+                        </Box>
+                      </Box>
+
+                      <Button
+                        className={styles.input__btn}
+                        variant="contained"
+                        color="primary"
+                        disableRipple
+                      >
                         Keep
                       </Button>
                     </Box>
 
-                    <Box className={styles.switch__wrapper}>
+                    {/* <Box className={styles.switch__wrapper}>
                       <FormControlLabel
                         className={styles.switch__btn}
                         control={<Switch defaultChecked disabled />}
                         label="activation"
                       />
-                    </Box>
+                    </Box> */}
                   </FormControl>
 
                   <FormControl className={styles.form__input} fullWidth>
@@ -114,18 +126,23 @@ const Settings = () => {
                     </Typography>
 
                     <Box className={styles.input__wrapper}>
-                      <TextField className={styles.input} placeholder="API Key Code" fullWidth />
-                      <Button className={styles.input__btn} variant="contained">
+                      <Box className={styles.activation__wrapper}>
+                        <TextField className={styles.input} placeholder="API Key Code" fullWidth />
+
+                        <Box className={styles.activation__input}>
+                          <FCSwitch />
+                          <Typography className={styles.activation__label}>Activation</Typography>
+                        </Box>
+                      </Box>
+
+                      <Button
+                        className={styles.input__btn}
+                        variant="contained"
+                        color="primary"
+                        disableRipple
+                      >
                         Keep
                       </Button>
-                    </Box>
-
-                    <Box className={styles.switch__wrapper}>
-                      <FormControlLabel
-                        className={styles.switch__btn}
-                        control={<Switch defaultChecked />}
-                        label="activation"
-                      />
                     </Box>
                   </FormControl>
 
@@ -135,18 +152,23 @@ const Settings = () => {
                     </Typography>
 
                     <Box className={styles.input__wrapper}>
-                      <TextField className={styles.input} placeholder="API Key Code" fullWidth />
-                      <Button className={styles.input__btn} variant="contained">
+                      <Box className={styles.activation__wrapper}>
+                        <TextField className={styles.input} placeholder="API Key Code" fullWidth />
+
+                        <Box className={styles.activation__input}>
+                          <FCSwitch />
+                          <Typography className={styles.activation__label}>Activation</Typography>
+                        </Box>
+                      </Box>
+
+                      <Button
+                        className={styles.input__btn}
+                        variant="contained"
+                        color="primary"
+                        disableRipple
+                      >
                         Keep
                       </Button>
-                    </Box>
-
-                    <Box className={styles.switch__wrapper}>
-                      <FormControlLabel
-                        className={styles.switch__btn}
-                        control={<Switch defaultChecked />}
-                        label="activation"
-                      />
                     </Box>
                   </FormControl>
                 </Box>
@@ -168,11 +190,10 @@ const Settings = () => {
                   </Typography>
 
                   <Box className={styles.field__wrapper}>
-                    <FormControlLabel
-                      className={styles.switch__btn}
-                      control={<Switch defaultChecked />}
-                      label="activation"
-                    />
+                    <Box className={styles.switch__btn}>
+                      <FCSwitch />
+                      <Typography className={styles.btn__label}>Activation</Typography>
+                    </Box>
 
                     <Button className={styles.payment__btn} variant="outlined">
                       Preparation &nbsp;
@@ -193,11 +214,10 @@ const Settings = () => {
                   </Typography>
 
                   <Box className={styles.field__wrapper}>
-                    <FormControlLabel
-                      className={styles.switch__btn}
-                      control={<Switch defaultChecked disabled />}
-                      label="activation"
-                    />
+                    <Box className={styles.switch__btn}>
+                      <FCSwitch />
+                      <Typography className={styles.btn__label}>Activation</Typography>
+                    </Box>
 
                     <Button className={styles.payment__btn} variant="outlined">
                       Preparation &nbsp;

@@ -36,6 +36,7 @@ const Header = ({ title }) => {
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
+              disableRipple
             >
               <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
                 <Avatar sx={{ width: 40, height: 40 }}>
