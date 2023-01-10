@@ -201,7 +201,11 @@ const Orders = () => {
                 </Box>
               </Box>
 
-              <TableContainer component={Paper} className={styles.content__table}>
+              <TableContainer
+                component={Paper}
+                sx={{ boxShadow: 'none', border: '1px solid #E5E7EB' }}
+                className={styles.content__table}
+              >
                 <Table>
                   <TableHead>
                     <TableRow>
