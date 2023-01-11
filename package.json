@@ -34,19 +34,19 @@
     "sass": "^1.57.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
-    "eslint": "^8.30.0",
+    "@commitlint/cli": "^17.4.1",
+    "@commitlint/config-conventional": "^17.4.0",
+    "eslint": "^8.31.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^13.1.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-jsx-a11y": "^6.7.0",
+    "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.2"
   }
 }
