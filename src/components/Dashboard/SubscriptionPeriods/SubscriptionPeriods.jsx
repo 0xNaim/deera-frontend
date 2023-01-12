@@ -52,7 +52,7 @@ const SubscriptionPeriods = () => {
       {success && <FCSuccess />}
       <Container>
         <div className={styles.header_btn}>
-          <Link href="/dashboard/subscriptions/new period" style={{ textDecoration: 'none' }}>
+          <Link href="/dashboard/subscriptions/new-period" style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="inherit" className={styles.new_button}>
               Add a new period
             </Button>
