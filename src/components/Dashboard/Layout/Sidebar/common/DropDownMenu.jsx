@@ -24,47 +24,52 @@ import styles from '../Sidebar.module.scss';
 
 const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
   const { pathname } = useRouter();
+  console.log(pathname, pageLink);
   return (
     <>
       <ListItemButton
         sx={{
-          background: pathname === pageLink ? '#684cf9' : 'transparent',
+          // background: pathname === pageLink ? '#684cf9' : 'transparent',
+          background: open ? '#684cf9' : 'transparent',
           borderRadius: '12px',
         }}
         className={styles._single_nav}
+        onClick={handleClick}
       >
         <ListItemIcon className={styles._img_nav}>
           {/* <Image src={image} alt="logo" width={20} height={20} /> */}
           <FontAwesomeIcon
             icon={icon}
-            color={pathname === pageLink ? '#fff' : '#718096'}
+            // color={pathname === pageLink ? '#fff' : '#718096'}
+            color={open ? '#fff' : '#718096'}
             style={{ fontSize: '18px', marginTop: '-3px' }}
           />
         </ListItemIcon>
         <ListItemText
           primary={
-            <Link href={pageLink} style={{ textDecoration: 'none' }}>
-              <Typography
-                variant="h6"
-                color="inherit"
-                className={styles._single_title}
-                sx={{
-                  color: pathname === pageLink ? '#fff' : '#718096',
-                }}
-              >
-                {name}
-              </Typography>
-            </Link>
+            // <Link href={pageLink} style={{ textDecoration: 'none' }}>
+            <Typography
+              variant="h6"
+              color="inherit"
+              className={styles._single_title}
+              sx={{
+                color: open ? '#fff' : '#718096',
+                // color: pathname === pageLink ? '#fff' : '#718096',
+              }}
+            >
+              {name}
+            </Typography>
+            // </Link>
           }
         />
 
         {open ? (
           <IconButton onClick={handleClick} sx={{ padding: '0' }}>
-            <ExpandLess />
+            <ExpandLess sx={{ color: open ? '#fff' : '#718096' }} />
           </IconButton>
         ) : (
           <IconButton onClick={handleClick} sx={{ padding: '0' }}>
-            <ExpandMore />
+            <ExpandMore sx={{ color: open ? '#fff' : '#718096' }} />
           </IconButton>
         )}
       </ListItemButton>
@@ -76,7 +81,16 @@ const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
               <ListItemText
                 primary={
                   <Link href={el.link} style={{ textDecoration: 'none' }}>
-                    <Typography variant="h6" color="inherit" className={styles._single_title}>
+                    <Typography
+                      variant="h6"
+                      color="inherit"
+                      className={styles._single_title}
+                      sx={{
+                        // color: open ? '#fff' : '#718096',
+                        color: pathname === el.link ? '#684CF9' : '#718096',
+                        // color: pathname === el.link ? 'red' : 'yellow',
+                      }}
+                    >
                       {el.name}
                     </Typography>
                   </Link>
