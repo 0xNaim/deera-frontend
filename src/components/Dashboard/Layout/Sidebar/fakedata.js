@@ -1,17 +1,17 @@
 export const mealsData = [
   {
     id: 1,
-    name: 'Meal schedule',
-    link: '/dashboard/meals/meal-schedule',
+    name: 'Meal',
+    link: '/dashboard/meals',
   },
   {
     id: 2,
-    name: 'Meal classification table',
+    name: 'Meals Categories',
     link: '/dashboard/meals/meal-classification-table',
   },
   {
     id: 3,
-    name: 'Daily meal calendar',
+    name: 'Meal Calendar',
     link: '/dashboard/meals/daily-meal-calendar',
   },
 ];
@@ -22,28 +22,23 @@ export const requestsData = [
     name: 'Order Table',
     link: '/dashboard/orders',
   },
-  {
-    id: 2,
-    name: 'Order Stars',
-    link: '/order-star',
-  },
-  {
-    id: 3,
-    name: 'Assign driver to requests',
-    link: '/driver-request',
-  },
 ];
 
 export const subscriptionsData = [
   {
     id: 1,
+    name: 'Subscription',
+    link: '/dashboard/subscriptions',
+  },
+  {
+    id: 1,
     name: 'Subscription schedule',
-    link: '/dashboard/subscription-schedule',
+    link: '/dashboard/subscriptions/new-subscription',
   },
   {
     id: 2,
     name: 'Subscription period schedule',
-    link: '//dashboard/subscription-period-schedule',
+    link: '/dashboard/subscriptions/subscription-periods',
   },
 ];
 
