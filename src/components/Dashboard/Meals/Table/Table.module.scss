@@ -17,16 +17,6 @@
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 6px;
       padding: 10px 10px;
-
-      // @media screen and (max-width: 768px) {
-      //   font-size: 12px;
-      // }
-
-      // @media screen and (max-width: 600px) {
-      //   font-size: 16px;
-      //   width: 100%;
-      //   max-width: 300px;
-      // }
     }
 
     ._header_meal_dropdown_button {
@@ -48,6 +38,25 @@
         width: 100%;
         min-width: 300px;
         max-width: 100%;
+      }
+    }
+    .search__coupon__wrapper {
+      display: flex;
+      gap: 0.5rem;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .search__btn {
+        background: #e5e7eb;
+        font-family: 'IBM Plex Sans Arabic' !important ;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        color: #6b7280;
       }
     }
   }

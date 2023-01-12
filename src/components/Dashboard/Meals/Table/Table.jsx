@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 
 // import MUI
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchIcon from '@mui/icons-material/Search';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import {
   Box,
@@ -16,6 +17,7 @@ import {
   Container,
   Fade,
   IconButton,
+  InputBase,
   Menu,
   MenuItem,
   Pagination,
@@ -28,6 +30,7 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
 
 // import components
 import Link from 'next/link';
@@ -39,6 +42,42 @@ import mealsTableData from '../fakedata';
 
 // import styles
 import styles from './Table.module.scss';
+
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('md')]: {
+    // marginLeft: theme.spacing(0),
+    width: '18rem',
+  },
+  border: '1px solid #9CA3AF',
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  right: 0,
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1),
+    // vertical padding + font size from searchIcon
+    paddingRight: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+  },
+}));
 
 function paginator(items, current_page, per_page_items) {
   const page = current_page || 1;
@@ -162,6 +201,21 @@ const CustomTable = () => {
               <MenuItem onClick={handleClose}>Logout</MenuItem>
             </Menu>
           </div>
+          <Box className={styles.search__coupon__wrapper}>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon sx={{ color: '#6B7280' }} />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search by meals name"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+
+            <Button className={styles.search__btn} variant="contained" disableRipple>
+              Search
+            </Button>
+          </Box>
         </Stack>
         <Box>
           {/* <TableContainer component={Paper}> */}
