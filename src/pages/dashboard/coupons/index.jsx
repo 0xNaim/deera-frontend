@@ -221,7 +221,7 @@ const Coupons = () => {
                     <SearchIcon sx={{ color: '#6B7280' }} />
                   </SearchIconWrapper>
                   <StyledInputBase
-                    placeholder="Search by customer name"
+                    placeholder="Search by coupon name"
                     inputProps={{ 'aria-label': 'search' }}
                   />
                 </Search>
