@@ -18,6 +18,7 @@ import {
   faTicket,
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 import styles from './Sidebar.module.scss';
 
 // import components
@@ -31,6 +32,7 @@ const Sidebar = () => {
   const [requests, setRequests] = React.useState(false);
   const [subscriptions, setSubscriptions] = React.useState(false);
   const [meals, setMeals] = React.useState(false);
+  const { t } = useTranslation();
 
   const handleRequestsClick = () => {
     setRequests(!requests);
@@ -44,6 +46,8 @@ const Sidebar = () => {
     setMeals(!meals);
   };
 
+  // const main = t('dSidebar:main');
+
   return (
     <Card className={styles._wrapper}>
       {/* logo wrapper start */}
@@ -53,14 +57,18 @@ const Sidebar = () => {
       <CardContent className={styles._content}>
         {/* menu list start here */}
         <List sx={{ width: '100%' }} component="nav" aria-labelledby="nested-list-subheader">
-          <SingleMenu icon={faHomeUser} link="/dashboard" name="Main" />
-          <SingleMenu icon={faUserGroup} link="/dashboard/customers" name="Customers" />
+          <SingleMenu icon={faHomeUser} link="/dashboard" name={t('dSidebar:main')} />
+          <SingleMenu
+            icon={faUserGroup}
+            link="/dashboard/customers"
+            name={t('dSidebar:customer')}
+          />
 
           <DropDownMenu
             handleClick={handleRequestsClick}
             open={requests}
             icon={faClipboardList}
-            name="Requests"
+            name={t('dSidebar:requests')}
             menus={requestsData}
             pageLink="/dashboard/orders"
           />
@@ -68,7 +76,7 @@ const Sidebar = () => {
             handleClick={handleSubscriptionsClick}
             open={subscriptions}
             icon={faClipboardCheck}
-            name="subscriptions"
+            name={t('dSidebar:subscriptions')}
             menus={subscriptionsData}
             pageLink="/dashboard/subscriptions"
           />
@@ -76,19 +84,19 @@ const Sidebar = () => {
             handleClick={handleMealsClick}
             open={meals}
             icon={faFire}
-            name="Meals"
+            name={t('dSidebar:meals')}
             menus={mealsData}
             pageLink="/dashboard/meals"
           />
 
-          <SingleMenu icon={faTicket} link="/dashboard/coupons" name="Coupons" />
+          <SingleMenu icon={faTicket} link="/dashboard/coupons" name={t('dSidebar:coupons')} />
 
-          <SingleMenu icon={faSliders} link="/dashboard/settings" name="Settings" />
+          <SingleMenu icon={faSliders} link="/dashboard/settings" name={t('dSidebar:settings')} />
         </List>
         {/* signout part */}
         <Stack className={styles._last_wrapper}>
           <List sx={{ width: '87%' }} component="nav" aria-labelledby="nested-list-subheader">
-            <SingleMenu icon={faRightFromBracket} link="/signout" name="Sign out" />
+            <SingleMenu icon={faRightFromBracket} link="/signout" name={t('dSidebar:sign_out')} />
           </List>
         </Stack>
       </CardContent>

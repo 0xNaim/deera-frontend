@@ -1,7 +1,17 @@
-import Header from '../../../../components/Dashboard/common/Header/Header';
+/* eslint-disable object-curly-newline */
+import dynamic from 'next/dynamic';
+import { useTranslation } from 'react-i18next';
+// import Header from '../../../../components/Dashboard/common/Header/Header';
 import EditMealClassification from '../../../../components/Dashboard/EditMealClassification/EditMealClassification';
 import { categoryData } from '../../../../components/Dashboard/fakedata';
-import Layout from '../../../../components/Dashboard/Layout/Layout';
+// import Layout from '../../../../components/Dashboard/Layout/Layout';
+
+const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
+const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+  ssr: false,
+});
 
 export async function getStaticProps(ctx) {
   const { slug } = ctx.params;
@@ -19,13 +29,15 @@ export async function getStaticPaths() {
   };
 }
 
-const ProjectDetails = ({ data }) => (
-  <Layout>
-    {/* <Meals /> */}
-    <Header title="Edit meal classification table" />
-    {/* <MealClassificationTable /> */}
-    <EditMealClassification data={data} />
-  </Layout>
-);
+const ProjectDetails = ({ data }) => {
+  const { t } = useTranslation();
+  return (
+    <Layout>
+      {/* <Meals /> */}
+      <Header title={t('header:edit_meal_classification_table')} />
+      <EditMealClassification data={data} />
+    </Layout>
+  );
+};
 
 export default ProjectDetails;

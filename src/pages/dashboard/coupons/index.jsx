@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import SearchIcon from '@mui/icons-material/Search';
 import {
@@ -17,15 +18,22 @@ import {
   ThemeProvider,
 } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import FCSwitch from '../../../components/Common/FCSwitch';
-import Header from '../../../components/Dashboard/common/Header/Header';
+// import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
 import styles from './coupons.module.scss';
+
+const Header = dynamic(() => import('../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
 
 const couponsData = [
   {
@@ -194,10 +202,11 @@ const Coupons = () => {
 
   const filteredData = paginate(couponsData, currentPage, sizePerPage);
 
+  const { t } = useTranslation();
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <Header title="Coupons" />
+        <Header title={t('header:coupons')} />
 
         <Container>
           <Box className={styles.content__wrapper}>
@@ -311,5 +320,14 @@ const Coupons = () => {
     </ThemeProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Coupons;

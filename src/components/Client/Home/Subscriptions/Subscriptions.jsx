@@ -1,6 +1,7 @@
 import { Container, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
@@ -27,6 +28,8 @@ const Subscriptions = () => {
       items: 1.3,
     },
   };
+
+  const { t } = useTranslation();
   return (
     <div className={styles.subWrapper}>
       <Container>
@@ -37,20 +40,19 @@ const Subscriptions = () => {
           className={styles.headerWrapper}
         >
           <Typography variant="h6" color="inherit" className={styles.headerTitle}>
-            Our subscriptions
+            {t('home:subscriptions_title')}
           </Typography>
           <div className={styles.headerView}>
             <Link href="/">
               <Typography variant="subtitle2" color="inherit">
-                View all
+                {t('home:view_all')}
               </Typography>
             </Link>
           </div>
         </Stack>
         <div className={styles.bodyText}>
           <Typography variant="subtitle1" color="inherit">
-            A wide range of healthy meal plans to help you reach your goals at different intervals
-            to suit your lifestyle
+            {t('home:subscriptions_subTitle')}
           </Typography>
         </div>
 

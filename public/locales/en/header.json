@@ -1,0 +1,18 @@
+{
+    "main": "Main",
+    "meals": "Meals",
+    "coupons": "Coupons",
+    "add_coupons": "Add Coupons",
+    "customers" : "Customers",
+    "add_customers": "Add Customers",
+    "add_meals": "Add Meals",
+    "daily_meals_calendar": "Daily Meals Calendar",
+    "edit_meal_classification_table": "Edit Meals Classification table",
+    "meal_classification_table": "Meal Classification Table",
+    "meal_new_category": "Meal New Category",
+    "orders": "Orders",
+    "settings": "Settings",
+    "type_of_subscription" : "Type of Subscription",
+    "add_a_new_subscription" : "Add a New Subscription",
+    "add_a_new_period" : "Add a New Period"
+}

@@ -20,10 +20,12 @@ import {
 import { useRouter } from 'next/router';
 // import scss
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 import styles from '../Sidebar.module.scss';
 
 const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
   const { pathname } = useRouter();
+  const { t } = useTranslation();
   console.log(pathname, pageLink);
   return (
     <>
@@ -91,7 +93,8 @@ const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
                         // color: pathname === el.link ? 'red' : 'yellow',
                       }}
                     >
-                      {el.name}
+                      {/* {el.name} */}
+                      {t(`dSidebar:${el?.slug}`)}
                     </Typography>
                   </Link>
                 }

@@ -1,0 +1,18 @@
+{
+    "main": "الأساسية",
+    "meals": "وجبات",
+    "coupons": "كوبونات",
+    "add_coupons": "أضف القسائم",
+    "customers" : "عملاء",
+    "add_customers": "أضف العملاء",
+    "add_meals": "أضف وجبات",
+    "daily_meals_calendar": "تقويم الوجبات اليومية",
+    "edit_meal_classification_table": "تحرير جدول تصنيف الوجبات",
+    "meal_classification_table": "جدول تصنيف الوجبات",
+    "meal_new_category": "وجبة فئة جديدة",
+    "orders": "أوامر",
+    "settings": "إعدادات",
+    "type_of_subscription" : "نوع الاشتراك",
+    "add_a_new_subscription" : "إضافة اشتراك جديد",
+    "add_a_new_period" : "أضف فترة جديدة"
+}

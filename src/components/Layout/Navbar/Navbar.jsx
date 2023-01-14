@@ -9,6 +9,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import Language from './Language';
 import styles from './Navbar.module.scss';
 
@@ -27,6 +28,7 @@ function ElevationScroll(props) {
 
 const Navbar = (props) => {
   const [open, setOpen] = React.useState(false);
+  const { t } = useTranslation();
 
   const handleClick = () => {
     setOpen(!open);
@@ -56,28 +58,28 @@ const Navbar = (props) => {
                   <Box className={styles.singleMenu}>
                     <Link href="/">
                       <Typography variant="subtitle1" color="inherit">
-                        Main
+                        {t('navbar:main')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/subscriptions">
                       <Typography variant="subtitle1" color="inherit">
-                        Subscription
+                        {t('navbar:subscriptions')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/meals">
                       <Typography variant="subtitle1" color="inherit">
-                        Meals
+                        {t('navbar:meals')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/help-center">
                       <Typography variant="subtitle1" color="inherit">
-                        Help Center
+                        {t('navbar:help_center')}
                       </Typography>
                     </Link>
                   </Box>
@@ -87,7 +89,7 @@ const Navbar = (props) => {
                   <Box className={styles.singleMenu}>
                     <Link href="/dashboard">
                       <Button variant="contained" color="inherit">
-                        Control Panel
+                        {t('navbar:contact_center')}
                       </Button>
                     </Link>
                   </Box>
@@ -102,28 +104,28 @@ const Navbar = (props) => {
                   <Box className={styles.singleMenu}>
                     <Link href="/">
                       <Typography variant="subtitle1" color="inherit">
-                        Main
+                        {t('navbar:main')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/subscriptions">
                       <Typography variant="subtitle1" color="inherit">
-                        Subscription
+                        {t('navbar:subscriptions')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/meals">
                       <Typography variant="subtitle1" color="inherit">
-                        Meals
+                        {t('navbar:meals')}
                       </Typography>
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
                     <Link href="/help-center">
                       <Typography variant="subtitle1" color="inherit">
-                        Help Center
+                        {t('navbar:help_center')}
                       </Typography>
                     </Link>
                   </Box>
@@ -133,7 +135,7 @@ const Navbar = (props) => {
                   <Box className={styles.singleMenu}>
                     <Link href="/dashboard">
                       <Button variant="contained" color="inherit">
-                        Control Panel
+                        {t('navbar:contact_center')}
                       </Button>
                     </Link>
                   </Box>

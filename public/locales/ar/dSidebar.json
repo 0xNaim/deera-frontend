@@ -1,0 +1,21 @@
+{
+    "meal": "وجبة",
+    "meals_categories": "فئات الوجبات",
+    "meal_calender" : "تقويم الوجبة",
+    "order_table": "ترتيب الجدول",
+    "subscription" : "الاشتراك",
+    "subscription_schedule": "جدول الاشتراك",
+    "subscription_period_schedule": "جدول فترة الاشتراك",
+    "profile": "حساب تعريفي",
+    "meal_schedule": "جدول الوجبات",
+    "meal_classification_table": "جدول تصنيف الوجبات",
+    "daily_meal_calender": "تقويم الوجبات اليومية",
+    "main": "الأساسية",
+    "customer": "عميل",
+    "coupons": "كوبونات",
+    "settings": "إعدادات",
+    "sign_out": "خروج",
+    "requests": "الطلبات",
+    "subscriptions": "الاشتراكات",
+    "meals": "وجبات"
+}

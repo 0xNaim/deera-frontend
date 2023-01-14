@@ -1,6 +1,7 @@
 import { Container, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
@@ -27,6 +28,7 @@ const DiscoverMeals = () => {
       items: 1.3,
     },
   };
+  const { t } = useTranslation();
   return (
     <div className={styles.subWrapper}>
       <Container>
@@ -37,19 +39,19 @@ const DiscoverMeals = () => {
           className={styles.headerWrapper}
         >
           <Typography variant="h6" color="inherit" className={styles.headerTitle}>
-            Discover our meals
+            {t('home:meals_title')}
           </Typography>
           <div className={styles.headerView}>
             <Link href="/">
               <Typography variant="subtitle2" color="inherit">
-                View all
+                {t('home:view_all')}
               </Typography>
             </Link>
           </div>
         </Stack>
         <div className={styles.bodyText}>
           <Typography variant="subtitle1" color="inherit">
-            Our list is always evolving and improving. Check out some of our current favourites!
+            {t('home:meals_subTitle')}
           </Typography>
         </div>
 

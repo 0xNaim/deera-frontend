@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import PrintIcon from '@mui/icons-material/Print';
 import {
@@ -18,14 +19,22 @@ import {
   TableRow,
   ThemeProvider,
 } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
-import Header from '../../../components/Dashboard/common/Header/Header';
-import Layout from '../../../components/Dashboard/Layout/Layout';
+import { useTranslation } from 'react-i18next';
 import MealCalendar from '../../../components/Dashboard/Meals/MealCalendar/MealCalendar';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
 import styles from './orders.module.scss';
+
+const Header = dynamic(() => import('../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
+const Layout = dynamic(() => import('../../../components/Dashboard/Layout/Layout'), {
+  ssr: false,
+});
 
 const ordersData = [
   {
@@ -139,6 +148,7 @@ const ordersData = [
 ];
 
 const Orders = () => {
+  const { t } = useTranslation();
   const [subType, setSubType] = useState('');
 
   // Pagination handling
@@ -153,7 +163,7 @@ const Orders = () => {
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <Header title="Orders" />
+        <Header title={t('header:orders')} />
 
         <Container>
           <MealCalendar />
@@ -294,5 +304,14 @@ const Orders = () => {
     </ThemeProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Orders;

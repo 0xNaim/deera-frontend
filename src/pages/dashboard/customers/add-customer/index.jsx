@@ -8,14 +8,21 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
-import Header from '../../../../components/Dashboard/common/Header/Header';
+import { useTranslation } from 'react-i18next';
+// import Header from '../../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../../theme/dashboard-theme';
 import styles from './add-customer.module.scss';
+
+const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
 
 const AddCustomer = () => {
   // Router
@@ -54,10 +61,12 @@ const AddCustomer = () => {
     if (!registrationDate) setRegistrationDateError(true);
   };
 
+  const { t } = useTranslation();
+
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <Header title="Add Customer" />
+        <Header title={t('header:add_customers')} />
 
         <Container>
           <Box component="form" className={styles.form}>
@@ -215,5 +224,14 @@ const AddCustomer = () => {
     </ThemeProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default AddCustomer;

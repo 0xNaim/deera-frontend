@@ -1,11 +1,16 @@
-import EditIcon from '@mui/icons-material/Edit';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
+/* eslint-disable comma-dangle */
+/* eslint-disable object-curly-newline */
 import LanguageIcon from '@mui/icons-material/Language';
+import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { alpha, styled } from '@mui/material/styles';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -35,13 +40,17 @@ const StyledMenu = styled((props) => (
         color: theme.palette.text.secondary,
         marginRight: theme.spacing(1.5),
       },
-      '&:active': { backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity) },
+      '&:active': {
+        backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+      },
     },
   },
 }));
 
 const Language = () => {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const router = useRouter();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -49,6 +58,23 @@ const Language = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const [language, setLanguage] = React.useState('en');
+
+  const handleChange = (event) => {
+    Cookies.setLanguage(event);
+    setLanguage(event);
+
+    router.replace({ pathname: router.asPath }, { pathname: router.asPath }, { locale: event });
+  };
+
+  React.useEffect(() => {
+    const storedLocale = Cookies.getLanguage();
+    if (storedLocale) {
+      setLanguage(storedLocale);
+    }
+
+    console.log(storedLocale, 'storedLocale');
+  }, [language]);
 
   return (
     <div>
@@ -75,7 +101,7 @@ const Language = () => {
           color: ' #374151',
         }}
       >
-        العربية
+        {t('navbar:language')}
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -84,13 +110,26 @@ const Language = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
+        <MenuItem onClick={() => handleChange('en')} disableRipple>
+          <Link href={router.asPath} locale="en" passHref style={{ textDecoration: 'none' }}>
+            <Typography
+              variant="h6"
+              sx={{ fontSize: '16px', fontFamily: 'IBM Plex Sans Arabic', color: '#000' }}
+            >
+              {t('navbar:english')}
+            </Typography>
+          </Link>
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
+
+        <MenuItem onClick={() => handleChange('ar')} disableRipple>
+          <Link href={router.asPath} locale="ar" passHref style={{ textDecoration: 'none' }}>
+            <Typography
+              variant="h6"
+              sx={{ fontSize: '16px', fontFamily: 'IBM Plex Sans Arabic', color: '#000' }}
+            >
+              {t('navbar:arabic')}
+            </Typography>
+          </Link>
         </MenuItem>
       </StyledMenu>
     </div>

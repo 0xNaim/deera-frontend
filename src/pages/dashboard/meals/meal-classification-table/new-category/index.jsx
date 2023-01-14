@@ -1,12 +1,35 @@
-import Header from '../../../../../components/Dashboard/common/Header/Header';
+/* eslint-disable object-curly-newline */
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
+import { useTranslation } from 'react-i18next';
+// import Header from '../../../../../components/Dashboard/common/Header/Header';
 import EditMealClassification from '../../../../../components/Dashboard/EditMealClassification/EditMealClassification';
-import Layout from '../../../../../components/Dashboard/Layout/Layout';
+// import Layout from '../../../../../components/Dashboard/Layout/Layout';
 
-const NewCategory = () => (
-  <Layout>
-    <Header title="Meal New Category" />
-    <EditMealClassification />
-  </Layout>
-);
+const Header = dynamic(() => import('../../../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
+const Layout = dynamic(() => import('../../../../../components/Dashboard/Layout/Layout'), {
+  ssr: false,
+});
+
+const NewCategory = () => {
+  const { t } = useTranslation();
+  return (
+    <Layout>
+      <Header title={t('header:meal_new_category')} />
+      <EditMealClassification />
+    </Layout>
+  );
+};
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default NewCategory;

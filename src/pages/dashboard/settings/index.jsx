@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import TuneIcon from '@mui/icons-material/Tune';
 import {
   Box,
@@ -9,25 +10,32 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import FCImageUploader from '../../../components/Common/FCImageUploader';
 import FCSwitch from '../../../components/Common/FCSwitch';
 import ImageDialog from '../../../components/Common/ImageDialog';
-import Header from '../../../components/Dashboard/common/Header/Header';
-// import DashboardHead from '../../../components/Dashboard/head';
-import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import styles from './settings.module.scss';
 
+const Header = dynamic(() => import('../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
+const Layout = dynamic(() => import('../../../components/Dashboard/Layout/Layout'), {
+  ssr: false,
+});
+
 const Settings = () => {
   const [files, setFiles] = useState('');
+  const { t } = useTranslation();
 
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        {/* <DashboardHead heading="Settings" /> */}
-        <Header title="Settings" />
+        <Header title={t('header:settings')} />
 
         <Container>
           <Box className={styles.content__wrapper} component="section">
@@ -267,5 +275,14 @@ const Settings = () => {
     </ThemeProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Settings;

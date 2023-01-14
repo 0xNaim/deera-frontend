@@ -1,0 +1,21 @@
+{
+    "meal": "Meal",
+    "meals_categories": "Meals Categories",
+    "meal_calender" : "Meal Calendar",
+    "order_table": "Order Table",
+    "subscription" : "Subscription",
+    "subscription_schedule": "Subscription schedule",
+    "subscription_period_schedule": "Subscription period schedule",
+    "profile": "Profile",
+    "meal_schedule": "Meal Schedule",
+    "meal_classification_table": "Meal Classification Table",
+    "daily_meal_calender": "Daily meal calendar",
+    "main": "Main",
+    "customer": "Customer",
+    "coupons": "Coupons",
+    "settings": "Settings",
+    "sign_out": "Sign Out",
+    "requests": "Requests",
+    "subscriptions": "Subscriptions",
+    "meals": "Meals"
+}

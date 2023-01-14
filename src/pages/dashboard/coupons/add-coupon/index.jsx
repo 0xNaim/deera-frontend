@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import {
   Box,
   Button,
@@ -7,14 +8,21 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
-import Header from '../../../../components/Dashboard/common/Header/Header';
+import { useTranslation } from 'react-i18next';
+// import Header from '../../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../../theme/dashboard-theme';
 import styles from './add-coupon.module.scss';
+
+const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+  ssr: false,
+});
 
 const AddCoupon = () => {
   // Router
@@ -54,11 +62,11 @@ const AddCoupon = () => {
     if (!startDate) setStartDateError(true);
     if (!endDate) setEndDateError(true);
   };
-
+  const { t } = useTranslation();
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
-        <Header title="Add Coupon" />
+        <Header title={t('header:add_coupons')} />
 
         <Container>
           <Box component="form" className={styles.content__wrapper}>
@@ -164,5 +172,14 @@ const AddCoupon = () => {
     </ThemeProvider>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default AddCoupon;

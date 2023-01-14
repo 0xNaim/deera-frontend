@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@mui/material';
+import { appWithTranslation } from 'next-i18next';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-horizontal-strip-datepicker/dist/ReactHorizontalDatePicker.css';
 import '../styles/globals.scss';
@@ -11,4 +12,4 @@ const MyApp = ({ Component, pageProps }) => (
   </ThemeProvider>
 );
 
-export default MyApp;
+export default appWithTranslation(MyApp);
