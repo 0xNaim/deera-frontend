@@ -3,6 +3,7 @@ import { Container } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import { subscriptionData } from '../../components/Client/fakedata/data';
+import SEO from '../../hooks/SEO';
 
 const Details = dynamic(
   () => import('../../components/Client/Home/Subscriptions/Details/Details'),
@@ -17,17 +18,9 @@ export async function getServerSideProps({ params, locale }) {
   return { props: { data, ...(await serverSideTranslations(locale, ['home', 'navbar'])) } };
 }
 
-// export async function getStaticPaths() {
-//   const paths = subscriptionData?.map((item) => ({ params: { slug: item?.slug } }));
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
-
 const ProjectDetails = ({ data }) => (
   <Layout>
+    <SEO title="Single Subscription || The best subscriptions for a healthy life" />
     <Container>
       <Details data={data} />
     </Container>

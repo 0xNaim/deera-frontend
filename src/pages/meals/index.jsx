@@ -1,6 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
+import SEO from '../../hooks/SEO';
 // import Meals from '../../components/Client/Meals/Meals';
 // import Layout from '../../components/Layout';
 
@@ -9,6 +10,7 @@ const Meals = dynamic(() => import('../../components/Client/Meals/Meals'));
 
 const MealsPage = () => (
   <Layout>
+    <SEO title="Meals page || The best subscriptions for a healthy life" />
     <Meals />
   </Layout>
 );
