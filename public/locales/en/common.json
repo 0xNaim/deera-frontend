@@ -1,3 +1,8 @@
 {
-    "title" : "Join us for the best and tailored meals every customer's need"
+    "meal_title" : "Meal list",
+    "meal_subtitle" : "discover our meals",
+    "subscriptions_title" : "List of subscriptions",
+    "subscriptions_subtitle" : "Browse and select existing subscriptions.",
+    "footer_copyright" : "Powered by Dera"
 }
+
