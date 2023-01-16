@@ -2,11 +2,11 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable react/button-has-type */
 import {
+  Box,
   Button,
   Container,
   IconButton,
   Pagination,
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -18,6 +18,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import * as Cookies from '../../../hooks/cookies';
 import paginator from '../../../utils/paginator';
 import FCSuccess from '../../Common/FCSuccess';
 import FCSwitch from '../../Common/FCSwitch';
@@ -47,6 +48,8 @@ const SubscriptionPeriods = () => {
       setSuccess(false);
     }, 3000);
   };
+
+  const currentLanguageCode = Cookies.getLanguage();
   return (
     <div className={styles.wrapper}>
       {success && <FCSuccess />}
@@ -101,11 +104,9 @@ const SubscriptionPeriods = () => {
                       </Typography>
                     </TableCell>
                     <TableCell component="th" scope="row">
-                      <Stack
-                        direction="row"
-                        spacing={1}
-                        alignItems="center"
+                      <Box
                         className={styles.button_wrapper}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
                       >
                         <IconButton>
                           <Image
@@ -124,7 +125,7 @@ const SubscriptionPeriods = () => {
                             alt="Delete Icon"
                           />
                         </IconButton>
-                      </Stack>
+                      </Box>
                     </TableCell>
                     <TableCell component="th" scope="row">
                       <FCSwitch value={row?.status} />

@@ -34,6 +34,7 @@ import { alpha, styled } from '@mui/material/styles';
 
 // import components
 import Link from 'next/link';
+import * as Cookies from '../../../../hooks/cookies';
 import FCSuccess from '../../../Common/FCSuccess';
 import FCSwitch from '../../../Common/FCSwitch';
 
@@ -128,6 +129,8 @@ const CustomTable = () => {
       setSuccess(false);
     }, 3000);
   };
+
+  const currentLanguageCode = Cookies.getLanguage();
 
   return (
     <div className={styles._wrapper}>
@@ -275,11 +278,9 @@ const CustomTable = () => {
                       </Typography>
                     </TableCell>
                     <TableCell component="th" scope="row">
-                      <Stack
-                        direction="row"
-                        spacing={1}
-                        alignItems="center"
+                      <Box
                         className={styles._button_wrapper}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
                       >
                         <IconButton>
                           <Image
@@ -298,7 +299,7 @@ const CustomTable = () => {
                             alt="Edit Icon"
                           />
                         </IconButton>
-                      </Stack>
+                      </Box>
                     </TableCell>
                     <TableCell component="th" scope="row">
                       <FCSwitch />
@@ -322,6 +323,8 @@ const CustomTable = () => {
           variant="outlined"
           shape="rounded"
         />
+        <br />
+        <br />
       </Container>
     </div>
   );
