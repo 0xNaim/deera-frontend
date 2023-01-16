@@ -7,10 +7,12 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import styles from './NewPeriod.module.scss';
 
 const NewPeriod = () => {
+  const { t } = useTranslation();
   const [value, setValue] = React.useState('friday_step');
 
   const handleChange = (event) => {
@@ -32,24 +34,24 @@ const NewPeriod = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                Duration name in Arabic
+                {t('dPeriod:Duration_name_in_Arabic')}
               </Typography>
               <input
                 {...register('arabic_name', { required: true })}
                 className={styles.input}
-                placeholder="Duration name in Arabic"
+                placeholder={t('dPeriod:Duration_name_in_Arabic')}
               />
               {/* errors will return when field validation fails  */}
               {errors.arabic_name && <p className={styles.error_title}>This field is required</p>}
             </Box>
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                The name of the period in English
+                {t('dPeriod:The_name_of_the_period_in_English')}
               </Typography>
               <input
                 {...register('english_name', { required: true })}
                 className={styles.input}
-                placeholder="The name of the period in English"
+                placeholder={t('dPeriod:The_name_of_the_period_in_English')}
               />
               {/* errors will return when field validation fails  */}
               {errors.english_name && <p className={styles.error_title}>This field is required</p>}
@@ -57,12 +59,12 @@ const NewPeriod = () => {
 
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                The number of days
+                {t('dPeriod:The_number_of_days')}
               </Typography>
               <input
                 {...register('days', { required: true })}
                 className={styles.input}
-                placeholder="The number of days"
+                placeholder={t('dPeriod:The_number_of_days')}
               />
               {/* errors will return when field validation fails  */}
               {errors.days && <p className={styles.error_title}>This field is required</p>}
@@ -70,12 +72,12 @@ const NewPeriod = () => {
 
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                Number of consultations
+                {t('dPeriod:Number_of_consultations')}
               </Typography>
               <input
                 {...register('consult_number', { required: true })}
                 className={styles.input}
-                placeholder="number of consultations"
+                placeholder={t('dPeriod:Number_of_consultations')}
               />
               {/* errors will return when field validation fails  */}
               {errors.consult_number && (
@@ -85,7 +87,7 @@ const NewPeriod = () => {
 
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                Days off
+                {t('dPeriod:Days_off')}
               </Typography>
               <FormControl>
                 {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
@@ -108,7 +110,7 @@ const NewPeriod = () => {
                     }
                     label={
                       <Typography variant="h6" color="inherit" className={styles.input_radio_title}>
-                        Friday stop
+                        {t('dPeriod:Friday_stop')}
                       </Typography>
                     }
                   />
@@ -124,7 +126,7 @@ const NewPeriod = () => {
                     }
                     label={
                       <Typography variant="h6" color="inherit" className={styles.input_radio_title}>
-                        The Weekend has stopped
+                        {t('dPeriod:The_Weekend_has_stopped')}
                       </Typography>
                     }
                   />
@@ -140,7 +142,7 @@ const NewPeriod = () => {
                     }
                     label={
                       <Typography variant="h6" color="inherit" className={styles.input_radio_title}>
-                        non stop
+                        {t('dPeriod:non_stop')}
                       </Typography>
                     }
                   />
@@ -158,10 +160,10 @@ const NewPeriod = () => {
                   color="primary"
                   className={styles.save_button}
                 >
-                  Save
+                  {t('dPeriod:Save')}
                 </Button>
                 <Button variant="outlined" color="primary" className={styles.cancellation_button}>
-                  Cancellation
+                  {t('dPeriod:Cancellation')}
                 </Button>
               </Box>
             </Stack>

@@ -26,7 +26,7 @@ const NewSubscriptionPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dNewSubscription'])),
       // Will be passed to the page component as props
     },
   };

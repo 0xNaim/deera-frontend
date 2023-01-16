@@ -6,7 +6,7 @@ import SEO from '../../hooks/SEO';
 // import Layout from '../../components/Layout';
 
 const Layout = dynamic(() => import('../../components/Layout'), { ssr: false });
-const Meals = dynamic(() => import('../../components/Client/Meals/Meals'));
+const Meals = dynamic(() => import('../../components/Client/Meals/Meals'), { ssr: false });
 
 const MealsPage = () => (
   <Layout>
@@ -18,7 +18,7 @@ const MealsPage = () => (
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'navbar'])),
+      ...(await serverSideTranslations(locale, ['common', 'navbar', 'dMain', 'dMeals'])),
       // Will be passed to the page component as props
     },
   };

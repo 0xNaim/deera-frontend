@@ -34,6 +34,7 @@ import { alpha, styled } from '@mui/material/styles';
 
 // import components
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import FCSuccess from '../../../Common/FCSuccess';
 import FCSwitch from '../../../Common/FCSwitch';
 
@@ -98,6 +99,7 @@ function paginator(items, current_page, per_page_items) {
 }
 
 const CustomTable = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState(mealsTableData || []);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [success, setSuccess] = useState(false);
@@ -146,7 +148,7 @@ const CustomTable = () => {
               className={styles._header_meal_button}
               fullWidth
             >
-              Add a Meal
+              {t('dMeals:Add_Meal')}
             </Button>
           </Link>
           <div>
@@ -158,7 +160,8 @@ const CustomTable = () => {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
             >
-              Sort by
+              {/* Sort by */}
+              {t('dMeals:Sort_by')}
               <SwapVertIcon />
             </Button>
             <Menu
@@ -183,7 +186,8 @@ const CustomTable = () => {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
             >
-              Choose the category
+              {/* Choose the category */}
+              {t('dMeals:Choose_the_category')}
               <KeyboardArrowDownIcon />
             </Button>
             <Menu
@@ -207,13 +211,13 @@ const CustomTable = () => {
                 <SearchIcon sx={{ color: '#6B7280' }} />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Search by meals name"
+                placeholder={t('dMeals:Search_by_meals_name')}
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
 
             <Button className={styles.search__btn} variant="contained" disableRipple>
-              Search
+              {t('dMeals:Search')}
             </Button>
           </Box>
         </Stack>
@@ -227,12 +231,16 @@ const CustomTable = () => {
             >
               <TableHead className={styles._table_header}>
                 <TableRow>
-                  <TableCell className={styles._table_h_title}>Meal Picture</TableCell>
-                  <TableCell className={styles._table_h_title}>Arabic Name</TableCell>
-                  <TableCell className={styles._table_h_title}>English Name</TableCell>
-                  <TableCell className={styles._table_h_title}>Category</TableCell>
-                  <TableCell className={styles._table_h_title}>Calories</TableCell>
-                  <TableCell className={styles._table_h_title}>Procedures</TableCell>
+                  <TableCell className={styles._table_h_title}>
+                    {t('dMeals:Meal_Picture')}
+                  </TableCell>
+                  <TableCell className={styles._table_h_title}>{t('dMeals:Arabic_Name')}</TableCell>
+                  <TableCell className={styles._table_h_title}>
+                    {t('dMeals:English_Name')}
+                  </TableCell>
+                  <TableCell className={styles._table_h_title}>{t('dMeals:Category')}</TableCell>
+                  <TableCell className={styles._table_h_title}>{t('dMeals:Calories')}</TableCell>
+                  <TableCell className={styles._table_h_title}>{t('dMeals:Procedures')}</TableCell>
                   <TableCell />
                 </TableRow>
               </TableHead>

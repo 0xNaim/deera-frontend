@@ -1,0 +1,11 @@
+{
+    "Customer_Name": "Customer Name",
+    "Registration_Date": "Registration Date",
+    "Phone_Number": "Phone Number",
+    "Customer_Address": "Customer Address",
+    "The_number_of_times_you_subscribe": "The number of times you subscribe",
+    "The_status_of_the_last_subscription": "The status of the last subscription",
+    "Subtype": "Subtype",
+    "Save": "Save",
+    "Cancellation": "Cancellation"
+}

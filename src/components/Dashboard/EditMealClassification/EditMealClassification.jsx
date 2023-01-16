@@ -2,9 +2,11 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import styles from './EditMealClassification.module.scss';
 
 const EditMealClassification = ({ data }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -23,24 +25,25 @@ const EditMealClassification = ({ data }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  Classification name in Arabic
+                  {/* Classification name in Arabic */}
+                  {t('dMeals:Classification_name_in_Arabic')}
                 </Typography>
                 <input
                   {...register('name_arabic', { required: true })}
                   className={styles.input}
-                  placeholder="The name of the meal"
+                  placeholder={t('dMeals:The_name_of_the_meal')}
                 />
                 {/* errors will return when field validation fails  */}
                 {errors.name_arabic && <p className={styles.error_title}>This field is required</p>}
               </Box>
               <Box sx={{ mt: 2 }}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  Category name in English
+                  {t('dMeals:Category_name_in_English')}
                 </Typography>
                 <input
                   {...register('name_english', { required: true })}
                   className={styles.input}
-                  placeholder="The name of the meal"
+                  placeholder={t('dMeals:The_name_of_the_meal')}
                 />
                 {/* errors will return when field validation fails  */}
                 {errors.name_english && (
@@ -56,12 +59,12 @@ const EditMealClassification = ({ data }) => {
                     color="primary"
                     className={styles.save_button}
                   >
-                    Save
+                    {t('dMeals:Save')}
                   </Button>
                 </Grid>
                 <Grid item md={6} sm={6} xs={12}>
                   <Button variant="outlined" color="primary" className={styles.cancellation_button}>
-                    Cancellation
+                    {t('dMeals:cancellation')}
                   </Button>
                 </Grid>
               </Grid>

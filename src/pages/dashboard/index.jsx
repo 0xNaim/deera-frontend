@@ -15,7 +15,7 @@ const MainPage = () => (
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dMain'])),
       // Will be passed to the page component as props
     },
   };

@@ -1,10 +1,8 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
-// import Header from '../../../../../components/Dashboard/common/Header/Header';
-import EditMealClassification from '../../../../../components/Dashboard/EditMealClassification/EditMealClassification';
-// import Layout from '../../../../../components/Dashboard/Layout/Layout';
 
 const Header = dynamic(() => import('../../../../../components/Dashboard/common/Header/Header'), {
   ssr: false,
@@ -12,6 +10,12 @@ const Header = dynamic(() => import('../../../../../components/Dashboard/common/
 const Layout = dynamic(() => import('../../../../../components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
+const EditMealClassification = dynamic(
+  () => import('../../../../../components/Dashboard/EditMealClassification/EditMealClassification'),
+  {
+    ssr: false,
+  }
+);
 
 const NewCategory = () => {
   const { t } = useTranslation();
@@ -26,7 +30,7 @@ const NewCategory = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dMeals'])),
       // Will be passed to the page component as props
     },
   };

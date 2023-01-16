@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import FirstStep from './FirstStep/FirstStep';
 import styles from './Tabs.module.scss';
 
@@ -31,6 +32,7 @@ function a11yProps(index) {
 }
 
 const FCTabs = () => {
+  const { t } = useTranslation();
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -50,7 +52,8 @@ const FCTabs = () => {
             disableRipple
             label={
               <Typography variant="h6" className={styles.title}>
-                Protein
+                {/* Protein */}
+                {t('dMeals:Protein')}
               </Typography>
             }
             {...a11yProps(0)}
@@ -59,7 +62,8 @@ const FCTabs = () => {
             disableRipple
             label={
               <Typography variant="h6" className={styles.title}>
-                Weight loss
+                {/* Weight loss */}
+                {t('dMeals:Weight_loss')}
               </Typography>
             }
             {...a11yProps(1)}
@@ -68,7 +72,8 @@ const FCTabs = () => {
             disableRipple
             label={
               <Typography variant="h6" className={styles.title}>
-                Lifestyle
+                {/* Lifestyle */}
+                {t('dMeals:Lifestyle')}
               </Typography>
             }
             {...a11yProps(2)}
@@ -77,7 +82,8 @@ const FCTabs = () => {
             disableRipple
             label={
               <Typography variant="h6" className={styles.title}>
-                Weight gain
+                {/* Weight gain */}
+                {t('dMeals:Weight_gain')}
               </Typography>
             }
             {...a11yProps(3)}

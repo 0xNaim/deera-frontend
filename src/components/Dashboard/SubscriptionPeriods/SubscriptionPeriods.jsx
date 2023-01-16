@@ -18,6 +18,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import paginator from '../../../utils/paginator';
 import FCSuccess from '../../Common/FCSuccess';
 import FCSwitch from '../../Common/FCSwitch';
@@ -25,6 +26,7 @@ import { subscriptionPeriodsData } from '../fakedata';
 import styles from './SubscriptionPeriods.module.scss';
 
 const SubscriptionPeriods = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState(subscriptionPeriodsData || []);
   const [success, setSuccess] = useState(false);
 
@@ -54,7 +56,7 @@ const SubscriptionPeriods = () => {
         <div className={styles.header_btn}>
           <Link href="/dashboard/subscriptions/new-period" style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="inherit" className={styles.new_button}>
-              Add a new period
+              {t('dSubscription:add_new_Period')}
             </Button>
           </Link>
         </div>
@@ -67,11 +69,19 @@ const SubscriptionPeriods = () => {
             >
               <TableHead className={styles.table_header}>
                 <TableRow>
-                  <TableCell className={styles.table_h_title}>Arabic name</TableCell>
-                  <TableCell className={styles.table_h_title}>English name</TableCell>
-                  <TableCell className={styles.table_h_title}>Days</TableCell>
-                  <TableCell className={styles.table_h_title}>Consult number</TableCell>
-                  <TableCell className={styles.table_h_title}>Procedures</TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:Arabic_name')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:English_name')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>{t('dSubscription:days')}</TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:consult_number')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:Procedures')}
+                  </TableCell>
 
                   <TableCell />
                 </TableRow>

@@ -9,6 +9,7 @@ import DialogContent from '@mui/material/DialogContent';
 import Image from 'next/image';
 import * as React from 'react';
 import { useDropzone } from 'react-dropzone';
+import * as Cookies from '../../hooks/cookies';
 import imageList from './data';
 
 const ImageDialog = ({ btnContent, files, setFiles }) => {
@@ -43,12 +44,12 @@ const ImageDialog = ({ btnContent, files, setFiles }) => {
         <DialogContent sx={{ minHeight: '500px' }}>
           <Box sx={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
             <Typography variant="h6" color="inherit">
-              Media Library
+              {Cookies.getLanguage() === 'ar' ? 'مكتبة الوسائط' : 'Media Library'}
             </Typography>
             <div {...getRootProps()}>
               <input {...getInputProps()} />
               <Button variant="outlined" color="primary" sx={{ ml: 2 }}>
-                Click Here to Upload
+                {Cookies.getLanguage() === 'ar' ? 'انقر هنا للتحميل' : 'Click Here to Upload'}
               </Button>
             </div>
           </Box>

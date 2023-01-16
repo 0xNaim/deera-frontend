@@ -3,6 +3,7 @@
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Box, Button, Grid, Stack } from '@mui/material';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import FCSuccess from '../../../Common/FCSuccess';
 import AddPackage from './AddPackage/AddPackage';
 import packageManagement from './data';
@@ -10,6 +11,7 @@ import SingleCard from './SingleCard/SingleCard';
 import styles from './StepTwo.module.scss';
 
 const StepTwo = ({ handleClick }) => {
+  const { t } = useTranslation();
   const [data, setData] = useState(packageManagement || []);
   const [success, setSuccess] = useState(false);
   const [newPackage, setNewPackage] = useState(false);
@@ -52,7 +54,8 @@ const StepTwo = ({ handleClick }) => {
               className={styles.add_package}
               onClick={() => setNewPackage(!newPackage)}
             >
-              Add Package
+              {/* Add Package */}
+              {t('dNewSubscription:Add_Package')}
             </Button>
           )}
 
@@ -82,7 +85,7 @@ const StepTwo = ({ handleClick }) => {
                 className={styles.next_button}
                 onClick={() => handleClick(0)}
               >
-                <ArrowBackIosNewIcon /> previous
+                <ArrowBackIosNewIcon /> {t('dNewSubscription:previous')}
               </Button>
             </Box>
           </Stack>

@@ -10,9 +10,11 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import styles from './AddPackage.module.scss';
 
 const AddPackage = ({ addNewPackage }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -31,16 +33,17 @@ const AddPackage = ({ addNewPackage }) => {
       <Grid container>
         <Grid item md={12} sm={12} xs={12}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Box className={styles.header_wrapper}>Add Package</Box>
+            <Box className={styles.header_wrapper}>{t('dNewSubscription:Add_Package')}</Box>
             <Grid container spacing={2} sx={{ mt: 2 }}>
               <Grid item md={6} sm={12} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  Calorie count
+                  {/* Calorie count */}
+                  {t('dNewSubscription:Calorie_count')}
                 </Typography>
                 <input
                   {...register('calorie_count', { required: true })}
                   className={styles.input}
-                  placeholder="Enter the number of calories"
+                  placeholder={t('dNewSubscription:Enter_the_number_of_calories')}
                 />
                 {/* errors will return when field validation fails  */}
                 {errors.calorie_count && (
@@ -49,12 +52,12 @@ const AddPackage = ({ addNewPackage }) => {
               </Grid>
               <Grid item md={6} sm={12} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  package name
+                  {t('dNewSubscription:package_name')}
                 </Typography>
                 <input
                   {...register('package_name', { required: true })}
                   className={styles.input}
-                  placeholder="Enter the package name"
+                  placeholder={t('dNewSubscription:Enter_the_package_name')}
                 />
                 {/* errors will return when field validation fails  */}
                 {errors.package_name && (
@@ -66,7 +69,7 @@ const AddPackage = ({ addNewPackage }) => {
             <Grid container spacing={2} sx={{ mt: 2 }}>
               <Grid item md={3} sm={6} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  Number of breakfasts
+                  {t('dNewSubscription:Number_of_breakfasts')}
                 </Typography>
                 <input
                   {...register('number_of_breakfasts', { required: true })}
@@ -80,7 +83,8 @@ const AddPackage = ({ addNewPackage }) => {
               </Grid>
               <Grid item md={3} sm={6} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  The number of lunches
+                  {/* The number of lunches */}
+                  {t('dNewSubscription:The_number_of_lunches')}
                 </Typography>
                 <input
                   {...register('number_of_lunches', { required: true })}
@@ -94,7 +98,8 @@ const AddPackage = ({ addNewPackage }) => {
               </Grid>
               <Grid item md={3} sm={6} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  number of authorities
+                  {/* number of authorities */}
+                  {t('dNewSubscription:number_of_authorities')}
                 </Typography>
                 <input
                   {...register('number_of_authorities', { required: true })}
@@ -108,7 +113,8 @@ const AddPackage = ({ addNewPackage }) => {
               </Grid>
               <Grid item md={3} sm={6} xs={12}>
                 <Typography variant="h6" color="inherit" className={styles.input_title}>
-                  The number of snacks
+                  {/* The number of snacks */}
+                  {t('dNewSubscription:The_number_of_snacks')}
                 </Typography>
                 <input
                   {...register('number_of_snacks', { required: true })}
@@ -124,7 +130,8 @@ const AddPackage = ({ addNewPackage }) => {
 
             <Box sx={{ mt: 2, mb: 2 }}>
               <Typography variant="h6" color="inherit" className={styles.input_title}>
-                Choose the duration and price for each package
+                {/* Choose the duration and price for each package */}
+                {t('dNewSubscription:Choose_the_duration_and_price_for_each_package')}
               </Typography>
             </Box>
 
@@ -133,7 +140,7 @@ const AddPackage = ({ addNewPackage }) => {
                 <FormControl>
                   <FormControlLabel
                     control={<Checkbox color="primary" />}
-                    label="week"
+                    label={t('dNewSubscription:week')}
                     {...register('week')}
                   />
                 </FormControl>
@@ -142,14 +149,14 @@ const AddPackage = ({ addNewPackage }) => {
                 <input
                   {...register('subscription_price')}
                   className={styles.input}
-                  placeholder="Subscription price"
+                  placeholder={t('dNewSubscription:Subscription_price')}
                 />
               </Grid>
               <Grid item md={5} sm={4} xs={4}>
                 <input
                   {...register('subscription_discount')}
                   className={styles.input}
-                  placeholder="Subscription price after discount"
+                  placeholder={t('dNewSubscription:Subscription_price_after_discount')}
                 />
               </Grid>
               {/* 2nd */}
@@ -157,7 +164,7 @@ const AddPackage = ({ addNewPackage }) => {
                 <FormControl>
                   <FormControlLabel
                     control={<Checkbox color="primary" />}
-                    label="Two weeks"
+                    label={t('dNewSubscription:Two_weeks')}
                     {...register('two_weeks')}
                   />
                 </FormControl>
@@ -166,14 +173,14 @@ const AddPackage = ({ addNewPackage }) => {
                 <input
                   {...register('subscription_price')}
                   className={styles.input}
-                  placeholder="Subscription price"
+                  placeholder={t('dNewSubscription:Subscription_price')}
                 />
               </Grid>
               <Grid item md={5} sm={4} xs={4}>
                 <input
                   {...register('subscription_discount')}
                   className={styles.input}
-                  placeholder="Subscription price after discount"
+                  placeholder={t('dNewSubscription:Subscription_price_after_discount')}
                 />
               </Grid>
               {/* 3rd part */}
@@ -181,7 +188,7 @@ const AddPackage = ({ addNewPackage }) => {
                 <FormControl>
                   <FormControlLabel
                     control={<Checkbox color="primary" />}
-                    label="Month"
+                    label={t('dNewSubscription:Month')}
                     {...register('month')}
                   />
                 </FormControl>
@@ -190,21 +197,21 @@ const AddPackage = ({ addNewPackage }) => {
                 <input
                   {...register('subscription_price')}
                   className={styles.input}
-                  placeholder="Subscription price"
+                  placeholder={t('dNewSubscription:Subscription_price')}
                 />
               </Grid>
               <Grid item md={5} sm={4} xs={4}>
                 <input
                   {...register('subscription_discount')}
                   className={styles.input}
-                  placeholder="Subscription price after discount"
+                  placeholder={t('dNewSubscription:Subscription_price_after_discount')}
                 />
               </Grid>
             </Grid>
 
             <Box className={styles.save_package_button}>
               <Button variant="contained" color="inherit" type="submit">
-                Save Package
+                {t('dNewSubscription:save_package')}
               </Button>
             </Box>
           </form>

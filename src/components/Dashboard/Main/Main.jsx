@@ -12,14 +12,19 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from '../common/Header/Header';
 import { bestCustomer, mostPopularMeals } from '../fakedata';
 import styles from './Main.module.scss';
 import MainDIalog from './MainDIalog/MainDIalog';
-import SalesStatistics from './SalesStatistics/SalesStatistics';
-import Services from './Services/Services';
+// import SalesStatistics from './SalesStatistics/SalesStatistics';
+
+const Services = dynamic(() => import('./Services/Services'));
+const SalesStatistics = dynamic(() => import('./SalesStatistics/SalesStatistics'));
+
+// import Services from './Services/Services';
 
 const Main = () => {
   const { t } = useTranslation();
@@ -34,7 +39,7 @@ const Main = () => {
         <Grid container spacing={1} className={styles.custom_details}>
           <Grid item md={6} sm={12} xs={12}>
             <Typography variant="h6" color="inherit" className={styles.custom_details_title}>
-              Best customer
+              {t('dMain:Best_customer')}
             </Typography>
 
             <Card className={styles.card}>
@@ -73,7 +78,7 @@ const Main = () => {
           </Grid>
           <Grid item md={6} sm={12} xs={12}>
             <Typography variant="h6" color="inherit" className={styles.custom_details_title}>
-              Most popular meals
+              {t('dMain:Most_popular_meals')}
             </Typography>
             <Card className={styles.card}>
               <List>

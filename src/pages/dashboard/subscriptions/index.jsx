@@ -1,16 +1,22 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable comma-dangle */
+/* eslint-disable function-paren-newline */
 /* eslint-disable object-curly-newline */
 import { ThemeProvider } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SubscriptionTable from '../../../components/Dashboard/Subscription/Subscription';
+// import SubscriptionTable from '../../../components/Dashboard/Subscription/Subscription';
 import dashboardTheme from '../../../theme/dashboard-theme';
 
 const Header = dynamic(() => import('../../../components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
 const Layout = dynamic(() => import('../../../components/Dashboard/Layout/Layout'), { ssr: false });
+const SubscriptionTable = dynamic(() =>
+  import('../../../components/Dashboard/Subscription/Subscription')
+);
 
 const SubscriptionPage = () => {
   const { t } = useTranslation();
@@ -27,8 +33,7 @@ const SubscriptionPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dSubscription'])),
     },
   };
 }

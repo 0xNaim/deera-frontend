@@ -17,6 +17,7 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import paginator from '../../../../utils/paginator';
 import FCSuccess from '../../../Common/FCSuccess';
 import FCSwitch from '../../../Common/FCSwitch';
@@ -24,6 +25,7 @@ import { categoryData } from '../../fakedata';
 import styles from './MealClassificationTablePage.module.scss';
 
 const MealClassificationTable = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState(categoryData || []);
   const [success, setSuccess] = useState(false);
 
@@ -56,7 +58,8 @@ const MealClassificationTable = () => {
             style={{ textDecoration: 'none' }}
           >
             <Button variant="contained" color="inherit" className={styles.new_button}>
-              Add a new category
+              {/* Add a new category */}
+              {t('dMeals:Add_a_new_category')}
             </Button>
           </Link>
         </div>
@@ -70,10 +73,12 @@ const MealClassificationTable = () => {
               <TableHead className={styles.table_header}>
                 <TableRow>
                   <TableCell className={styles.table_h_title}>
-                    Classification name in Arabic
+                    {t('dMeals:Classification_name_in_Arabic')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>Category name in English</TableCell>
-                  <TableCell className={styles.table_h_title}>Procedures</TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dMeals:Category_name_in_English')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>{t('dMeals:Procedures')}</TableCell>
 
                   <TableCell />
                 </TableRow>

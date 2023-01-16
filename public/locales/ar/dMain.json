@@ -1,0 +1,17 @@
+{
+    "title" : "",
+    "subtitle" : "",
+    "Order" : "ترتيب",
+    "Driver" : "السائقين",
+    "Client":"عميل",
+    "Employees": "الموظفين",
+    "Customers": "عملاء",
+    "Requests" : "الطلبات",
+    "Sales_Statistics": "إحصائيات المبيعات",
+    "total_sales": "إجمالي المبيعات",
+    "kuwait_dollar": "دينار كويتي",
+    "Total_orders_sold" : "إجمالي مبيعات الطلبات",
+    "Best_customer" : "أفضل زبون",
+    "Most_popular_meals": "أشهر الوجبات"
+    
+}

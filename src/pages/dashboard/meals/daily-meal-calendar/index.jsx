@@ -1,12 +1,12 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable object-curly-newline */
 import { Container, ThemeProvider } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// import Header from '../../../../components/Dashboard/common/Header/Header';
-// import Layout from '../../../../components/Dashboard/Layout/Layout';
-import MealCalendar from '../../../../components/Dashboard/Meals/MealCalendar/MealCalendar';
 import dashboardTheme from '../../../../theme/dashboard-theme';
 
 const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
@@ -15,6 +15,10 @@ const Header = dynamic(() => import('../../../../components/Dashboard/common/Hea
 const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
+
+const MealCalendar = dynamic(() =>
+  import('../../../../components/Dashboard/Meals/MealCalendar/MealCalendar')
+);
 
 const MealsPage = () => {
   const { t } = useTranslation();
@@ -33,7 +37,7 @@ const MealsPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dMeals'])),
       // Will be passed to the page component as props
     },
   };

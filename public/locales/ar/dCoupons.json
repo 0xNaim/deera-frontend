@@ -1,0 +1,16 @@
+{
+    "Name" : "اسم",
+    "Percentage"  :"النسبة المئوية",
+    "Start_Date" : "تاريخ البدء",
+    "Expiry_Date" : "تاريخ الانتهاء",
+    "Usage_Times" : "أوقات الاستخدام",
+    "Procedures" : "إجراءات",
+    "add_coupon" : "أضف قسيمة",
+    "sortBy" : "ترتيب حسب",
+    "Search" : "يبحث",
+    "Search_by_coupon_name" : "البحث باسم القسيمة",
+    "Code_Name" :"اسم الرمز",
+    "Discount_Percentage":"نسبة الخصم",
+    "Cancellation" : "إلغاء",
+    "Addition" : "إضافة"
+}

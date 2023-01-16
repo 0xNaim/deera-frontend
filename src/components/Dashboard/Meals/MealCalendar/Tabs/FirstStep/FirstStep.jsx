@@ -6,6 +6,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './FirstStep.module.scss';
 
 const data = [
@@ -17,6 +18,7 @@ const data = [
 ];
 
 const FirstStep = () => {
+  const { t } = useTranslation();
   const [values, setValues] = useState(data || []);
   const [lunches, setLunches] = useState(data || []);
   const [dinners, setDinners] = useState(data || []);
@@ -53,10 +55,10 @@ const FirstStep = () => {
     <div className={styles.wrapper}>
       <div className={styles.header_wrapper}>
         <Typography variant="h6" color="inherit" className={styles.header_title}>
-          Breakfasts
+          {t('dMeals:Breakfasts')}
         </Typography>
         <Button variant="contained" color="inherit" className={styles.header_button}>
-          Add a Meal
+          {t('dMeals:Add_a_Meal')}
         </Button>
       </div>
 
@@ -84,10 +86,10 @@ const FirstStep = () => {
       <br />
       <div className={styles.header_wrapper}>
         <Typography variant="h6" color="inherit" className={styles.header_title}>
-          Lunches
+          {t('dMeals:Lunches')}
         </Typography>
         <Button variant="contained" color="inherit" className={styles.header_button}>
-          Add a Meal
+          {t('dMeals:Add_a_Meal')}
         </Button>
       </div>
 
@@ -115,10 +117,10 @@ const FirstStep = () => {
       <br />
       <div className={styles.header_wrapper}>
         <Typography variant="h6" color="inherit" className={styles.header_title}>
-          Dinners
+          {t('dMeals:Dinners')}
         </Typography>
         <Button variant="contained" color="inherit" className={styles.header_button}>
-          Add a Meal
+          {t('dMeals:Add_a_Meal')}
         </Button>
       </div>
 

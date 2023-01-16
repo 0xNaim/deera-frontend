@@ -4,12 +4,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import NewPeriod from '../../../../components/Dashboard/NewPeriod/NewPeriod';
+// import NewPeriod from '../../../../components/Dashboard/NewPeriod/NewPeriod';
 
 const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
 const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+  ssr: false,
+});
+const NewPeriod = dynamic(() => import('../../../../components/Dashboard/NewPeriod/NewPeriod'), {
   ssr: false,
 });
 
@@ -28,8 +31,7 @@ const NewPeriodPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dPeriod'])),
     },
   };
 }

@@ -1,0 +1,18 @@
+{
+    "Name" : "Name",
+    "Percentage"  :"Percentage",
+    "Start_Date" : "Start Date",
+    "Expiry_Date" : "Expiry Date",
+    "Usage_Times" : "Usage Times",
+    "Procedures" : "Procedures",
+    "add_coupon" : "Add a coupon",
+    "sortBy" : "Sort by",
+    "Search" : "Search",
+    "Search_by_coupon_name" : "Search by coupon name",
+    "Code_Name" :"Code Name",
+    "Discount_Percentage":"Discount percentage",
+    "Cancellation" : "Cancellation",
+    "Addition" : "Addition"
+}
+
+				 		

@@ -1,0 +1,11 @@
+{
+    "Customer_Name": "اسم الزبون",
+    "Registration_Date": "تاريخ التسجيل",
+    "Phone_Number": "رقم الهاتف",
+    "Customer_Address": "عنوان العميل",
+    "The_number_of_times_you_subscribe": "عدد مرات الاشتراك",
+    "The_status_of_the_last_subscription": "حالة الاشتراك الأخير",
+    "Subtype": "النوع الفرعي",
+    "Save": "يحفظ",
+    "Cancellation": "إلغاء"
+}

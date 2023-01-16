@@ -1,0 +1,19 @@
+{
+    "title" : "",
+    "subtitle" : "",
+    "Order" : "Order",
+    "Driver" : "Drivers",
+    "Client":"Client",
+    "Employees": "Employees",
+    "Customers": "Customers",
+    "Requests" : "Requests",
+    "Sales_Statistics": "Sales Statistics",
+    "total_sales": "Total Sales",
+    "kuwait_dollar": "Kuwait dinars",
+    "Total_orders_sold" : "Total Orders Sales",
+    "Best_customer" : "Best customer",
+    "Most_popular_meals": "Most popular meals"
+}
+
+
+

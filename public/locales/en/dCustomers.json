@@ -1,0 +1,13 @@
+{
+    "add_customers" : "Add Customers",
+    "sort_by" : "Sort By",
+    "search_by_customer_name" : "Search By Customer Name",
+    "name" : "Name",
+    "start_date" : "Start Date",
+    "expiry_date" : "Expiry Date",
+    "mobile": "Mobile",
+    "repetition" : "Repetition",
+    "status" : "Status",
+    "procedures" : "Procedures",
+    "search": "Search"
+}

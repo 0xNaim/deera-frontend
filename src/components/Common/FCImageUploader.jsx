@@ -3,6 +3,7 @@
 /* eslint-disable comma-dangle */
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import React from 'react';
+import * as Cookies from '../../hooks/cookies';
 
 const FCImageUploader = () => (
   <section className="image_container">
@@ -25,7 +26,9 @@ const FCImageUploader = () => (
             color: '#6B7280',
           }}
         >
-          Click here to upload a new image
+          {Cookies.getLanguage() === 'ar'
+            ? 'انقر هنا لتحميل صورة جديدة'
+            : 'Click here to upload a new image'}
         </p>
       </div>
     </div>

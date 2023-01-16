@@ -1,0 +1,13 @@
+{
+    "add_customers" : "أضف العملاء",
+    "sort_by" : "ترتيب حسب",
+    "search_by_customer_name" : "البحث عن طريق اسم العميل",
+    "name" : "اسم",
+    "start_date" : "تاريخ البدء",
+    "expiry_date" : "تاريخ الانتهاء",
+    "mobile": "متحرك",
+    "repetition" : "تكرار",
+    "status" : "حالة",
+    "procedures" : "إجراءات",
+    "search": "يبحث"
+}

@@ -18,6 +18,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import paginator from '../../../utils/paginator';
 import FCSuccess from '../../Common/FCSuccess';
 import FCSwitch from '../../Common/FCSwitch';
@@ -25,6 +26,7 @@ import { subscriptionData } from '../fakedata';
 import styles from './Subscription.module.scss';
 
 const SubscriptionTable = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState(subscriptionData || []);
   const [success, setSuccess] = useState(false);
 
@@ -54,7 +56,8 @@ const SubscriptionTable = () => {
         <div className={styles.header_btn}>
           <Link href="/dashboard/subscriptions/new-subscription" style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="inherit" className={styles.new_button}>
-              Add a new subscription
+              {/* Add a new subscription */}
+              {t('dSubscription:Add_new_subscription')}
             </Button>
           </Link>
         </div>
@@ -67,11 +70,19 @@ const SubscriptionTable = () => {
             >
               <TableHead className={styles.table_header}>
                 <TableRow>
-                  <TableCell className={styles.table_h_title}>Image</TableCell>
-                  <TableCell className={styles.table_h_title}>Arabic name</TableCell>
-                  <TableCell className={styles.table_h_title}>English name</TableCell>
-                  <TableCell className={styles.table_h_title}>#packages</TableCell>
-                  <TableCell className={styles.table_h_title}>Procedures</TableCell>
+                  <TableCell className={styles.table_h_title}>{t('dSubscription:Image')}</TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:Arabic_name')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:English_name')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:packages')}
+                  </TableCell>
+                  <TableCell className={styles.table_h_title}>
+                    {t('dSubscription:Procedures')}
+                  </TableCell>
 
                   <TableCell />
                 </TableRow>

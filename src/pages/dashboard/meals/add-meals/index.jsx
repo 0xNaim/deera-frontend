@@ -4,9 +4,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import AddMeal from '../../../../components/Dashboard/AddMeal/AddMeal';
-// import Header from '../../../../components/Dashboard/common/Header/Header';
-// import Layout from '../../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../../theme/dashboard-theme';
 
 const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
@@ -16,6 +13,8 @@ const Header = dynamic(() => import('../../../../components/Dashboard/common/Hea
 const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
+
+const AddMeal = dynamic(() => import('../../../../components/Dashboard/AddMeal/AddMeal'));
 
 const MealsPage = () => {
   const { t } = useTranslation();
@@ -33,7 +32,7 @@ const MealsPage = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['dSidebar', 'header'])),
+      ...(await serverSideTranslations(locale, ['dSidebar', 'header', 'dMeals'])),
       // Will be passed to the page component as props
     },
   };
