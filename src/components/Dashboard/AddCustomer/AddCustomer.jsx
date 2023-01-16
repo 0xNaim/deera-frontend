@@ -66,7 +66,7 @@ const AddCustomer = () => {
   return (
     <ThemeProvider theme={DashboardTheme}>
       <Layout>
-        <Header title={t('header:Customer_Name')} />
+        <Header title={t('header:add_customers')} />
 
         <Container>
           <Box component="form" className={styles.form}>
