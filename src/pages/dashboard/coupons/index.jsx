@@ -25,6 +25,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import FCSwitch from '../../../components/Common/FCSwitch';
+import * as Cookies from '../../../hooks/cookies';
 // import Header from '../../../components/Dashboard/common/Header/Header';
 import Layout from '../../../components/Dashboard/Layout/Layout';
 import dashboardTheme from '../../../theme/dashboard-theme';
@@ -202,6 +203,9 @@ const Coupons = () => {
 
   const filteredData = paginate(couponsData, currentPage, sizePerPage);
 
+  // Localization
+  const currentLanguageCode = Cookies.getLanguage();
+
   const { t } = useTranslation();
   return (
     <ThemeProvider theme={dashboardTheme}>
@@ -278,7 +282,10 @@ const Coupons = () => {
                         {coupon?.usageTimes}
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <Box className={styles.action__icons}>
+                        <Box
+                          className={styles.action__icons}
+                          sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        >
                           <IconButton>
                             <Image
                               src="/assets/deleteIcon.svg"

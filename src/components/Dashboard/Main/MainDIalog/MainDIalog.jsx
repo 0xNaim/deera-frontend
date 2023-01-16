@@ -33,15 +33,17 @@ const MainDIalog = ({ btnContent, data }) => {
       >
         <DialogTitle
           id="alert-dialog-title"
-          sx={{ position: 'relative', fontFamily: 'IBM Plex Sans Arabic', fontSize: '24px' }}
+          sx={{
+            fontFamily: 'IBM Plex Sans Arabic',
+            fontSize: '24px',
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
         >
-          <IconButton
-            onClick={handleClose}
-            sx={{ position: 'absolute', right: '10px', top: '10px' }}
-          >
+          {data?.name}
+          <IconButton onClick={handleClose}>
             <CloseIcon />
           </IconButton>
-          {data?.name}
         </DialogTitle>
         <DialogContent>
           <Typography
