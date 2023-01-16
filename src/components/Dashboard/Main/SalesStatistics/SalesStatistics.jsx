@@ -10,8 +10,6 @@ import styles from './SalesStatistics.module.scss';
 const SalesStatistics = () => {
   const currentLanguageCode = Cookies.getLanguage();
 
-  console.log(currentLanguageCode);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
