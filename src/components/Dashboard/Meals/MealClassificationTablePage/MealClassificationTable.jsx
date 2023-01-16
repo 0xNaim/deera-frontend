@@ -1,12 +1,11 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable react/button-has-type */
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import {
+  Box,
   Button,
   Container,
+  IconButton,
   Pagination,
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -15,8 +14,10 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import * as Cookies from '../../../../hooks/cookies';
 import paginator from '../../../../utils/paginator';
 import FCSuccess from '../../../Common/FCSuccess';
 import FCSwitch from '../../../Common/FCSwitch';
@@ -46,6 +47,9 @@ const MealClassificationTable = () => {
       setSuccess(false);
     }, 3000);
   };
+
+  const currentLanguageCode = Cookies.getLanguage();
+
   return (
     <div className={styles.wrapper}>
       {success && <FCSuccess />}
@@ -93,21 +97,30 @@ const MealClassificationTable = () => {
                       </Typography>
                     </TableCell>
                     <TableCell component="th" scope="row">
-                      <Stack
-                        direction="row"
-                        spacing={1}
-                        alignItems="center"
+                      <Box
                         className={styles.button_wrapper}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
                       >
                         <Link href={`/dashboard/meals/meal-classification-table/${row?.slug}`}>
-                          <button>
-                            <EditIcon />
-                          </button>
+                          <IconButton>
+                            <Image
+                              src="/assets/editIcon.svg"
+                              width={18}
+                              height={18}
+                              alt="Edit Icon"
+                            />
+                          </IconButton>
                         </Link>
-                        <button onClick={() => deleteById(row.id)}>
-                          <DeleteIcon />
-                        </button>
-                      </Stack>
+
+                        <IconButton onClick={() => deleteById(row.id)}>
+                          <Image
+                            src="/assets/deleteIcon.svg"
+                            width={18}
+                            height={18}
+                            alt="Delete Icon"
+                          />
+                        </IconButton>
+                      </Box>
                     </TableCell>
                     <TableCell component="th" scope="row">
                       <FCSwitch value={row?.status} />
@@ -123,7 +136,6 @@ const MealClassificationTable = () => {
               count={count}
               page={page}
               onChange={handleChange}
-              color="success"
               variant="outlined"
               shape="rounded"
             />

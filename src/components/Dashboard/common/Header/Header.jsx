@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import * as Cookies from '../../../../hooks/cookies';
 
 // import styles
 import SliceText from '../../../../utils/SliceText';
@@ -26,6 +27,9 @@ const Header = ({ title }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const currentLanguageCode = Cookies.getLanguage();
+
   return (
     <Box component="div" className={styles._wrapper}>
       <Container>
@@ -56,7 +60,11 @@ const Header = ({ title }) => {
             >
               <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
                 <Avatar
-                  sx={{ width: { md: 40, sm: 30, xs: 25 }, height: { md: 40, sm: 30, xs: 25 } }}
+                  sx={{
+                    width: { md: 40, sm: 30, xs: 25 },
+                    height: { md: 40, sm: 30, xs: 25 },
+                    marginLeft: currentLanguageCode === 'ar' && 1,
+                  }}
                 >
                   <Image src="/assets/sonjoy.png" alt="logo" width={35} height={35} />
                 </Avatar>
