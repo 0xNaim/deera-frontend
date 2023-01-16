@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 // import next
-import Image from 'next/image';
 import React from 'react';
 // import mui
 import { Card, CardContent, Stack } from '@mui/material';
@@ -52,7 +51,7 @@ const Sidebar = () => {
     <Card className={styles._wrapper}>
       {/* logo wrapper start */}
       <Stack className={styles._logo_wrapper}>
-        <Image src="/assets/Header.svg" alt="logo" width={150} height={60} />
+        {/* <Image src="/assets/Header.svg" alt="logo" width={150} height={60} /> */}
       </Stack>
       <CardContent className={styles._content}>
         {/* menu list start here */}

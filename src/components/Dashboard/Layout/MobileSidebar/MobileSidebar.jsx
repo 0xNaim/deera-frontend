@@ -1,6 +1,7 @@
-import { IconButton } from '@mui/material';
+import { Divider, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
+import Image from 'next/image';
 import * as React from 'react';
 import CloseIcon from '../../../Common/CloseIcon/CloseIcon';
 import Sidebar from '../Sidebar/Sidebar';
@@ -32,11 +33,13 @@ const MobileSidebar = ({ buttonContent }) => {
         onClose={toggleDrawer('left', false)}
         className={styles.MobileSidebar}
       >
-        <div style={{ zIndex: '99999' }}>
+        <Box style={{ zIndex: '99999', display: 'flex', justifyContent: 'space-between' }}>
+          <Image src="/assets/Header.svg" alt="logo" width={150} height={60} />
           <IconButton onClick={toggleDrawer('left', false)} className={styles.closeButton}>
             <CloseIcon />
           </IconButton>
-        </div>
+        </Box>
+        <Divider />
 
         {list('left')}
       </Drawer>

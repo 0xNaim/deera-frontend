@@ -58,6 +58,8 @@
       }
 
       .button_wrapper {
+        display: flex;
+        gap: 1rem;
         button {
           background: #e5e7eb;
           border: 0.568047px solid #d1d5db;
