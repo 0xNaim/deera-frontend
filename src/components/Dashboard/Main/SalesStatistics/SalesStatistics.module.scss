@@ -21,11 +21,13 @@
     .left_side {
       display: flex;
       align-items: center;
+
       .left_icon {
         padding: 14px;
         background: #a7f3d0;
         border-radius: 14px;
-        margin-right: 6px;
+        // margin-right: 6px;
+
         svg {
           color: #c4c4c4;
         }
@@ -59,7 +61,7 @@
         font-size: 20px;
         line-height: 120%;
         color: #10b981;
-        margin-left: 6px;
+        // margin-left: 6px;
       }
     }
   }

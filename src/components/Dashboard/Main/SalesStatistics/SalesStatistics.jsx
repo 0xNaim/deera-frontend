@@ -6,10 +6,13 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../../hooks/cookies';
 import styles from './SalesStatistics.module.scss';
 
 const SalesStatistics = () => {
   const { t } = useTranslation();
+  const currentLanguageCode = Cookies.getLanguage();
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -23,9 +26,15 @@ const SalesStatistics = () => {
           <Card className={styles.card}>
             <Stack direction="row" justifyContent="space-between">
               <Box className={styles.left_side}>
-                <div className={styles.left_icon}>
+                <Box
+                  className={styles.left_icon}
+                  sx={{
+                    marginLeft: currentLanguageCode === 'ar' && 1.5,
+                    marginRight: currentLanguageCode !== 'ar' && 1.5,
+                  }}
+                >
                   <PaymentsIcon sx={{ fill: '#10b981', width: 24, height: 24 }} />
-                </div>
+                </Box>
                 <div>
                   <Typography variant="h6" color="inherit" className={styles.left_total}>
                     {/* Total sales */}
@@ -38,7 +47,15 @@ const SalesStatistics = () => {
               </Box>
               <Box className={styles.right_side}>
                 <Image src="/assets/up.svg" alt="service" width={24} height={24} />
-                <Typography variant="h6" color="inherit" className={styles.right_title}>
+                <Typography
+                  variant="h6"
+                  color="inherit"
+                  className={styles.right_title}
+                  sx={{
+                    marginRight: currentLanguageCode === 'ar' && 1,
+                    marginLeft: currentLanguageCode !== 'ar' && 1,
+                  }}
+                >
                   20%
                 </Typography>
               </Box>
@@ -49,7 +66,14 @@ const SalesStatistics = () => {
           <Card className={styles.card}>
             <Stack direction="row" justifyContent="space-between">
               <Box className={styles.left_side}>
-                <div className={styles.left_icon} style={{ background: '#FECACA' }}>
+                <Box
+                  className={styles.left_icon}
+                  style={{ background: '#FECACA' }}
+                  sx={{
+                    marginLeft: currentLanguageCode === 'ar' && 1.5,
+                    marginRight: currentLanguageCode !== 'ar' && 1.5,
+                  }}
+                >
                   {/* <PaymentsIcon style={{ color: '#DC2626' }} /> */}
                   <Image
                     src="/assets/dashboard/soldIcon.svg"
@@ -57,20 +81,27 @@ const SalesStatistics = () => {
                     width={24}
                     height={24}
                   />
-                </div>
-                <div>
+                </Box>
+                <Box>
                   <Typography variant="h6" color="inherit" className={styles.left_total}>
-                    {/* Total orders sold */}
                     {t('dMain:Total_orders_sold')}
                   </Typography>
                   <Typography variant="h6" color="inherit" className={styles.left_subTitle}>
                     500 {t('dMain:Requests')}
                   </Typography>
-                </div>
+                </Box>
               </Box>
               <Box className={styles.right_side}>
                 <Image src="/assets/up.svg" alt="service" width={25} height={25} />
-                <Typography variant="h6" color="inherit" className={styles.right_title}>
+                <Typography
+                  variant="h6"
+                  color="inherit"
+                  className={styles.right_title}
+                  sx={{
+                    marginRight: currentLanguageCode === 'ar' && 1,
+                    marginLeft: currentLanguageCode !== 'ar' && 1,
+                  }}
+                >
                   30%
                 </Typography>
               </Box>

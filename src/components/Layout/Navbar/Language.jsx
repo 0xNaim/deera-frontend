@@ -86,7 +86,7 @@ const Language = () => {
         variant="outlined"
         disableElevation
         onClick={handleClick}
-        endIcon={<LanguageIcon />}
+        endIcon={<LanguageIcon sx={{ marginRight: language === 'ar' && 2 }} />}
         sx={{
           padding: '10.5333px 15.8px',
           border: ' 1.31667px solid #374151',
