@@ -4,6 +4,7 @@
     "Insert_new_component"  :"Insert a new component",
     "components_name" : "Components Name",
     "add_new" : "Add New",
-    "submit"  :"Submit"
+    "submit"  :"Submit",
+    "Other_Ingredients" : "Other Ingredients"
 
 }
