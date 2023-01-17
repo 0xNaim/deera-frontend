@@ -1,6 +1,7 @@
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
+import * as Cookies from '../../../hooks/cookies';
 import styles from './settings-head.module.scss';
 
 const SettingsHead = ({ heading }) => {
@@ -16,7 +17,7 @@ const SettingsHead = ({ heading }) => {
         <Box className={styles.head__wrapper}>
           <Box onClick={handleGoBack} className={styles.go__back}>
             <ArrowBackIosIcon className={styles['go__back--icon']} />
-            Back
+            {Cookies.getLanguage() === 'ar' ? 'خلف' : 'Back'}
           </Box>
 
           <Typography className={styles.heading} variant="h5" gutterBottom>
