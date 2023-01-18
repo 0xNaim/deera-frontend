@@ -10,10 +10,14 @@ import { ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/mat
 
 // import styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Cookies from '../../../../../hooks/cookies';
 import styles from '../Sidebar.module.scss';
 
 const SingleMenu = ({ icon, link, name }) => {
   const { pathname } = useRouter();
+
+  const currentLanguageCode = Cookies.getLanguage();
+
   return (
     <ListItemButton
       className={styles._single_nav}
@@ -36,6 +40,7 @@ const SingleMenu = ({ icon, link, name }) => {
               className={styles._single_title}
               sx={{
                 color: pathname === link ? '#fff' : '#718096',
+                textAlign: currentLanguageCode === 'ar' ? 'right' : 'left !important',
               }}
             >
               {name}

@@ -23,6 +23,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
 import FCSwitch from '../../Common/FCSwitch';
@@ -234,6 +235,7 @@ const Customers = () => {
   const filteredData = paginate(customersData, currentPage, sizePerPage);
 
   const { t } = useTranslation();
+  const currentLanguageCode = Cookies.getLanguage();
   return (
     <ThemeProvider theme={dashboardTheme}>
       <Layout>
@@ -325,7 +327,13 @@ const Customers = () => {
                         {customer?.status}
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <Box className={styles.action__icons}>
+                        <Box
+                          className={styles.action__icons}
+                          sx={{
+                            justifyContent:
+                              currentLanguageCode === 'ar' ? 'flex-end' : 'flex-start',
+                          }}
+                        >
                           <IconButton>
                             <Image
                               src="/assets/viewIcon.svg"
