@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
 import LanguageIcon from '@mui/icons-material/Language';
@@ -6,11 +7,12 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { alpha, styled } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { useTranslation } from 'react-i18next';
 import * as Cookies from '../../../hooks/cookies';
+import SliceText from '../../../utils/SliceText';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -48,7 +50,8 @@ const StyledMenu = styled((props) => (
 }));
 
 const Language = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
+  const matches = useMediaQuery('(max-width:600px)');
   const [anchorEl, setAnchorEl] = React.useState(null);
   const router = useRouter();
   const open = Boolean(anchorEl);
@@ -101,7 +104,11 @@ const Language = () => {
           color: ' #374151',
         }}
       >
-        {t('navbar:language')}
+        {matches ? (
+          <SliceText number={3}>{Cookies.getLanguage() === 'ar' ? 'لغة' : 'Language'}</SliceText>
+        ) : (
+          <>{Cookies.getLanguage() === 'ar' ? 'لغة' : 'Language'}</>
+        )}
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -116,7 +123,8 @@ const Language = () => {
               variant="h6"
               sx={{ fontSize: '16px', fontFamily: 'IBM Plex Sans Arabic', color: '#000' }}
             >
-              {t('navbar:english')}
+              {/* {t('navbar:english')} */}
+              {Cookies.getLanguage() === 'ar' ? 'إنجليزي' : 'English'}
             </Typography>
           </Link>
         </MenuItem>
@@ -127,7 +135,8 @@ const Language = () => {
               variant="h6"
               sx={{ fontSize: '16px', fontFamily: 'IBM Plex Sans Arabic', color: '#000' }}
             >
-              {t('navbar:arabic')}
+              {/* {t('navbar:arabic')} */}
+              {Cookies.getLanguage() === 'ar' ? 'عربي' : 'Arabic'}
             </Typography>
           </Link>
         </MenuItem>

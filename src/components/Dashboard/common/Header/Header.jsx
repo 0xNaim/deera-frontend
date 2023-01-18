@@ -14,6 +14,7 @@ import * as Cookies from '../../../../hooks/cookies';
 
 // import styles
 import SliceText from '../../../../utils/SliceText';
+import Language from '../../../Layout/Navbar/Language';
 import MobileSidebar from '../../Layout/MobileSidebar/MobileSidebar';
 import styles from './Header.module.scss';
 
@@ -49,7 +50,8 @@ const Header = ({ title }) => {
             </Typography>
           </Box>
 
-          <div>
+          <Stack direction="row" spacing={1} alignItems="center">
+            <Language />
             <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -92,7 +94,7 @@ const Header = ({ title }) => {
                 Logout
               </MenuItem>
             </Menu>
-          </div>
+          </Stack>
         </Stack>
       </Container>
     </Box>
