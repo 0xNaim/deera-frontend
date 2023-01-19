@@ -21,12 +21,16 @@ import { useRouter } from 'next/router';
 // import scss
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../../../hooks/cookies';
 import styles from '../Sidebar.module.scss';
 
 const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
   const { pathname } = useRouter();
   const { t } = useTranslation();
   console.log(pathname, pageLink);
+
+  const currentLanguageCode = Cookies.getLanguage();
+
   return (
     <>
       <ListItemButton
@@ -56,6 +60,7 @@ const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
               className={styles._single_title}
               sx={{
                 color: open ? '#fff' : '#718096',
+                textAlign: currentLanguageCode === 'ar' ? 'right' : 'left !important',
                 // color: pathname === pageLink ? '#fff' : '#718096',
               }}
             >
@@ -90,6 +95,7 @@ const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
                       sx={{
                         // color: open ? '#fff' : '#718096',
                         color: pathname === el.link ? '#684CF9' : '#718096',
+                        textAlign: currentLanguageCode === 'ar' ? 'right' : 'left !important',
                         // color: pathname === el.link ? 'red' : 'yellow',
                       }}
                     >
