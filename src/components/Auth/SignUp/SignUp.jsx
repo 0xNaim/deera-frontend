@@ -5,10 +5,12 @@ import Grid from '@mui/material/Grid';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -28,56 +30,59 @@ const SignUp = () => {
             <Card className={styles.card}>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <Typography variant="h6" color="inherit" className={styles.title}>
-                  Create a new account
+                  {/* Create a new account */}
+                  {t('auth:Create_a_new_account')}
                 </Typography>
                 <Typography variant="h6" color="inherit" className={styles.subtitle}>
-                  Enter the information below to register a new subscription
+                  {/* Enter the information below to register a new subscription */}
+                  {t('auth:Enter_the_information_below_to_register_a_new_subscription')}
                 </Typography>
 
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    The name
+                    {/* The name */}
+                    {t('auth:The_name')}
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter the name"
+                    placeholder={t('auth:Enter_the_name')}
                     {...register('name', { required: true })}
                   />
                   {errors?.name && <p className={styles.input_error}>This field is required</p>}
                 </div>
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    The phone
+                    {t('auth:The_phone')}
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter the phone"
+                    placeholder={t('auth:Enter_the_phone')}
                     {...register('phone', { required: true })}
                   />
                   {errors?.phone && <p className={styles.input_error}>This field is required</p>}
                 </div>
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    E-mail
+                    {t('auth:E_mail')}
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter the email"
+                    placeholder={t('auth:Enter_the_email')}
                     {...register('email', { required: true })}
                   />
                   {errors?.email && <p className={styles.input_error}>This field is required</p>}
                 </div>
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    password
+                    {t('auth:password')}
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter the password"
+                    placeholder={t('auth:Enter_the_password')}
                     {...register('password', { required: true })}
                   />
                   {errors?.password && <p className={styles.input_error}>This field is required</p>}
@@ -89,13 +94,20 @@ const SignUp = () => {
                   color="primary"
                   className={styles.submit__button}
                 >
-                  Create a new account
+                  {t('auth:Create_a_new_account')}
                 </Button>
 
                 <Typography variant="h6" color="inherit" className={styles.submit__title}>
-                  Already have an account?
-                  <Link href="/sign-in" style={{ color: '#F2A515', paddingLeft: '4px' }}>
-                    Sign in
+                  {t('auth:Already_have_an_account')}
+                  <Link
+                    href="/sign-in"
+                    style={{
+                      color: '#F2A515',
+                      paddingLeft: '4px',
+                      marginRight: Cookies.getLanguage() === 'ar' && '6px',
+                    }}
+                  >
+                    {t('auth:Sign_in')}
                   </Link>
                 </Typography>
               </form>

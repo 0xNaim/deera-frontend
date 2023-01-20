@@ -7,11 +7,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 import FCSnackbar from '../../Common/FCSnackbar';
-
 import styles from './SignIn.module.scss';
 
 const SignIn = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -55,32 +57,35 @@ const SignIn = () => {
             <Card className={styles.card}>
               <form onSubmit={handleSubmit(onSubmit, onError)}>
                 <Typography variant="h6" color="inherit" className={styles.title}>
-                  Sign in
+                  {/* Sign in */}
+                  {t('auth:Sign_in')}
                 </Typography>
                 <Typography variant="h6" color="inherit" className={styles.subtitle}>
-                  Log in by completing the information below
+                  {/* Log in by completing the information below */}
+                  {t('auth:Log_in_by_completing_the_information_below')}
                 </Typography>
 
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    Phone number
+                    {/* Phone number */}
+                    {t('auth:Phone_number')}
                   </Typography>
                   <input
                     type="text"
                     className={styles.input}
-                    placeholder="Enter a phone number"
+                    placeholder={t('auth:Enter_the_phone')}
                     {...register('phone', { required: true })}
                   />
                   {errors?.phone && <p className={styles.input_error}>This field is required</p>}
                 </div>
                 <div className={styles.single__box}>
                   <Typography variant="h6" color="inherit" className={styles.input__title}>
-                    Password
+                    {t('auth:Password')}
                   </Typography>
                   <input
                     type="password"
                     className={styles.input}
-                    placeholder="Enter the password"
+                    placeholder={t('auth:Enter_the_password')}
                     {...register('password', { required: true })}
                   />
                   {errors?.password && <p className={styles.input_error}>This field is required</p>}
@@ -96,12 +101,12 @@ const SignIn = () => {
                       render={({ field }) => <Checkbox {...field} />}
                     />
                     <Typography variant="h6" color="inherit" className={styles.saving__title}>
-                      Saving data
+                      {t('auth:Saving_data')}
                     </Typography>
                   </Stack>
                   <div>
                     <Typography variant="h6" color="inherit" className={styles.saving__title}>
-                      did you forget your password?
+                      {t('auth:did_you_forget_your_password')}
                     </Typography>
                   </div>
                 </Stack>
@@ -118,13 +123,19 @@ const SignIn = () => {
                   color="primary"
                   className={styles.submit__button}
                 >
-                  Sign in
+                  {t('auth:Sign_in')}
                 </Button>
 
                 <Typography variant="h6" color="inherit" className={styles.submit__title}>
-                  Don&apos;t have account yet?{' '}
-                  <Link href="/sign-up" style={{ color: '#F2A515' }}>
-                    Create a new account{' '}
+                  {t('auth:Don_have_account_yet')}
+                  <Link
+                    href="/sign-up"
+                    style={{
+                      color: '#F2A515',
+                      marginRight: Cookies.getLanguage() === 'ar' && '6px',
+                    }}
+                  >
+                    {t('auth:Create_a_new_account')}
                   </Link>
                 </Typography>
               </form>

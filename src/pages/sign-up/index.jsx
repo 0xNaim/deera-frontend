@@ -16,7 +16,7 @@ const SignInPage = () => (
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home', 'navbar'])),
+      ...(await serverSideTranslations(locale, ['auth'])),
       // Will be passed to the page component as props
     },
   };
