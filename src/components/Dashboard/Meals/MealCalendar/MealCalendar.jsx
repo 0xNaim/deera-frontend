@@ -3,6 +3,7 @@
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
+import * as Cookies from '../../../../hooks/cookies';
 import HorizontalDatepicker from '../../../HorizontalDatepicker/HorizontalDatepicker';
 import styles from './MealCalendar.module.scss';
 import FCTabs from './Tabs/Tabs';
@@ -12,10 +13,11 @@ const MealCalendar = ({ show }) => (
     <HorizontalDatepicker />
     <Box className={styles.select_meals}>
       <Typography variant="h6" color="inherit" className={styles._title}>
-        Today&apos;s meals
+        {Cookies.getLanguage() === 'ar' ? 'وجبات اليوم' : ' Today&apos;s meals'}
       </Typography>
       <Typography variant="h6" color="inherit" className={styles._subtitle}>
-        <CalendarTodayIcon /> Saturday 12th, December
+        <CalendarTodayIcon />
+        {Cookies.getLanguage() === 'ar' ? 'السبت 12 ديسمبر' : 'Saturday 12th, December'}
       </Typography>
     </Box>
 

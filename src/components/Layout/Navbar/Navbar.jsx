@@ -10,6 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 import Language from './Language';
 import styles from './Navbar.module.scss';
 
@@ -55,7 +56,10 @@ const Navbar = (props) => {
               </div>
               <Box className={styles.rightNav}>
                 <Stack direction="row" spacing={4} alignItems="center">
-                  <Box className={styles.singleMenu}>
+                  <Box
+                    className={styles.singleMenu}
+                    sx={{ marginLeft: Cookies.getLanguage() === 'ar' && '30px' }}
+                  >
                     <Link href="/">
                       <Typography variant="subtitle1" color="inherit">
                         {t('navbar:main')}

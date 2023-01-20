@@ -136,7 +136,7 @@ const Language = () => {
               sx={{ fontSize: '16px', fontFamily: 'IBM Plex Sans Arabic', color: '#000' }}
             >
               {/* {t('navbar:arabic')} */}
-              {Cookies.getLanguage() === 'ar' ? 'عربي' : 'Arabic'}
+              {Cookies.getLanguage() === 'ar' ? 'العربية' : 'Arabic'}
             </Typography>
           </Link>
         </MenuItem>
