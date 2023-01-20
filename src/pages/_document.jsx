@@ -10,7 +10,7 @@ class MyDocument extends Document {
   render() {
     return (
       // <Html lang={lang === 'en' ? 'en' : 'ar'} dir={lang === 'en' ? 'ltr' : 'rtl'}>
-      <Html lang="en">
+      <Html lang="en" dir="ltr">
         <Head />
         <body>
           <Main />

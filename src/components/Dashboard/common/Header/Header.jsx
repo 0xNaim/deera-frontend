@@ -63,16 +63,16 @@ const Header = ({ title }) => {
               <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
                 <Avatar
                   sx={{
-                    width: { md: 40, sm: 30, xs: 25 },
-                    height: { md: 40, sm: 30, xs: 25 },
+                    width: { md: 35, sm: 30, xs: 25 },
+                    height: { md: 35, sm: 30, xs: 25 },
                     marginLeft: currentLanguageCode === 'ar' && 1,
                   }}
                 >
-                  <Image src="/assets/sonjoy.png" alt="logo" width={35} height={35} />
+                  S
                 </Avatar>
 
                 <Typography variant="h5" color="inherit" className={styles._subtitle}>
-                  {matches ? <SliceText number={6}>Sonjoy barman</SliceText> : 'Sonjoy barman'}
+                  {matches ? <SliceText number={6}>Deera Dashboard</SliceText> : 'Deera Dashboard'}
                 </Typography>
                 <Image src="/assets/down.svg" alt="logo" width={20} height={20} />
               </Stack>

@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './NewSubscripiton.module.scss';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
@@ -33,6 +34,7 @@ function a11yProps(index) {
 }
 
 const NewSubscription = () => {
+  const { t } = useTranslation();
   const [value, setValue] = React.useState(0);
 
   const handleNext = (num) => {
@@ -66,7 +68,8 @@ const NewSubscription = () => {
                     className={styles.tabs_title}
                     sx={{ color: value === 0 ? '#684CF9' : '#9ca3af' }}
                   >
-                    Subscription information
+                    {/* Subscription information */}
+                    {t('dNewSubscription:subscription_information')}
                   </Typography>
                 }
                 {...a11yProps(0)}
@@ -82,7 +85,8 @@ const NewSubscription = () => {
                     className={styles.tabs_title}
                     sx={{ color: value === 1 ? '#684CF9' : '#9ca3af' }}
                   >
-                    Package management
+                    {/* Package management */}
+                    {t('dNewSubscription:package_management')}
                   </Typography>
                 }
                 {...a11yProps(1)}

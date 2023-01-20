@@ -51,11 +51,10 @@ const Search = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('md')]: {
-    // marginLeft: theme.spacing(0),
-    width: '18rem',
-  },
+  // width: '100%',
+  // [theme.breakpoints.up('md')]: {
+  //   width: '18rem',
+  // },
   border: '1px solid #9CA3AF',
 }));
 
@@ -144,7 +143,10 @@ const CustomTable = () => {
           spacing={1}
           className={styles._header_wrapper}
         >
-          <Link href="/dashboard/meals/add-meals" style={{ textDecoration: 'none' }}>
+          <Link
+            href="/dashboard/meals/add-meals"
+            style={{ textDecoration: 'none', marginLeft: Cookies.getLanguage() === 'ar' && '10px' }}
+          >
             <Button
               variant="contained"
               color="inherit"
@@ -209,7 +211,7 @@ const CustomTable = () => {
             </Menu>
           </div>
           <Box className={styles.search__coupon__wrapper}>
-            <Search>
+            <Search sx={{ width: { md: '350px', xs: '100%' } }}>
               <SearchIconWrapper>
                 <SearchIcon sx={{ color: '#6B7280' }} />
               </SearchIconWrapper>
@@ -234,16 +236,42 @@ const CustomTable = () => {
             >
               <TableHead className={styles._table_header}>
                 <TableRow>
-                  <TableCell className={styles._table_h_title}>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:Meal_Picture')}
                   </TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Arabic_Name')}</TableCell>
-                  <TableCell className={styles._table_h_title}>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Arabic_Name')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:English_Name')}
                   </TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Category')}</TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Calories')}</TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Procedures')}</TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Category')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Calories')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Procedures')}
+                  </TableCell>
                   <TableCell />
                 </TableRow>
               </TableHead>
@@ -251,7 +279,11 @@ const CustomTable = () => {
               <TableBody className={styles._table_body}>
                 {paginator(data, page, 5).data.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Image
                         src={row.meal_picture}
                         alt="meal_picture"
@@ -265,30 +297,50 @@ const CustomTable = () => {
                         className={styles.tableImg}
                       />
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.arabic_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.english_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.category}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.calories}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Box
                         className={styles._button_wrapper}
-                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'start' : 'start' }}
                       >
                         <IconButton>
                           <Image
@@ -309,7 +361,11 @@ const CustomTable = () => {
                         </IconButton>
                       </Box>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <FCSwitch />
                     </TableCell>
                   </TableRow>

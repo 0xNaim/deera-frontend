@@ -196,11 +196,6 @@ const Search = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('md')]: {
-    // marginLeft: theme.spacing(0),
-    width: '18rem',
-  },
   border: '1px solid #9CA3AF',
 }));
 
@@ -260,7 +255,7 @@ const Customers = () => {
               </Box>
 
               <Box className={styles.search__coupon__wrapper}>
-                <Search>
+                <Search sx={{ width: { md: '350px', xs: '100%' } }}>
                   <SearchIconWrapper>
                     <SearchIcon sx={{ color: '#6B7280' }} />
                   </SearchIconWrapper>
@@ -282,23 +277,46 @@ const Customers = () => {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell className={styles.table__heading}>{t('dCustomers:name')}</TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
+                      {t('dCustomers:name')}
+                    </TableCell>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:start_date')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:expiry_date')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:mobile')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:repetition')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:status')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCustomers:procedures')}
                     </TableCell>
                     <TableCell />
@@ -308,30 +326,64 @@ const Customers = () => {
                 <TableBody>
                   {filteredData?.map((customer) => (
                     <TableRow key={Math.random()}>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.name}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.startDate}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.expiryDate}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.mobile}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.repitition}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {customer?.status}
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         <Box
                           className={styles.action__icons}
                           sx={{
                             justifyContent:
-                              currentLanguageCode === 'ar' ? 'flex-end' : 'flex-start',
+                              currentLanguageCode === 'ar' ? 'flex-start' : 'flex-start',
                           }}
                         >
                           <IconButton>
