@@ -13,7 +13,7 @@ const MealCalendar = ({ show }) => (
     <HorizontalDatepicker />
     <Box className={styles.select_meals}>
       <Typography variant="h6" color="inherit" className={styles._title}>
-        {Cookies.getLanguage() === 'ar' ? 'وجبات اليوم' : ' Today&apos;s meals'}
+        {Cookies.getLanguage() === 'ar' ? 'وجبات اليوم' : "Today's meals"}
       </Typography>
       <Typography variant="h6" color="inherit" className={styles._subtitle}>
         <CalendarTodayIcon />
