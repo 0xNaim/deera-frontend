@@ -76,13 +76,24 @@ const MealClassificationTable = () => {
             >
               <TableHead className={styles.table_header}>
                 <TableRow>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:Classification_name_in_Arabic')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:Category_name_in_English')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>{t('dMeals:Procedures')}</TableCell>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Procedures')}
+                  </TableCell>
 
                   <TableCell />
                 </TableRow>
@@ -91,20 +102,32 @@ const MealClassificationTable = () => {
               <TableBody className={styles.table_body}>
                 {paginator(data, page, 5).data.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.arabic_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.english_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Box
                         className={styles.button_wrapper}
-                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'start' : 'start' }}
                       >
                         <Link href={`/dashboard/meals/meal-classification-table/${row?.slug}`}>
                           <IconButton>
@@ -127,7 +150,11 @@ const MealClassificationTable = () => {
                         </IconButton>
                       </Box>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <FCSwitch value={row?.status} />
                     </TableCell>
                   </TableRow>

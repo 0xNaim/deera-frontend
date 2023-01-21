@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable no-plusplus */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable camelcase */
@@ -16,10 +17,12 @@ import {
   Button,
   Container,
   Fade,
+  FormControl,
   IconButton,
-  InputBase,
+  InputAdornment,
   Menu,
   MenuItem,
+  OutlinedInput,
   Pagination,
   Stack,
   Table,
@@ -30,7 +33,6 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
-import { alpha, styled } from '@mui/material/styles';
 
 // import components
 import Link from 'next/link';
@@ -44,42 +46,6 @@ import mealsTableData from '../fakedata';
 
 // import styles
 import styles from './Table.module.scss';
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('md')]: {
-    // marginLeft: theme.spacing(0),
-    width: '18rem',
-  },
-  border: '1px solid #9CA3AF',
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  right: 0,
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1),
-    // vertical padding + font size from searchIcon
-    paddingRight: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-  },
-}));
 
 function paginator(items, current_page, per_page_items) {
   const page = current_page || 1;
@@ -140,84 +106,96 @@ const CustomTable = () => {
         {success && <FCSuccess />}
         <Stack
           direction={{ sm: 'row', xs: 'column' }}
-          justifyContent="flex-end"
+          justifyContent="space-between"
           spacing={1}
           className={styles._header_wrapper}
         >
-          <Link href="/dashboard/meals/add-meals" style={{ textDecoration: 'none' }}>
-            <Button
-              variant="contained"
-              color="inherit"
-              className={styles._header_meal_button}
-              fullWidth
+          <Stack direction={{ sm: 'row', xs: 'column' }} justifyContent="space-between" spacing={1}>
+            <Link
+              href="/dashboard/meals/add-meals"
+              style={{
+                textDecoration: 'none',
+                marginLeft: Cookies.getLanguage() === 'ar' && '10px',
+              }}
             >
-              {t('dMeals:Add_Meal')}
-            </Button>
-          </Link>
-          <div>
-            <Button
-              className={styles._header_meal_dropdown_button}
-              id="fade-button"
-              aria-controls={open ? 'fade-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick}
-            >
-              {/* Sort by */}
-              {t('dMeals:Sort_by')}
-              <SwapVertIcon />
-            </Button>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{ 'aria-labelledby': 'fade-button' }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
-          </div>
-          <div>
-            <Button
-              className={styles._header_meal_dropdown_button}
-              id="fade-button"
-              aria-controls={open ? 'fade-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick}
-            >
-              {/* Choose the category */}
-              {t('dMeals:Choose_the_category')}
-              <KeyboardArrowDownIcon />
-            </Button>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{ 'aria-labelledby': 'fade-button' }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-              <MenuItem sx={{ width: '200px' }} onClick={handleClose}>
-                Profile
-              </MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
-          </div>
+              <Button
+                variant="contained"
+                color="inherit"
+                className={styles._header_meal_button}
+                fullWidth
+              >
+                {t('dMeals:Add_Meal')}
+              </Button>
+            </Link>
+            <div>
+              <Button
+                className={styles._header_meal_dropdown_button}
+                id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                {/* Sort by */}
+                {t('dMeals:Sort_by')}
+                <SwapVertIcon />
+              </Button>
+              <Menu
+                id="fade-menu"
+                MenuListProps={{ 'aria-labelledby': 'fade-button' }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </Menu>
+            </div>
+            <div>
+              <Button
+                className={styles._header_meal_dropdown_button}
+                id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                {/* Choose the category */}
+                {t('dMeals:Choose_the_category')}
+                <KeyboardArrowDownIcon />
+              </Button>
+              <Menu
+                id="fade-menu"
+                MenuListProps={{ 'aria-labelledby': 'fade-button' }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+              >
+                <MenuItem sx={{ width: '200px' }} onClick={handleClose}>
+                  Profile
+                </MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </Menu>
+            </div>
+          </Stack>
           <Box className={styles.search__coupon__wrapper}>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon sx={{ color: '#6B7280' }} />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder={t('dMeals:Search_by_meals_name')}
-                inputProps={{ 'aria-label': 'search' }}
+            <FormControl className={styles.search__field}>
+              <OutlinedInput
+                className={styles.search__input}
+                placeholder="Search by customer name"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton edge="end" disableRipple>
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                }
               />
-            </Search>
+            </FormControl>
 
             <Button className={styles.search__btn} variant="contained" disableRipple>
               {t('dMeals:Search')}
@@ -234,16 +212,42 @@ const CustomTable = () => {
             >
               <TableHead className={styles._table_header}>
                 <TableRow>
-                  <TableCell className={styles._table_h_title}>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:Meal_Picture')}
                   </TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Arabic_Name')}</TableCell>
-                  <TableCell className={styles._table_h_title}>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Arabic_Name')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dMeals:English_Name')}
                   </TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Category')}</TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Calories')}</TableCell>
-                  <TableCell className={styles._table_h_title}>{t('dMeals:Procedures')}</TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Category')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Calories')}
+                  </TableCell>
+                  <TableCell
+                    className={styles._table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dMeals:Procedures')}
+                  </TableCell>
                   <TableCell />
                 </TableRow>
               </TableHead>
@@ -251,7 +255,11 @@ const CustomTable = () => {
               <TableBody className={styles._table_body}>
                 {paginator(data, page, 5).data.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Image
                         src={row.meal_picture}
                         alt="meal_picture"
@@ -265,30 +273,50 @@ const CustomTable = () => {
                         className={styles.tableImg}
                       />
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.arabic_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.english_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.category}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles._table_b_title}>
                         {row.calories}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Box
                         className={styles._button_wrapper}
-                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'start' : 'start' }}
                       >
                         <IconButton>
                           <Image
@@ -309,7 +337,11 @@ const CustomTable = () => {
                         </IconButton>
                       </Box>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <FCSwitch />
                     </TableCell>
                   </TableRow>

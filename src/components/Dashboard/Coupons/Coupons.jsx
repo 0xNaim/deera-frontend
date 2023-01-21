@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable object-curly-newline */
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import SearchIcon from '@mui/icons-material/Search';
@@ -5,8 +6,10 @@ import {
   Box,
   Button,
   Container,
+  FormControl,
   IconButton,
-  InputBase,
+  InputAdornment,
+  OutlinedInput,
   Pagination,
   Paper,
   Table,
@@ -17,7 +20,6 @@ import {
   TableRow,
   ThemeProvider,
 } from '@mui/material';
-import { alpha, styled } from '@mui/material/styles';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -157,42 +159,6 @@ const couponsData = [
   },
 ];
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('md')]: {
-    // marginLeft: theme.spacing(0),
-    width: '18rem',
-  },
-  border: '1px solid #9CA3AF',
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  right: 0,
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1),
-    // vertical padding + font size from searchIcon
-    paddingRight: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-  },
-}));
-
 const Coupons = () => {
   // Pagination handling
   const [currentPage, setCurrentPage] = useState(1);
@@ -226,15 +192,19 @@ const Coupons = () => {
               </Box>
 
               <Box className={styles.search__coupon__wrapper}>
-                <Search>
-                  <SearchIconWrapper>
-                    <SearchIcon sx={{ color: '#6B7280' }} />
-                  </SearchIconWrapper>
-                  <StyledInputBase
-                    placeholder={t('dCoupons:Search_by_coupon_name')}
-                    inputProps={{ 'aria-label': 'search' }}
+                <FormControl className={styles.search__field}>
+                  <OutlinedInput
+                    className={styles.search__input}
+                    placeholder="Search by customer name"
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton edge="end" disableRipple>
+                          <SearchIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    }
                   />
-                </Search>
+                </FormControl>
 
                 <Button className={styles.search__btn} variant="contained" disableRipple>
                   {t('dCoupons:Search')}
@@ -250,20 +220,40 @@ const Coupons = () => {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell className={styles.table__heading}>{t('dCoupons:Name')}</TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
+                      {t('dCoupons:Name')}
+                    </TableCell>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCoupons:Percentage')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCoupons:Start_Date')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCoupons:Expiry_Date')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCoupons:Usage_Times')}
                     </TableCell>
-                    <TableCell className={styles.table__heading}>
+                    <TableCell
+                      className={styles.table__heading}
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       {t('dCoupons:Procedures')}
                     </TableCell>
                     <TableCell />
@@ -273,19 +263,44 @@ const Coupons = () => {
                 <TableBody>
                   {filteredData?.map((coupon) => (
                     <TableRow key={Math.random()}>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {coupon?.name}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {`${coupon?.percentage}%`}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {coupon?.startDate}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {coupon?.expiryDate}
                       </TableCell>
-                      <TableCell className={styles.table__cell} component="th" scope="row">
+                      <TableCell
+                        className={styles.table__cell}
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {coupon?.usageTimes}
                       </TableCell>
                       <TableCell component="th" scope="row">
@@ -293,7 +308,7 @@ const Coupons = () => {
                           className={styles.action__icons}
                           sx={{
                             justifyContent:
-                              currentLanguageCode === 'ar' ? 'flex-end' : 'flex-start',
+                              currentLanguageCode === 'ar' ? 'flex-start' : 'flex-start',
                           }}
                         >
                           <IconButton>
@@ -314,7 +329,11 @@ const Coupons = () => {
                           </IconButton>
                         </Box>
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         <FCSwitch checked={coupon?.checked} />
                       </TableCell>
                     </TableRow>

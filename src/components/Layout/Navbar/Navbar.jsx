@@ -81,7 +81,7 @@ const Navbar = (props) => {
                     </Link>
                   </Box>
                   <Box className={styles.singleMenu}>
-                    <Link href="/help-center">
+                    <Link href="/">
                       <Typography variant="subtitle1" color="inherit">
                         {t('navbar:help_center')}
                       </Typography>

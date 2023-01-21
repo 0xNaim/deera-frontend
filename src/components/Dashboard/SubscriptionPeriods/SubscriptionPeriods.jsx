@@ -72,17 +72,34 @@ const SubscriptionPeriods = () => {
             >
               <TableHead className={styles.table_header}>
                 <TableRow>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:Arabic_name')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:English_name')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>{t('dSubscription:days')}</TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dSubscription:days')}
+                  </TableCell>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:consult_number')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:Procedures')}
                   </TableCell>
 
@@ -93,22 +110,38 @@ const SubscriptionPeriods = () => {
               <TableBody className={styles.table_body}>
                 {paginator(data, page, 5).data.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.arabic_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.english_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.days}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.consult_number}
                       </Typography>
@@ -116,7 +149,7 @@ const SubscriptionPeriods = () => {
                     <TableCell component="th" scope="row">
                       <Box
                         className={styles.button_wrapper}
-                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'start' : 'start' }}
                       >
                         <IconButton>
                           <Image
@@ -137,7 +170,11 @@ const SubscriptionPeriods = () => {
                         </IconButton>
                       </Box>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <FCSwitch value={row?.status} />
                     </TableCell>
                   </TableRow>

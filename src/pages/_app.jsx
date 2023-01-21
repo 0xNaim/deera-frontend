@@ -12,9 +12,6 @@ import theme from '../theme/theme';
 
 const MyApp = ({ Component, pageProps }) => {
   const currentLanguageCode = Cookies.getLanguage();
-  useEffect(() => {
-    document.body.dir = currentLanguageCode === 'en' ? 'ltr' : 'rtl';
-  }, [currentLanguageCode]);
 
   const router = useRouter();
   const [language, setLanguage] = useState('en');
@@ -49,6 +46,14 @@ const MyApp = ({ Component, pageProps }) => {
       Cookies.setLanguage(router.locale);
     }
   }, []);
+
+  useEffect(() => {
+    if (currentLanguageCode) {
+      document.body.dir = currentLanguageCode === 'en' ? 'ltr' : 'rtl';
+    } else {
+      document.body.dir = 'ltr';
+    }
+  }, [currentLanguageCode]);
 
   return (
     <ThemeProvider theme={theme}>

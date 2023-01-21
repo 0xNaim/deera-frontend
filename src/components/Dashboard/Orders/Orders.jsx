@@ -23,6 +23,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import * as Cookies from '../../../hooks/cookies';
 import dashboardTheme from '../../../theme/dashboard-theme';
 import paginate from '../../../utils/paginate';
 import MealCalendar from '../Meals/MealCalendar/MealCalendar';
@@ -219,20 +220,52 @@ const Orders = () => {
                 <Table>
                   <TableHead>
                     <TableRow>
-                      <TableCell className={styles.table__heading}>{t('dOrders:Name')}</TableCell>
-                      <TableCell className={styles.table__heading}>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
+                        {t('dOrders:Name')}
+                      </TableCell>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {t('dOrders:Sub_Number')}
                       </TableCell>
-                      <TableCell className={styles.table__heading}>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {t('dOrders:Sub_Type')}
                       </TableCell>
-                      <TableCell className={styles.table__heading}>{t('dOrders:Mobile')}</TableCell>
-                      <TableCell className={styles.table__heading}>{t('dOrders:Area')}</TableCell>
-                      <TableCell className={styles.table__heading}>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
+                        {t('dOrders:Mobile')}
+                      </TableCell>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
+                        {t('dOrders:Area')}
+                      </TableCell>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {t('dOrders:Address')}
                       </TableCell>
-                      <TableCell className={styles.table__heading}>{t('dOrders:Driver')}</TableCell>
-                      <TableCell className={styles.table__heading}>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
+                        {t('dOrders:Driver')}
+                      </TableCell>
+                      <TableCell
+                        className={styles.table__heading}
+                        align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                      >
                         {t('dOrders:Actions')}
                       </TableCell>
                       <TableCell />
@@ -242,28 +275,67 @@ const Orders = () => {
                   <TableBody>
                     {filteredData?.map((customer) => (
                       <TableRow key={Math.random()}>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.name}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.subNumber}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.subType}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.mobile}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.area}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.address}
                         </TableCell>
-                        <TableCell className={styles.table__cell} component="th" scope="row">
+                        <TableCell
+                          className={styles.table__cell}
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           {customer?.driver}
                         </TableCell>
-                        <TableCell component="th" scope="row">
+                        <TableCell
+                          component="th"
+                          scope="row"
+                          align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                        >
                           <Box className={styles.action__icons}>
                             <IconButton>
                               <Image

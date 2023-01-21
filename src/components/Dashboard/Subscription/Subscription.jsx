@@ -73,17 +73,34 @@ const SubscriptionTable = () => {
             >
               <TableHead className={styles.table_header}>
                 <TableRow>
-                  <TableCell className={styles.table_h_title}>{t('dSubscription:Image')}</TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
+                    {t('dSubscription:Image')}
+                  </TableCell>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:Arabic_name')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:English_name')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:packages')}
                   </TableCell>
-                  <TableCell className={styles.table_h_title}>
+                  <TableCell
+                    className={styles.table_h_title}
+                    align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                  >
                     {t('dSubscription:Procedures')}
                   </TableCell>
 
@@ -94,7 +111,11 @@ const SubscriptionTable = () => {
               <TableBody className={styles.table_body}>
                 {paginator(data, page, 5).data.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Image
                         src={row?.image}
                         alt={row?.english_name}
@@ -103,25 +124,41 @@ const SubscriptionTable = () => {
                         style={{ objectFit: 'contain' }}
                       />
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.arabic_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.english_name}
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Typography variant="h6" color="inherit" className={styles.table_b_title}>
                         {row.packages} packages
                       </Typography>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <Box
                         className={styles.button_wrapper}
-                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'end' : 'start' }}
+                        sx={{ justifyContent: currentLanguageCode === 'ar' ? 'start' : 'start' }}
                       >
                         <Link href={`/dashboard/meals/meal-classification-table/${row?.slug}`}>
                           <IconButton>
@@ -144,7 +181,11 @@ const SubscriptionTable = () => {
                         </IconButton>
                       </Box>
                     </TableCell>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align={Cookies.getLanguage() === 'en' ? 'left' : 'right'}
+                    >
                       <FCSwitch value={row?.status} />
                     </TableCell>
                   </TableRow>
