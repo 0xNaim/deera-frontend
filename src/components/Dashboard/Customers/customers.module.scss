@@ -64,6 +64,19 @@
         flex-direction: column;
       }
 
+      .search__field {
+        width: 20rem;
+        overflow: hidden;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        .search__input {
+          height: 50px;
+        }
+      }
+
       .search__btn {
         background: #e5e7eb;
         font-family: 'IBM Plex Sans Arabic' !important ;
