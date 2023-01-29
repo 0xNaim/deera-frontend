@@ -13,7 +13,6 @@ const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'
 });
 const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
-  suspense: true,
 });
 const SubscriptionTable = dynamic(() => import('@components/Dashboard/Subscription/Subscription'));
 

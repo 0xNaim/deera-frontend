@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 const Subscription = dynamic(() => import('@components/Client/Subscription/Subscription'));
 const Layout = dynamic(() => import('@components/Layout'), {
   ssr: false,
-  suspense: true,
 });
 
 const SubscriptionPage = () => (

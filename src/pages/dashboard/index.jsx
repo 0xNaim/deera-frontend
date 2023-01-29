@@ -2,10 +2,7 @@ import Main from '@components/Dashboard/Main/Main';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
-const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
-  ssr: false,
-  suspense: true,
-});
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), { ssr: false });
 
 const MainPage = () => (
   <Layout>
