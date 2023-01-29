@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const DislikeList = dynamic(
   () => import('@components/Client/ProhibitedIngredients/ProhibitedIngredients'),
-  { ssr: false }
+  { suspense: true }
 );
 
 const DislikeListPage = () => (

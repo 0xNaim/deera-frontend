@@ -2,8 +2,8 @@ import SEO from '@hooks/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
-const Layout = dynamic(() => import('@components/Layout'), { ssr: false });
-const SignUp = dynamic(() => import('@components/Auth/SignUp/SignUp'), { ssr: false });
+const Layout = dynamic(() => import('@components/Layout'), { suspense: true });
+const SignUp = dynamic(() => import('@components/Auth/SignUp/SignUp'), { suspense: true });
 
 const SignInPage = () => (
   <Layout>

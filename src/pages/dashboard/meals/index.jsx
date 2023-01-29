@@ -1,11 +1,10 @@
+import Layout from '@components/Dashboard/Layout/Layout';
 import { ThemeProvider } from '@mui/material';
+import DashboardTheme from '@theme/dashboard-theme';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import React from 'react';
-import Layout from '@components/Dashboard/Layout/Layout';
-import DashboardTheme from '@theme/dashboard-theme';
 
-const Meals = dynamic(() => import('@components/Dashboard/Meals/Main'), { ssr: false });
+const Meals = dynamic(() => import('@components/Dashboard/Meals/Main'), { suspense: true });
 const MealsPage = () => (
   <ThemeProvider theme={DashboardTheme}>
     <Layout>

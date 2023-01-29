@@ -3,16 +3,15 @@
 /* eslint-disable function-paren-newline */
 /* eslint-disable object-curly-newline */
 import { ThemeProvider } from '@mui/material';
+import dashboardTheme from '@theme/dashboard-theme';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import dashboardTheme from '@theme/dashboard-theme';
 
 const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), { ssr: false });
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), { suspense: true });
 const SubscriptionTable = dynamic(() => import('@components/Dashboard/Subscription/Subscription'));
 
 const SubscriptionPage = () => {

@@ -1,10 +1,10 @@
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import SEO from '@hooks/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import SEO from '@hooks/SEO';
 
-const Layout = dynamic(() => import('@components/Layout'), { ssr: false });
-const Home = dynamic(() => import('@components/Client/Home/Home'), { ssr: false });
+const Layout = dynamic(() => import('@components/Layout'), { suspense: true });
+const Home = dynamic(() => import('@components/Client/Home/Home'), { suspense: true });
 
 const HomePage = () => (
   <Layout>

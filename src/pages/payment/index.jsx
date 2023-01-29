@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
-import { Box, Container, Divider, Typography } from '@mui/material';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import dynamic from 'next/dynamic';
 import StepOne from '@components/subscription-steps/step-one';
 import StepTwo from '@components/subscription-steps/step-two';
 import useMultiStepForm from '@hooks/useMultiStepForm';
+import { Box, Container, Divider, Typography } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
 import styles from './payment.module.scss';
 
-const Layout = dynamic(() => import('@components/Layout'), { ssr: false });
+const Layout = dynamic(() => import('@components/Layout'), { suspense: true });
 
 const Payment = () => {
   const { currentStepIndex, nextStep, backStep, isFirstStep } = useMultiStepForm([

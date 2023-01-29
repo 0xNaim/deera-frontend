@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const AddNewDislikeItem = dynamic(
   () => import('@components/Client/Insertcomponent/AddNewDislikeItem'),
-  { ssr: false }
+  { suspense: true }
 );
 
 const AddNewDislikeItemPage = () => (

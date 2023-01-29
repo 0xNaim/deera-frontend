@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const PersonalInformation = dynamic(
   () => import('@components/Client/PersonalInformation/PersonalInformation'),
-  { ssr: false }
+  { suspense: true }
 );
 
 const PersonalInformationPage = () => (
