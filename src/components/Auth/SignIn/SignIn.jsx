@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import FCSnackbar from '../../Common/FCSnackbar';
+import FCSnackbar from '@components/Common/FCSnackbar';
 import styles from './SignIn.module.scss';
 
 const SignIn = () => {

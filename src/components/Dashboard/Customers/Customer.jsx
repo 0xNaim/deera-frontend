@@ -28,11 +28,11 @@ import { useTranslation } from 'react-i18next';
 import * as Cookies from '@hooks/cookies';
 import dashboardTheme from '@theme/dashboard-theme';
 import paginate from '@utils/paginate';
-import FCSwitch from '../../Common/FCSwitch';
-import Layout from '../Layout/Layout';
+import FCSwitch from '@components/Common/FCSwitch';
+import Layout from '@components/Dashboard/Layout/Layout';
 import styles from './customers.module.scss';
 
-const Header = dynamic(() => import('../common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
 

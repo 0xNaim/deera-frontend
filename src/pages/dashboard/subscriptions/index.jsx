@@ -7,16 +7,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// import SubscriptionTable from '../../../components/Dashboard/Subscription/Subscription';
-import dashboardTheme from '../../../theme/dashboard-theme';
+import dashboardTheme from '@theme/dashboard-theme';
 
-const Header = dynamic(() => import('../../../components/Dashboard/common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../../../components/Dashboard/Layout/Layout'), { ssr: false });
-const SubscriptionTable = dynamic(() =>
-  import('../../../components/Dashboard/Subscription/Subscription')
-);
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), { ssr: false });
+const SubscriptionTable = dynamic(() => import('@components/Dashboard/Subscription/Subscription'));
 
 const SubscriptionPage = () => {
   const { t } = useTranslation();

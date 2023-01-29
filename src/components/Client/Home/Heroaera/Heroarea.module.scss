@@ -1,13 +1,9 @@
 .heroAreaWrapper {
   width: 100%;
-  padding: 200px 0;
+  padding: 5rem 0;
 
-  @media screen and (max-width: 768px) {
-    padding: 50px 0;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 0;
+  @media only screen and (max-width: 768px) {
+    padding: 3rem 0;
   }
 
   .mobileImage {
@@ -16,8 +12,9 @@
       height: auto;
       object-fit: contain;
       border-radius: 30px;
-      @media screen and (max-width: 600px) {
-        border-radius: 0px;
+
+      @media only screen and (max-width: 768px) {
+        border-radius: 10px;
       }
     }
   }

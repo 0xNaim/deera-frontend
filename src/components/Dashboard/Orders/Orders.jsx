@@ -26,13 +26,13 @@ import { useTranslation } from 'react-i18next';
 import * as Cookies from '@hooks/cookies';
 import dashboardTheme from '@theme/dashboard-theme';
 import paginate from '@utils/paginate';
-import MealCalendar from '../Meals/MealCalendar/MealCalendar';
+import MealCalendar from '@components/Dashboard/Meals/MealCalendar/MealCalendar';
 import styles from './orders.module.scss';
 
-const Header = dynamic(() => import('../common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
 

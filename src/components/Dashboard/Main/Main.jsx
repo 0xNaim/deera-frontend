@@ -15,7 +15,7 @@ import {
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../common/Header/Header';
+import Header from '@components/Dashboard/common/Header/Header';
 import { bestCustomer, mostPopularMeals } from '../fakedata';
 import styles from './Main.module.scss';
 import MainDIalog from './MainDIalog/MainDIalog';

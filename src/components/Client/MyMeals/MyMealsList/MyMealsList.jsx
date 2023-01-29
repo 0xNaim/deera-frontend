@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable object-curly-newline */
+import { myMealsList } from '@components/Client/fakedata/data';
 import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import { myMealsList } from '../../fakedata/data';
 import styles from './MyMealsList.module.scss';
 import SingleMyMealList from './SingleMyMealList/SingleMyMealList';
 
@@ -65,7 +65,7 @@ const MyMealsList = () => {
         >
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Monday
               </Typography>
             }
@@ -73,7 +73,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Tuesday
               </Typography>
             }
@@ -81,7 +81,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Wednesday
               </Typography>
             }
@@ -89,7 +89,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Thursday
               </Typography>
             }
@@ -97,7 +97,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Friday
               </Typography>
             }
@@ -105,7 +105,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Saturday
               </Typography>
             }
@@ -113,7 +113,7 @@ const MyMealsList = () => {
           />
           <Tab
             label={
-              <Typography variant="h6" color="inherit" className={styles.title}>
+              <Typography variant="h6" className={styles.title}>
                 Sunday
               </Typography>
             }

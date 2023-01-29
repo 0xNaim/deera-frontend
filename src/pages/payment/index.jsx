@@ -2,7 +2,6 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-// import Layout from '../../components/Layout';
 import StepOne from '@components/subscription-steps/step-one';
 import StepTwo from '@components/subscription-steps/step-two';
 import useMultiStepForm from '@hooks/useMultiStepForm';

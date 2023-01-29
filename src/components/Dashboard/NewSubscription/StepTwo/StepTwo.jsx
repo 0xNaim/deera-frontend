@@ -4,7 +4,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Box, Button, Grid, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import FCSuccess from '../../../Common/FCSuccess';
+import FCSuccess from '@components/Common/FCSuccess';
 import AddPackage from './AddPackage/AddPackage';
 import packageManagement from './data';
 import SingleCard from './SingleCard/SingleCard';

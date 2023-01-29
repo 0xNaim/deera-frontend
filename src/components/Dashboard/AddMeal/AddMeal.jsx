@@ -7,10 +7,10 @@ import Image from 'next/image';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import FCImageUploader from '../../Common/FCImageUploader';
-import ImageDialog from '../../Common/ImageDialog';
-import SelectBundle from '../common/SelectBundle/SelectBundle';
-import { subscriptionData } from '../fakedata';
+import FCImageUploader from '@components/Common/FCImageUploader';
+import ImageDialog from '@components/Common/ImageDialog';
+import SelectBundle from '@components/Dashboard/common/SelectBundle/SelectBundle';
+import { subscriptionData } from '@components/Dashboard/fakedata';
 import styles from './AddMeal.module.scss';
 
 const AddMeal = () => {

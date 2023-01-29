@@ -3,7 +3,7 @@ import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import SettingsLayout from '@pages/settings/settings-layout';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import Navbar from '../../Layout/Navbar/Navbar';
+import Navbar from '@components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 
 import styles from './add-new-dislike-item.module.scss';

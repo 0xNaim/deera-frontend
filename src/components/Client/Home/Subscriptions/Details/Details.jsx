@@ -4,8 +4,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import SingleProduct from '../../../../Common/SingleProduct/SingleProduct';
-import SingleSubscription from '../../../Subscription/SingleSubscription/SingleSubscription';
+import SingleProduct from '@components/Common/SingleProduct/SingleProduct';
+import SingleSubscription from '@components/Client/Subscription/SingleSubscription/SingleSubscription';
 import styles from './Details.module.scss';
 
 const Details = ({ data }) => {

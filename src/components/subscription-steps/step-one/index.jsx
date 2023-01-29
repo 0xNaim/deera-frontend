@@ -14,7 +14,7 @@ import {
 import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
-import kuwaitCitiesData from '../../Client/fakedata/cities';
+import kuwaitCitiesData from '@components/Client/fakedata/cities';
 import styles from './step-one.module.scss';
 
 // const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];

@@ -2,7 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { subscriptionData } from '../fakedata/data';
+import { subscriptionData } from '@components/Client/fakedata/data';
 import SingleSubscription from './SingleSubscription/SingleSubscription';
 import styles from './Subscription.module.scss';
 

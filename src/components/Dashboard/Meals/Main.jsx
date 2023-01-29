@@ -1,7 +1,7 @@
 // import components
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
-import Header from '../common/Header/Header';
+import Header from '@components/Dashboard/common/Header/Header';
 import styles from './Meals.module.scss';
 
 const CustomTable = dynamic(() => import('./Table/Table'));

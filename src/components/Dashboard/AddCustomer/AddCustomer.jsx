@@ -16,11 +16,11 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import Layout from '../Layout/Layout';
+import Layout from '@components/Dashboard/Layout/Layout';
 
 import styles from './add-customer.module.scss';
 
-const Header = dynamic(() => import('../common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
 

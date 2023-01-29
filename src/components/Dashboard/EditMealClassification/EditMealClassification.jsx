@@ -9,8 +9,6 @@ const EditMealClassification = ({ data }) => {
   const {
     register,
     handleSubmit,
-    // control,
-    // watch,
     formState: { errors },
   } = useForm({
     defaultValues: { name_arabic: data?.arabic_name || '', name_english: data?.english_name || '' },

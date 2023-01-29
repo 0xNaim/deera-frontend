@@ -2,7 +2,7 @@ import { Box, Button, Container, FormControl, OutlinedInput, Typography } from '
 import SettingsLayout from '@pages/settings/settings-layout';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import Navbar from '../../Layout/Navbar/Navbar';
+import Navbar from '@components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 import styles from './personal-information.module.scss';
 

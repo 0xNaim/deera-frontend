@@ -21,9 +21,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as Cookies from '@hooks/cookies';
 import paginator from '@utils/paginator';
-import FCSuccess from '../../Common/FCSuccess';
-import FCSwitch from '../../Common/FCSwitch';
-import { subscriptionPeriodsData } from '../fakedata';
+import FCSuccess from '@components/Common/FCSuccess';
+import FCSwitch from '@components/Common/FCSwitch';
+import { subscriptionPeriodsData } from '@components/Dashboard/fakedata';
 import styles from './SubscriptionPeriods.module.scss';
 
 const SubscriptionPeriods = () => {

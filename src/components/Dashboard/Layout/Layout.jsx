@@ -1,6 +1,4 @@
 // /* eslint-disable react/jsx-wrap-multilines */
-// import Grid from '@mui/material/Grid';
-// import Sidebar from './Sidebar/Sidebar';
 // style
 import dynamic from 'next/dynamic';
 import styles from './Layout.module.scss';

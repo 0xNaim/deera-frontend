@@ -14,8 +14,8 @@ import * as Cookies from '@hooks/cookies';
 
 // import styles
 import SliceText from '@utils/SliceText';
-import Language from '../../../Layout/Navbar/Language';
-import MobileSidebar from '../../Layout/MobileSidebar/MobileSidebar';
+import Language from '@components/Layout/Navbar/Language';
+import MobileSidebar from '@components/Dashboard/Layout/MobileSidebar/MobileSidebar';
 import styles from './Header.module.scss';
 
 const Header = ({ title }) => {

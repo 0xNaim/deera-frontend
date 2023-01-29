@@ -4,8 +4,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
-import { subscriptionsData } from '../../fakedata/data';
+import SingleProduct from '@components/Common/SingleProduct/SingleProduct';
+import { subscriptionsData } from '@components/Client/fakedata/data';
 import styles from './Subscriptions.module.scss';
 
 const Subscriptions = () => {

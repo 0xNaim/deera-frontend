@@ -25,14 +25,6 @@ body {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
 
   border-bottom: 1px solid #e5e7eb;
-  // padding: 0 10px !important;
-}
-
-.Mui-selected {
-  h6 {
-    // color: #f2a515 !important;
-    color: #684cf9 !important;
-  }
 }
 
 .image_container {
@@ -43,7 +35,6 @@ body {
   padding: 40px 30px;
   border-width: 3px;
   border-radius: 8px;
-  // border-color: ${(props) => getColor(props)};
   border-color: #684cf9;
   border-style: dashed;
   background-color: #fafafa;
@@ -64,10 +55,7 @@ body {
 }
 
 .date-day-Item-selected {
-  // width: 45px;
-  // height: 45px;
   border-radius: 50%;
-  // border: 2px solid #684cf9 !important;
   color: #684cf9 !important;
   position: relative !important;
 
@@ -95,9 +83,6 @@ body {
 
 .datepicker-date-day-Item {
   flex-direction: row !important;
-  /* margin: 0 12px 0 12px; */
-  // width: 45px;
-  // height: 45px;
   border-radius: 0% !important;
   border: none !important;
   justify-content: center !important;

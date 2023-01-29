@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Image from 'next/image';
 import * as React from 'react';
-import CloseIcon from '../../../Common/CloseIcon/CloseIcon';
+import CloseIcon from '@components/Common/CloseIcon/CloseIcon';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './MobileSidebar.module.scss';
 

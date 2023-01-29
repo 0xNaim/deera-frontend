@@ -6,8 +6,8 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import SingleProduct from '../../../Common/SingleProduct/SingleProduct';
-import { mealsList } from '../../fakedata/data';
+import SingleProduct from '@components/Common/SingleProduct/SingleProduct';
+import { mealsList } from '@components/Client/fakedata/data';
 import MealsDialog from '../MealsDialog/MealsDialog';
 import styles from './MealsList.module.scss';
 

@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
 const PersonalInformation = dynamic(
-  () => import('../../../components/Client/PersonalInformation/PersonalInformation'),
+  () => import('@components/Client/PersonalInformation/PersonalInformation'),
   { ssr: false }
 );
 

@@ -6,15 +6,15 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import FCImageUploader from '../../Common/FCImageUploader';
-import FCSwitch from '../../Common/FCSwitch';
-import ImageDialog from '../../Common/ImageDialog';
+import FCImageUploader from '@components/Common/FCImageUploader';
+import FCSwitch from '@components/Common/FCSwitch';
+import ImageDialog from '@components/Common/ImageDialog';
 import styles from './settings.module.scss';
 
-const Header = dynamic(() => import('../common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
 

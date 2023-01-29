@@ -1,6 +1,5 @@
 /* eslint-disable object-curly-newline */
 import { Box, Container, Grid, Typography } from '@mui/material';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Heroarea.module.scss';
 
@@ -8,7 +7,7 @@ const Heroarea = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.heroAreaWrapper}>
-      <Container sx={{ padding: { xs: 0, sm: '24px' } }}>
+      <Container>
         <Grid container justifyContent="center" alignItems="center">
           <Grid item md={6} sm={12} xs={12}>
             <Box className={styles.mobileImage}>

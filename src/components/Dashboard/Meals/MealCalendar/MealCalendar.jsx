@@ -4,7 +4,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import * as Cookies from '@hooks/cookies';
-import HorizontalDatepicker from '../../../HorizontalDatepicker/HorizontalDatepicker';
+import HorizontalDatepicker from '@components/HorizontalDatepicker/HorizontalDatepicker';
 import styles from './MealCalendar.module.scss';
 import FCTabs from './Tabs/Tabs';
 

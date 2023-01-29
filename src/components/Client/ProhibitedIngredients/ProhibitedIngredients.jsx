@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SettingsLayout from '@pages/settings/settings-layout';
-import Navbar from '../../Layout/Navbar/Navbar';
+import Navbar from '@components/Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 
 import styles from './dislike-list.module.scss';

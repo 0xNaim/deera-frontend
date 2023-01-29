@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import SettingsLayout from '../../settings-layout';
+import SettingsLayout from '@pages/settings/settings-layout';
 import styles from './edit.module.scss';
 
 const regions = ['Cumilla', 'Noyakhali', 'Barishal', 'Khulna'];
