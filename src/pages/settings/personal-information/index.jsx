@@ -4,7 +4,10 @@ import dynamic from 'next/dynamic';
 
 const PersonalInformation = dynamic(
   () => import('@components/Client/PersonalInformation/PersonalInformation'),
-  { suspense: true }
+  {
+    ssr: false,
+    suspense: true,
+  }
 );
 
 const PersonalInformationPage = () => (

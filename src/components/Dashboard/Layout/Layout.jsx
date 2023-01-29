@@ -3,7 +3,10 @@
 import dynamic from 'next/dynamic';
 import styles from './Layout.module.scss';
 
-const Sidebar = dynamic(() => import('./Sidebar/Sidebar'), { suspense: true });
+const Sidebar = dynamic(() => import('./Sidebar/Sidebar'), {
+  ssr: false,
+  suspense: true,
+});
 
 const Layout = ({ children }) => (
   <div className={styles.wrapper}>

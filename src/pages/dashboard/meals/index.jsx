@@ -4,7 +4,10 @@ import DashboardTheme from '@theme/dashboard-theme';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
-const Meals = dynamic(() => import('@components/Dashboard/Meals/Main'), { suspense: true });
+const Meals = dynamic(() => import('@components/Dashboard/Meals/Main'), {
+  ssr: false,
+  suspense: true,
+});
 const MealsPage = () => (
   <ThemeProvider theme={DashboardTheme}>
     <Layout>

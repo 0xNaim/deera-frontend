@@ -6,7 +6,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
 const Details = dynamic(() => import('@components/Client/Home/Subscriptions/Details/Details'), { ssr: true, });
-const Layout = dynamic(() => import('@components/Layout'), { suspense: true });
+const Layout = dynamic(() => import('@components/Layout'), {
+  ssr: false,
+  suspense: true,
+});
 
 export async function getServerSideProps({ params, locale }) {
   const { slug } = params;

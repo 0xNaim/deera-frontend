@@ -11,7 +11,10 @@ import { useTranslation } from 'react-i18next';
 const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), { suspense: true });
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
+  ssr: false,
+  suspense: true,
+});
 const SubscriptionTable = dynamic(() => import('@components/Dashboard/Subscription/Subscription'));
 
 const SubscriptionPage = () => {
