@@ -5,12 +5,9 @@
 import { ThemeProvider } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-// import AddCustomer from '../../../../components/Dashboard/AddCustomer/AddCustomer';
-import dashboardTheme from '../../../../theme/dashboard-theme';
+import dashboardTheme from '@theme/dashboard-theme';
 
-const AddCustomer = dynamic(() =>
-  import('../../../../components/Dashboard/AddCustomer/AddCustomer')
-);
+const AddCustomer = dynamic(() => import('@components/Dashboard/AddCustomer/AddCustomer'));
 
 const AddCustomerPage = () => (
   <ThemeProvider theme={dashboardTheme}>

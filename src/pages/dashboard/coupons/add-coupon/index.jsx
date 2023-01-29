@@ -2,9 +2,9 @@
 import { ThemeProvider } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import dashboardTheme from '../../../../theme/dashboard-theme';
+import dashboardTheme from '@theme/dashboard-theme';
 
-const AddCoupon = dynamic(() => import('../../../../components/Dashboard/AddCoupon/AddCoupon'), {
+const AddCoupon = dynamic(() => import('@components/Dashboard/AddCoupon/AddCoupon'), {
   ssr: false,
 });
 

@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
 const DislikeList = dynamic(
-  () => import('../../../components/Client/ProhibitedIngredients/ProhibitedIngredients'),
+  () => import('@components/Client/ProhibitedIngredients/ProhibitedIngredients'),
   { ssr: false }
 );
 

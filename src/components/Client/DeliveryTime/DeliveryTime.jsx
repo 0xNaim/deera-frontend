@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { useState } from 'react';
-import * as Cookies from '../../../hooks/cookies';
-import SettingsLayout from '../../../pages/settings/settings-layout';
+import * as Cookies from '@hooks/cookies';
+import SettingsLayout from '@pages/settings/settings-layout';
 import Navbar from '../../Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 import styles from './delivery-time.module.scss';

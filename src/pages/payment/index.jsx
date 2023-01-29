@@ -3,12 +3,12 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 // import Layout from '../../components/Layout';
-import StepOne from '../../components/subscription-steps/step-one';
-import StepTwo from '../../components/subscription-steps/step-two';
-import useMultiStepForm from '../../hooks/useMultiStepForm';
+import StepOne from '@components/subscription-steps/step-one';
+import StepTwo from '@components/subscription-steps/step-two';
+import useMultiStepForm from '@hooks/useMultiStepForm';
 import styles from './payment.module.scss';
 
-const Layout = dynamic(() => import('../../components/Layout'), { ssr: false });
+const Layout = dynamic(() => import('@components/Layout'), { ssr: false });
 
 const Payment = () => {
   const { currentStepIndex, nextStep, backStep, isFirstStep } = useMultiStepForm([

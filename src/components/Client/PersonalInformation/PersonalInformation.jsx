@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControl, OutlinedInput, Typography } from '@mui/material';
+import SettingsLayout from '@pages/settings/settings-layout';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import SettingsLayout from '../../../pages/settings/settings-layout';
 import Navbar from '../../Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 import styles from './personal-information.module.scss';
@@ -16,9 +16,7 @@ const PersonalInformation = () => {
   } = useForm({});
 
   // Handle form submit
-  const handleFormSubmit = (e) => {
-    console.log(e);
-  };
+  const handleFormSubmit = () => {};
 
   return (
     <>

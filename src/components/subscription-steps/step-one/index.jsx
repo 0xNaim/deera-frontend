@@ -57,9 +57,7 @@ const StepOne = ({ nextStep }) => {
   const values = getValues();
 
   // Handle form submit
-  const handleFormSubmit = (e) => {
-    console.log(e);
-
+  const handleFormSubmit = () => {
     // Handle error message
     if (startDate) setStartDateError(false);
     if (endDate) setEndDateError(false);

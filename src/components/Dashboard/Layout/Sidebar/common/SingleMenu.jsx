@@ -10,7 +10,7 @@ import { ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/mat
 
 // import styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as Cookies from '../../../../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 import styles from '../Sidebar.module.scss';
 
 const SingleMenu = ({ icon, link, name }) => {

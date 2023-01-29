@@ -8,7 +8,6 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styles from './AddPackage.module.scss';
@@ -18,16 +17,13 @@ const AddPackage = ({ addNewPackage }) => {
   const {
     register,
     handleSubmit,
-    // control,
-    watch,
     formState: { errors },
   } = useForm();
-  //   { defaultValues: { category: 'meal1' } }
-  console.log(watch('week'));
+
   const onSubmit = (data) => {
-    console.log({ ...data });
     addNewPackage(data);
   };
+
   return (
     <div className={styles.wrapper}>
       <Grid container>

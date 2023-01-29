@@ -17,7 +17,7 @@ const Footer = () => (
         <Stack direction="row" spacing={1} className={styles.desktopNumber} alignItems="center">
           <PhoneIcon />
           <Typography variant="subtitle1" color="inherit">
-            99824772
+            +99824772
           </Typography>
         </Stack>
         <Stack direction="row" spacing={1} className={styles.desktopSocialIcon} alignItems="center">
@@ -36,7 +36,7 @@ const Footer = () => (
         </Stack>
         <Stack direction="row" spacing={1} className={styles.desktopCopyWrite} alignItems="center">
           <Typography variant="subtitle1" color="inherit">
-            Powered by Dera
+            Powered by Deera
           </Typography>
         </Stack>
       </Box>

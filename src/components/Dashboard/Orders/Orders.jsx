@@ -23,9 +23,9 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../hooks/cookies';
-import dashboardTheme from '../../../theme/dashboard-theme';
-import paginate from '../../../utils/paginate';
+import * as Cookies from '@hooks/cookies';
+import dashboardTheme from '@theme/dashboard-theme';
+import paginate from '@utils/paginate';
 import MealCalendar from '../Meals/MealCalendar/MealCalendar';
 import styles from './orders.module.scss';
 

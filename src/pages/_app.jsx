@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ThemeProvider } from '@mui/material';
+import '@styles/globals.scss';
+import '@styles/reset.scss';
+import theme from '@theme/theme';
 import { appWithTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-horizontal-strip-datepicker/dist/ReactHorizontalDatePicker.css';
 import * as Cookies from '../hooks/cookies';
-import '../styles/globals.scss';
-import '../styles/reset.scss';
-import theme from '../theme/theme';
 
 const MyApp = ({ Component, pageProps }) => {
   const currentLanguageCode = Cookies.getLanguage();

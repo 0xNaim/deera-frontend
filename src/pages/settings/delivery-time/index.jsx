@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import dynamic from 'next/dynamic';
 
-const DeliveryTime = dynamic(() => import('../../../components/Client/DeliveryTime/DeliveryTime'), {
+const DeliveryTime = dynamic(() => import('@components/Client/DeliveryTime/DeliveryTime'), {
   ssr: false,
 });
 

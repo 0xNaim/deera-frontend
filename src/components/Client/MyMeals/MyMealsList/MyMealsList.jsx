@@ -52,8 +52,6 @@ const MyMealsList = () => {
     setValue(newValue);
   };
 
-  // console.log(selectData, 'datas');
-
   return (
     <Box sx={{ width: '100%' }} className={styles.wrapper}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>

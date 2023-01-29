@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
+import * as Cookies from '@hooks/cookies';
 import LanguageIcon from '@mui/icons-material/Language';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -8,11 +9,10 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { alpha, styled } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import SliceText from '@utils/SliceText';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import * as Cookies from '../../../hooks/cookies';
-import SliceText from '../../../utils/SliceText';
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -75,8 +75,6 @@ const Language = () => {
     if (storedLocale) {
       setLanguage(storedLocale);
     }
-
-    console.log(storedLocale, 'storedLocale');
   }, [language]);
 
   return (

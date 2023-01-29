@@ -2,10 +2,9 @@
 import { ThemeProvider } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-// import Customers from '../../../components/Dashboard/Customers/Customer';
-import dashboardTheme from '../../../theme/dashboard-theme';
+import dashboardTheme from '@theme/dashboard-theme';
 
-const Customers = dynamic(() => import('../../../components/Dashboard/Customers/Customer'), {
+const Customers = dynamic(() => import('@components/Dashboard/Customers/Customer'), {
   ssr: false,
 });
 

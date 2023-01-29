@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
 import Header from '../common/Header/Header';
 import styles from './Meals.module.scss';
-// import CustomTable from './Table/Table';
 
 const CustomTable = dynamic(() => import('./Table/Table'));
 

@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
+import * as Cookies from '@hooks/cookies';
 import { Alert, Button, Card, Checkbox, Container, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../hooks/cookies';
 import FCSnackbar from '../../Common/FCSnackbar';
 import styles from './SignIn.module.scss';
 
@@ -24,7 +24,7 @@ const SignIn = () => {
     control,
     watch,
   } = useForm({
-    defaultValues: { saving: true, phone: '+8801708717675', password: 'sonjoybarman' },
+    defaultValues: { saving: true, phone: '+8801900000000', password: '0xNaim' },
   });
 
   const onSubmit = (data) => {
@@ -40,7 +40,6 @@ const SignIn = () => {
 
   const onError = (Error, e) => {
     if (Error?.saving?.message === '') {
-      // console.log('first');
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -127,7 +126,7 @@ const SignIn = () => {
                 </Button>
 
                 <Typography variant="h6" color="inherit" className={styles.submit__title}>
-                  {t('auth:Don_have_account_yet')}
+                  {t('auth:Don_have_account_yet')} &nbsp; &nbsp;
                   <Link
                     href="/sign-up"
                     style={{

@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import SettingsLayout from '@pages/settings/settings-layout';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import SettingsLayout from '../../../pages/settings/settings-layout';
 import Navbar from '../../Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 
@@ -29,9 +29,7 @@ const AddNewDislikeItem = () => {
   const handleInsertItem = () => append(initialComponent);
 
   // Handle form submit
-  const handleFormSubmit = (e) => {
-    console.log(e);
-  };
+  const handleFormSubmit = () => {};
 
   return (
     <>

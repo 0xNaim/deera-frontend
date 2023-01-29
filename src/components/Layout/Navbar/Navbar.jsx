@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 import Language from './Language';
 import styles from './Navbar.module.scss';
 

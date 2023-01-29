@@ -7,19 +7,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import DashboardTheme from '../../../../theme/dashboard-theme';
+import DashboardTheme from '@theme/dashboard-theme';
 
-const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
 
 const MealClassificationTable = dynamic(() =>
-  import(
-    '../../../../components/Dashboard/Meals/MealClassificationTablePage/MealClassificationTable'
-  )
+  import('@components/Dashboard/Meals/MealClassificationTablePage/MealClassificationTable')
 );
 
 const MealClassificationTablePage = () => {

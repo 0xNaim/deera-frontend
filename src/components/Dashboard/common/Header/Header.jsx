@@ -10,10 +10,10 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import * as Cookies from '../../../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 
 // import styles
-import SliceText from '../../../../utils/SliceText';
+import SliceText from '@utils/SliceText';
 import Language from '../../../Layout/Navbar/Language';
 import MobileSidebar from '../../Layout/MobileSidebar/MobileSidebar';
 import styles from './Header.module.scss';

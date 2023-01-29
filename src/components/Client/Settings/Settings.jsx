@@ -16,7 +16,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import SettingsLayout from '../../../pages/settings/settings-layout';
+import SettingsLayout from '@pages/settings/settings-layout';
 import Navbar from '../../Layout/Navbar/Navbar';
 
 import styles from './settings.module.scss';

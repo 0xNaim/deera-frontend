@@ -1,10 +1,10 @@
 /* eslint-disable object-curly-newline */
 import { ThemeProvider } from '@mui/material';
+import dashboardTheme from '@theme/dashboard-theme';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import dashboardTheme from '../../../theme/dashboard-theme';
 
-const Settings = dynamic(() => import('../../../components/Dashboard/Settings/Settings'));
+const Settings = dynamic(() => import('@components/Dashboard/Settings/Settings'));
 
 const SettingsPage = () => (
   <ThemeProvider theme={dashboardTheme}>

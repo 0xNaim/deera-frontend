@@ -1,7 +1,7 @@
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
-import * as Cookies from '../../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 import styles from './settings-head.module.scss';
 
 const SettingsHead = ({ heading }) => {

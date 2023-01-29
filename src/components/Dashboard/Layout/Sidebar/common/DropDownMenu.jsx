@@ -3,7 +3,6 @@
 /* eslint-disable no-underscore-dangle */
 // import next js
 import Link from 'next/link';
-import React from 'react';
 // mui
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -20,14 +19,13 @@ import {
 import { useRouter } from 'next/router';
 // import scss
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Cookies from '@hooks/cookies';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../../../hooks/cookies';
 import styles from '../Sidebar.module.scss';
 
-const DropDownMenu = ({ handleClick, open, icon, name, menus, pageLink }) => {
+const DropDownMenu = ({ handleClick, open, icon, name, menus }) => {
   const { pathname } = useRouter();
   const { t } = useTranslation();
-  console.log(pathname, pageLink);
 
   const currentLanguageCode = Cookies.getLanguage();
 

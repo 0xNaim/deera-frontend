@@ -40,8 +40,6 @@ const BootstrapDialogTitle = (props) => {
 };
 
 const SelectDialog = ({ data, btnContent, handleRemoveData }) => {
-  console.log(data);
-
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

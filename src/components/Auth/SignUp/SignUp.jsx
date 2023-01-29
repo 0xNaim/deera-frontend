@@ -1,12 +1,11 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
+import * as Cookies from '@hooks/cookies';
 import { Button, Card, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../hooks/cookies';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
@@ -19,9 +18,8 @@ const SignUp = () => {
     defaultValues: { saving: false, name: '', phone: '', email: '', password: '' },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = () => {};
+
   return (
     <div className={styles.wrapper}>
       <Container>

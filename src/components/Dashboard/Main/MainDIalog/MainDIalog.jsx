@@ -20,9 +20,6 @@ const MainDIalog = ({ btnContent, data }) => {
   return (
     <div>
       <Box onClick={handleClickOpen}>{btnContent}</Box>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button> */}
       <Dialog
         open={open}
         onClose={handleClose}

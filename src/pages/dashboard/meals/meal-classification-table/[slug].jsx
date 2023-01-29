@@ -1,15 +1,13 @@
 /* eslint-disable object-curly-newline */
+import EditMealClassification from '@components/Dashboard/EditMealClassification/EditMealClassification';
+import { categoryData } from '@components/Dashboard/fakedata';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
-// import Header from '../../../../components/Dashboard/common/Header/Header';
-import EditMealClassification from '../../../../components/Dashboard/EditMealClassification/EditMealClassification';
-import { categoryData } from '../../../../components/Dashboard/fakedata';
-// import Layout from '../../../../components/Dashboard/Layout/Layout';
 
-const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
 

@@ -3,7 +3,7 @@
 /* eslint-disable comma-dangle */
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import React from 'react';
-import * as Cookies from '../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 
 const FCImageUploader = () => (
   <section className="image_container">

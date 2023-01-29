@@ -10,12 +10,12 @@ import {
 } from '@mui/material';
 import dynamic from 'next/dynamic';
 // import dynamic from 'next/dynamic';
+import DashboardTheme from '@theme/dashboard-theme';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import DashboardTheme from '../../../theme/dashboard-theme';
 import Layout from '../Layout/Layout';
 
 import styles from './add-customer.module.scss';
@@ -42,9 +42,7 @@ const AddCustomer = () => {
   } = useForm({});
 
   // Handle form submit
-  const handleFormSubmit = (e) => {
-    console.log(e);
-
+  const handleFormSubmit = () => {
     // Handle error message
     if (registrationDate) setRegistrationDateError(false);
 

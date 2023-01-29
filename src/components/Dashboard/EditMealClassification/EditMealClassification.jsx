@@ -1,6 +1,5 @@
 /* eslint-disable object-curly-newline */
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styles from './EditMealClassification.module.scss';
@@ -16,7 +15,9 @@ const EditMealClassification = ({ data }) => {
   } = useForm({
     defaultValues: { name_arabic: data?.arabic_name || '', name_english: data?.english_name || '' },
   });
-  const onSubmit = (value) => console.log(value);
+
+  const onSubmit = () => {};
+
   return (
     <div className={styles.wrapper}>
       <Container>

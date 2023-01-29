@@ -9,7 +9,7 @@ import DialogContent from '@mui/material/DialogContent';
 import Image from 'next/image';
 import * as React from 'react';
 import { useDropzone } from 'react-dropzone';
-import * as Cookies from '../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 import imageList from './data';
 
 const ImageDialog = ({ btnContent, files, setFiles }) => {

@@ -10,8 +10,8 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
-import * as Cookies from '../../../hooks/cookies';
-import SettingsLayout from '../../../pages/settings/settings-layout';
+import * as Cookies from '@hooks/cookies';
+import SettingsLayout from '@pages/settings/settings-layout';
 import Navbar from '../../Layout/Navbar/Navbar';
 import SettingsHead from '../head';
 import styles from './address.module.scss';

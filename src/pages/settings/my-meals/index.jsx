@@ -1,6 +1,5 @@
-import React from 'react';
-import MyMeals from '../../../components/Client/MyMeals/MyMeals';
-import Layout from '../../../components/Layout';
+import MyMeals from '@components/Client/MyMeals/MyMeals';
+import Layout from '@components/Layout';
 
 const MyMealsPage = () => (
   <Layout>

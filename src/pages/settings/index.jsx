@@ -1,7 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 
-const Settings = dynamic(() => import('../../components/Client/Settings/Settings'), { ssr: false });
+const Settings = dynamic(() => import('@components/Client/Settings/Settings'), { ssr: false });
 
 const SettingsPage = () => (
   <div>

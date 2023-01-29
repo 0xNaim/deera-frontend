@@ -4,15 +4,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// import NewPeriod from '../../../../components/Dashboard/NewPeriod/NewPeriod';
 
-const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
-const NewPeriod = dynamic(() => import('../../../../components/Dashboard/NewPeriod/NewPeriod'), {
+const NewPeriod = dynamic(() => import('@components/Dashboard/NewPeriod/NewPeriod'), {
   ssr: false,
 });
 

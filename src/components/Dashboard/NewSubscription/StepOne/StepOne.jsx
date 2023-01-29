@@ -15,12 +15,11 @@ const StepOne = ({ handleClick }) => {
   const {
     register,
     handleSubmit,
-    // control,
-    // watch,
     formState: { errors },
   } = useForm();
-  //   { defaultValues: { category: 'meal1' } }
-  const onSubmit = (data) => console.log({ ...data, files });
+
+  const onSubmit = () => {};
+
   return (
     <div className={styles.wrapper}>
       <Grid container>

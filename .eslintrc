@@ -17,6 +17,7 @@
     "react/jsx-props-no-spreading": 0,
     "indent": ["error", 2],
     "object-curly-newline": ["error", { "multiline": true }],
+    "import/no-unresolved": 0,
     "react/function-component-definition": [
       2,
       {

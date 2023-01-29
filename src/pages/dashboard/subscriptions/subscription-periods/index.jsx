@@ -1,16 +1,15 @@
 /* eslint-disable object-curly-newline */
+import SubscriptionPeriods from '@components/Dashboard/SubscriptionPeriods/SubscriptionPeriods';
 import { ThemeProvider } from '@mui/material';
+import DashboardTheme from '@theme/dashboard-theme';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import dynamic from 'next/dynamic';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SubscriptionPeriods from '../../../../components/Dashboard/SubscriptionPeriods/SubscriptionPeriods';
-import DashboardTheme from '../../../../theme/dashboard-theme';
 
-const Header = dynamic(() => import('../../../../components/Dashboard/common/Header/Header'), {
+const Header = dynamic(() => import('@components/Dashboard/common/Header/Header'), {
   ssr: false,
 });
-const Layout = dynamic(() => import('../../../../components/Dashboard/Layout/Layout'), {
+const Layout = dynamic(() => import('@components/Dashboard/Layout/Layout'), {
   ssr: false,
 });
 

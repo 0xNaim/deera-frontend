@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import * as Cookies from '../../../../hooks/cookies';
+import * as Cookies from '@hooks/cookies';
 import styles from './SalesStatistics.module.scss';
 
 const SalesStatistics = () => {
